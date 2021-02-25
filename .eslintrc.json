@@ -43,7 +43,8 @@
         "@typescript-eslint"
     ],
     
-    "rules": {
+    "rules": {      
+      "no-underscore-dangle": "off",
       "@typescript-eslint/explicit-module-boundary-types": "off",
         "react/jsx-filename-extension": [
             1,

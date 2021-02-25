@@ -7,10 +7,10 @@ import * as $ACS from '@actions/profile/Action';
 export default function Profile() {
   const counter = useSelector((state) => state.ProfileReducer.counter);
 
-  const counterInc = () => {
+  const _counterInc = () => {
     $ACS.increment();
   };
-  const counterDec = () => {
+  const _counterDec = () => {
     $ACS.decrement();
   };
   return (
@@ -27,11 +27,11 @@ export default function Profile() {
         </Text>
 
         <View style={{ marginTop: 30 }}>        
-          <Button onPress={counterInc} title="Increment" />
+          <Button onPress={_counterInc} title="Increment" />
         </View>
 
         <View style={{ marginTop: 30 }}>        
-          <Button onPress={counterDec} title="Fecrement" />
+          <Button onPress={_counterDec} title="Fecrement" />
         </View>
       
       </View>

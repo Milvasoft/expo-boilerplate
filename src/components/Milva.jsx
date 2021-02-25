@@ -6,14 +6,14 @@ import { getStoreData } from '@helpers/storage';
 import * as $AC from '@actions/auth/Action'; 
 
 export default function Milva() {
-  const onRequest = async () => {  
+  const _onRequest = async () => {  
     const loginDto = {
       userName: 'username',
       password: 'password'
     };
     await $AC.signIn(loginDto);
   };
-  const onStorage = async () => {
+  const _onStorage = async () => {
     // await storeData('new', { id: '1' });
     const storeData = await getStoreData('new');    
     alert(JSON.stringify(storeData));
@@ -28,7 +28,7 @@ export default function Milva() {
 
       <View style={{ marginTop: 10 }}>
         
-        <Button onPress={onRequest} title="SignIn" />
+        <Button onPress={_onRequest} title="SignIn" />
 
       </View>
       
