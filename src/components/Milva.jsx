@@ -3,20 +3,26 @@
 import React from 'react';
 import { Text, View, Button } from 'react-native';
 import { getStoreData } from '@helpers/storage';
-import * as $AC from '@actions/auth/Action'; 
+import * as $AC from '@actions/Auth'; 
 
 export default function Milva() {
-  const _onRequest = async () => {  
-    const loginDto = {
+
+  const _onRequest = async () => {
+  
+    const loginDto = {      
       userName: 'username',
       password: 'password'
     };
     await $AC.signIn(loginDto);
+  
   };
+  
   const _onStorage = async () => {
+
     // await storeData('new', { id: '1' });
     const storeData = await getStoreData('new');    
     alert(JSON.stringify(storeData));
+  
   };
 
   return (   
@@ -35,8 +41,10 @@ export default function Milva() {
       <View style={{ marginTop: 10 }}>
         <Button
           onPress={() => {
+
             // eslint-disable-next-line no-throw-literal
             throw 'Crash!';
+          
           }}
           title="Crash"
         />
@@ -45,5 +53,6 @@ export default function Milva() {
     </View>    
 
   );
+
 }
 

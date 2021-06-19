@@ -1,10 +1,23 @@
-/* eslint-disable max-len */
-/* eslint-disable no-return-await */
-import { LoginApi } from './info';
 import Network from './network';
 
+/**
+* Oturum açma
+* @param  {object} LoginDTO
+* @url `Account/Login`
+* @ {
+* @  `userName`: `string`,
+* @  `password`: `string`,
+* @ } */
+export const signInAPI = async (LoginDTO) => {
+    const url = 'Account/Login';
+    return await Network.postRequest({ url, data: LoginDTO });
+};
 
-export const signIn = async (LoginDTO) => await Network.postRequest({ url: LoginApi.signIn, data: LoginDTO });
-
-
-export const signOut = async () => Network.getRequest({ url: LoginApi.signOut });
+/**
+* Oturum Kapatma
+* @url `Account/Login`
+*/
+export const signOutAPI = async () => {
+      const url = 'Account/Login';
+  return await Network.getRequest({ url });
+}

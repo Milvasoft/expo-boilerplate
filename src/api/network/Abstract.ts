@@ -14,17 +14,12 @@ result? : unknown;
 errorCodes? : Array<number>;  
 }
 
-export interface Action {
-  key?: string;
-  type?: string;
-}
-
 export interface ApiParams {
 url?: string;
 headers?: unknown,
 queryString?: string,
 data?: unknown,
-action?: Action,
+isToast?:boolean,
 }
 export interface NetworkParams extends ApiParams {
 method?: Method,

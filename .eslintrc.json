@@ -142,7 +142,8 @@
             }
          ],
          "@typescript-eslint/no-use-before-define": ["error"],
-         "no-use-before-define": "off"
+         "no-use-before-define": "off",
+         "padded-blocks": ["error", { "blocks": "always" }]
     },
     "overrides": [
       {

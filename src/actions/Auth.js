@@ -3,7 +3,7 @@ import { storeData } from '@helpers/storage';
 import AxiosInstance from '@api/network/AxiosInstance';
 
 export const signIn = async (loginDto) => {
-  await $API.signIn(loginDto)
+  await $API.signInAPI(loginDto)
     .then(async (res) => {
       if (res.statusCode === 200) {
         const token = res?.result?.token;
@@ -18,7 +18,7 @@ export const signIn = async (loginDto) => {
 };
 
 export const signOut = async () => {
-  await $API.signOut()
+  await $API.signOutAPI()
     .then((res) => console.log(res))
     .catch((err) => console.log(err));
 };
