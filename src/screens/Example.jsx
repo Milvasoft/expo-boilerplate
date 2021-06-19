@@ -1,10 +1,22 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, InteractionManager } from 'react-native';
 import i18n from 'i18n-js';
 import Milva from '@components/Milva';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function Example() {
+
+  // ! Used to render after the page is opened
+  React.useEffect(() => {
+
+    InteractionManager.runAfterInteractions(() => {
+      // Process
+    });
+    return () => {
+      // Clear Process
+    };
+  
+  }, []);
 
   return (
     <SafeAreaView style={{ flex: 1, }}>
