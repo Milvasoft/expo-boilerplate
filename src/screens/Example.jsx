@@ -5,6 +5,7 @@ import Milva from '@components/Milva';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function Example() {
+
   return (
     <SafeAreaView style={{ flex: 1, }}>
       <View style={{ flex: 1, justifyContent: 'space-between', alignItems: 'center' }}>
@@ -21,5 +22,6 @@ export default function Example() {
       </View>
     </SafeAreaView>
   );
+
 }
 

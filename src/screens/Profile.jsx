@@ -5,13 +5,18 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import * as $ACS from '@actions/Profile';
 
 export default function Profile() {
+
   const counter = useSelector((state) => state.ProfileReducer.counter);
 
   const _counterInc = () => {
+
     $ACS.increment();
+  
   };
   const _counterDec = () => {
+
     $ACS.decrement();
+  
   };
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -37,5 +42,6 @@ export default function Profile() {
       </View>
     </SafeAreaView>
   );
+
 }
 

@@ -7,6 +7,7 @@ import Profile from '@screens/Profile';
 const Tab = createBottomTabNavigator();
 
 export default function TabNavigator() {
+
   return (
     <Tab.Navigator
       tabBarOptions={{
@@ -44,4 +45,5 @@ export default function TabNavigator() {
 
     </Tab.Navigator>
   );
+
 }

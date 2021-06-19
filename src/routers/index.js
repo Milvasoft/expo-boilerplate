@@ -7,6 +7,7 @@ import BottomNavigation from './BottomNavigation';
 
 const Stack = createStackNavigator();
 export default function RootNavigation() {
+
   return (
     <SafeAreaProvider>
 
@@ -24,4 +25,5 @@ export default function RootNavigation() {
       
     </SafeAreaProvider>
   );
+
 }
