@@ -1,8 +1,8 @@
 import React from 'react';
 import { Text, View, InteractionManager } from 'react-native';
-import i18n from 'i18n-js';
 import Milva from '@components/Milva';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import GetLang from '@helpers/localization';
 
 export default function Example() {
 
@@ -25,11 +25,11 @@ export default function Example() {
         <Milva />
 
         <Text style={{ fontFamily: 'Inter-Black' }}>
-          {i18n.t('name')}   
+          {GetLang('name')}   
         </Text>  
 
         <Text style={{ fontFamily: 'Inter-Black' }}>
-          {i18n.t('welcome')}  
+          {GetLang('welcome')}  
         </Text>       
       </View>
     </SafeAreaView>
