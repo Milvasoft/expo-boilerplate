@@ -1,21 +1,34 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from 'react-native-screens/native-stack';
 import Example from '@screens/Example';
 import BottomNavigation from './BottomNavigation';
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 export default function RootNavigation() {
 
+  const TransitionScreenOptions = {
+    stackAnimation: 'slide_from_right',
+    headerShown: false 
+  };
   return (
     <SafeAreaProvider>
 
       <NavigationContainer>
 
-        <Stack.Navigator initialRouteName="Home" headerMode="none">
+        <Stack.Navigator 
+          initialRouteName="Home"
+          headerMode="none"
+          detachInactiveScreens
+          screenOptions={TransitionScreenOptions}
+        >
 
-          <Stack.Screen name="Home" component={BottomNavigation} />
+          <Stack.Screen
+            name="Home" 
+            component={BottomNavigation} 
+            options={{ gestureEnabled: false }} 
+          />
 
           <Stack.Screen name="Settings" component={Example} />
 

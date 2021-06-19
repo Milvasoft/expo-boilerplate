@@ -14,7 +14,8 @@ export default function TabNavigator() {
         tabStyle: {
         //   backgroundColor: '#000',
         },
-        // activeTintColor: '#fff'
+        // activeTintColor: '#fff',
+        // inactiveTintColor: _tintColor
       }}
     >
       <Tab.Screen
@@ -33,7 +34,17 @@ export default function TabNavigator() {
       <Tab.Screen
         name="Profile"
         component={Profile}
+        // listeners={{
+        //   tabPress: () => {
+        //     // Process
+        //   },
+        //   focus: () => {
+        //     // Process
+        //   }
+        // }}
         options={{
+          // unmountOnBlur: true, ! Important =>  To re-render each time
+          // tabBarLabel: () => null,
           tabBarIcon: ({ color }) => (
             <Ionicons
               name="person-outline" color={color}
