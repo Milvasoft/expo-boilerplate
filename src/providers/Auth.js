@@ -1,6 +1,8 @@
 import React from 'react';
-import { getStoreData } from '@helpers/storage';
+import { getStoreString } from '@helpers/storage';
 import AxiosInstance from '@api/network/AxiosInstance';
+import { globalStateChange } from '@actions/Global';
+import AppLoading from 'expo-app-loading';
 
 /**
  * When the application `reloaded`, 
@@ -8,18 +10,43 @@ import AxiosInstance from '@api/network/AxiosInstance';
    adds it to the `AxiosInstance` object.
  */
 export default function AuthProvider({ children }) {
-  React.useEffect(() => {
-    const tokenCheck = async () => {
-      const token = await getStoreData('token');
-      if (token) {
-        AxiosInstance.defaults.headers.common.Authorization = `Bearer ${token}`;
-      }
-    };
-    tokenCheck();
-  }, []);
+
+  const [loading, setLoading] = React.useState(true);
+   
+  const _check = async () => {
+
+    const token = await getStoreString('token');
+    if (token) {
+
+      AxiosInstance.defaults.headers.common.Authorization = `Bearer ${token}`;
+
+      globalStateChange({ key: 'isSignedIn', value: true });
+        
+    
+    } else {
+
+      // Process
+    
+    }
+  
+  };
+
+  if (loading) {
+
+    return (
+      <AppLoading
+        startAsync={_check}
+        onFinish={() => setLoading(false)}
+        onError={console.warn}
+      />
+    ); 
+  
+  }
+
   return (
     <>
       {children}
     </>
   );
+
 }

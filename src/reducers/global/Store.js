@@ -1,5 +1,6 @@
 const INITIAL_STATE = {
-  example: ''
+  example: '',
+  isSignedIn: false
 };
 export default INITIAL_STATE;
   
