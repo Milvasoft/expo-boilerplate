@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 /* eslint-disable no-alert */
-import { addStoreData } from '@helpers/storage';
+import { addStoreDataAsync } from '@helpers/storage';
 import Constants from 'expo-constants';
 import * as Notifications from 'expo-notifications';
 import React, { useEffect, useRef } from 'react';
@@ -27,7 +27,7 @@ export default function Notification({ children }) {
     registerForPushNotificationsAsync()
       .then(async (token) => {
 
-        await addStoreData('pushToken', token);
+        await addStoreDataAsync('pushToken', token);
       
       });
       

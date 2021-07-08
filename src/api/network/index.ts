@@ -47,31 +47,31 @@ export default class Network {
   
   }
 
-  static getRequest(params: ApiParams): Promise<Result> {
+  static getRequestAsync(params: ApiParams): Promise<Result> {
 
     return this.network(networkParamsMap(params, 'GET'));
   
   }
 
-  static deleteRequest(params: ApiParams): Promise<Result> {
+  static deleteRequestAsync(params: ApiParams): Promise<Result> {
 
     return this.network(networkParamsMap(params, 'DELETE'));
   
   }
 
-  static postRequest(params: ApiParams): Promise<Result> {
+  static postRequestAsync(params: ApiParams): Promise<Result> {
 
     return this.network(networkParamsMap(params, 'POST'));
   
   }
  
-  static putRequest(params: ApiParams): Promise<Result> {
+  static putRequestAsync(params: ApiParams): Promise<Result> {
 
     return this.network(networkParamsMap(params, 'PUT'));
   
   }
  
-  static patchRequest(params: ApiParams): Promise<Result> {
+  static patchRequestAsync(params: ApiParams): Promise<Result> {
 
     return this.network(networkParamsMap(params, 'PATCH'));
   

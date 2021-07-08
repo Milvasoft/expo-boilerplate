@@ -9,6 +9,7 @@ import ErrorProvider from './Error';
    The `CustomProvider` is used to `monitor` and take action at every moment of the application.
  */
 export default function CustomProvider({ children }) {
+
   return (
     <>
       <ErrorProvider>
@@ -22,4 +23,5 @@ export default function CustomProvider({ children }) {
       </ErrorProvider>
     </>
   );
+
 }

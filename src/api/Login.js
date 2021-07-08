@@ -8,16 +8,22 @@ import Network from './network';
 * @  `userName`: `string`,
 * @  `password`: `string`,
 * @ } */
-export const signInAPI = async (LoginDTO) => {
-    const url = 'Account/Login';
-    return await Network.postRequest({ url, data: LoginDTO });
+export const signInAPIAsync = async (LoginDTO) => {
+
+  const url = 'Account/Login';
+  const request = await Network.postRequestAsync({ url, data: LoginDTO });
+  return request;
+
 };
 
 /**
 * Oturum Kapatma
 * @url `Account/Login`
 */
-export const signOutAPI = async () => {
-      const url = 'Account/Login';
-  return await Network.getRequest({ url });
-}
+export const signOutAPIAsync = async () => {
+
+  const url = 'Account/Login';
+  const request = await Network.getRequestAsync({ url });
+  return request;
+
+};

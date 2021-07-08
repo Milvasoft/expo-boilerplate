@@ -2,7 +2,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { isObjectLike } from '@helpers/global';
 import { storeType } from './Abstract';
 
-export const addStoreData = async (key:storeType, value: string): Promise<void> => {
+export const addStoreDataAsync = async (key:storeType, value: string): Promise<void> => {
 
   try {
 
@@ -19,7 +19,7 @@ export const addStoreData = async (key:storeType, value: string): Promise<void> 
 
 };
 
-export const getStoreData = async (key:storeType):Promise<string> => {
+export const getStoreDataAsync = async (key:storeType):Promise<string> => {
 
   try {
 
@@ -39,7 +39,7 @@ export const getStoreData = async (key:storeType):Promise<string> => {
 
 };
 
-export const getStoreString = async (key:storeType):Promise<string> => {
+export const getStoreStringAsync = async (key:storeType):Promise<string> => {
 
   try {
 
@@ -58,7 +58,7 @@ export const getStoreString = async (key:storeType):Promise<string> => {
   } 
 
 };
-export const removeStoreData = async (key:storeType):Promise<void> => {
+export const removeStoreDataAsync = async (key:storeType):Promise<void> => {
 
   try {
 

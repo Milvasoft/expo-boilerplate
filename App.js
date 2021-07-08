@@ -24,6 +24,7 @@ export default function App() {
     ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT_UP);
   
   }, []);
+  
   return (
     <Provider store={Store}>  
       <CustomProvider>

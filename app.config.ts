@@ -32,7 +32,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     versionCode: 1,
     useNextNotificationsApi: true,
   },
-  scheme: 'obk',
+  scheme: 'milvasoft',
   userInterfaceStyle: 'automatic'
 
 });

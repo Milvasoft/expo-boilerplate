@@ -2,25 +2,26 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
 import { Text, View, Button } from 'react-native';
-import { getStoreData } from '@helpers/storage';
+import { getStoreDataAsync } from '@helpers/storage';
 import * as $AC from '@actions/Auth'; 
 
 export default function Milva() {
 
-  const _onRequest = async () => {
+  const _onRequestAsync = async () => {
   
     const loginDto = {      
       userName: 'username',
       password: 'password'
     };
-    await $AC.signIn(loginDto);
+
+    await $AC.signInAsync(loginDto);
   
   };
   
-  const _onStorage = async () => {
+  const _onStorageAsync = async () => {
 
     // await storeData('new', { id: '1' });
-    const storeData = await getStoreData('new');    
+    const storeData = await getStoreDataAsync('new');    
     alert(JSON.stringify(storeData));
   
   };
@@ -34,7 +35,7 @@ export default function Milva() {
 
       <View style={{ marginTop: 10 }}>
         
-        <Button onPress={_onRequest} title="SignIn" />
+        <Button onPress={_onRequestAsync} title="SignIn" />
 
       </View>
       

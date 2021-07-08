@@ -1,5 +1,5 @@
 import React from 'react';
-import { getStoreString } from '@helpers/storage';
+import { getStoreStringAsync } from '@helpers/storage';
 import AxiosInstance from '@api/network/AxiosInstance';
 import { globalStateChange } from '@actions/Global';
 import AppLoading from 'expo-app-loading';
@@ -15,7 +15,8 @@ export default function AuthProvider({ children }) {
    
   const _check = async () => {
 
-    const token = await getStoreString('token');
+    const token = await getStoreStringAsync('token');
+    
     if (token) {
 
       AxiosInstance.defaults.headers.common.Authorization = `Bearer ${token}`;
