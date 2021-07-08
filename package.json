@@ -16,7 +16,6 @@
     "expo-localization": "~10.2.0",
     "expo-notifications": "~0.12.3",
     "expo-screen-orientation": "~3.2.1",
-    "expo-splash-screen": "~0.11.2",
     "i18n-js": "^3.8.0",
     "moment": "^2.29.1",
     "react": "16.13.1",
