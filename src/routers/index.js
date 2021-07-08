@@ -8,10 +8,12 @@ import BottomNavigation from './BottomNavigation';
 const Stack = createNativeStackNavigator();
 export default function RootNavigation() {
 
-  const TransitionScreenOptions = {
+  const screenOptions = {
+    gestureEnabled: true,
     stackAnimation: 'slide_from_right',
-    headerShown: false 
+    headerShown: false,
   };
+
   return (
     <SafeAreaProvider>
 
@@ -21,7 +23,7 @@ export default function RootNavigation() {
           initialRouteName="Home"
           headerMode="none"
           detachInactiveScreens
-          screenOptions={TransitionScreenOptions}
+          screenOptions={screenOptions}
         >
 
           <Stack.Screen

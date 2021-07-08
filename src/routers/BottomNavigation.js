@@ -2,7 +2,7 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { AntDesign, Ionicons } from 'react-native-vector-icons';
 import Example from '@screens/Example';
-import Profile from '@screens/Profile';
+import ProfileStack from './ProfileStack';
 
 const Tab = createBottomTabNavigator();
 
@@ -33,7 +33,7 @@ export default function TabNavigator() {
 
       <Tab.Screen
         name="Profile"
-        component={Profile}
+        component={ProfileStack}
         // listeners={{
         //   tabPress: () => {
         //     // Process
