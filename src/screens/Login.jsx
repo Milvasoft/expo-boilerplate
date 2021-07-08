@@ -4,11 +4,16 @@ import { wp } from '@helpers/responsive';
 import React from 'react';
 import { View, Text } from 'react-native';
 import { Button } from 'react-native-paper';
+import * as Notifications from 'expo-notifications';
 
 export default function Login() {
 
 
-  const _goHomePage = () => {
+  const _goHomePage = async () => {
+
+    const token = (await Notifications.getExpoPushTokenAsync()).data;
+
+    console.log('token', token);
 
     globalStateChange({ property: 'isSignedIn', value: true });
   
