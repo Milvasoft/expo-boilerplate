@@ -19,14 +19,24 @@ export default function AuthProvider({ children }) {
     
     if (token) {
 
-      AxiosInstance.defaults.headers.common.Authorization = `Bearer ${token}`;
+
+      AxiosInstance.defaults.headers.common.Authorization = `Bearer ${token}`;      
+
+      // Requst Api Then
+      
+      globalStateChange({ property: 'user', value: {} });
 
       globalStateChange({ key: 'isSignedIn', value: true });
         
     
     } else {
 
-      // Process
+      AxiosInstance.defaults.headers.common.Authorization = '';
+
+      globalStateChange({ property: 'user', value: {} });
+
+      globalStateChange({ key: 'isSignedIn', value: false });
+
     
     }
   
