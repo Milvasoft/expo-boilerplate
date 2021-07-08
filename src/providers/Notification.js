@@ -78,17 +78,13 @@ async function registerForPushNotificationsAsync() {
     }
     if (finalStatus !== 'granted') {
 
-      alert('Failed to get push token for push notification!');
+      // alert('Failed to get push token for push notification!');
       return;
     
     }
     token = (await Notifications.getExpoPushTokenAsync()).data;
   
-  } else {
-
-    alert('Must use physical device for Push Notifications');
-  
-  }
+  } 
 
   // eslint-disable-next-line consistent-return
   return token;
