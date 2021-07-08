@@ -3,6 +3,7 @@ import AuthProvider from './Auth';
 import FontProvider from './Font';
 import LocalizationProvider from './Localization';
 import ErrorProvider from './Error';
+import Notification from './Notification';
 
 /**
  * Providers for `global` transactions.
@@ -14,11 +15,13 @@ export default function CustomProvider({ children }) {
     <>
       <ErrorProvider>
         <AuthProvider>
-          <LocalizationProvider>
-            <FontProvider>
-              {children}
-            </FontProvider>
-          </LocalizationProvider>
+          <Notification>
+            <LocalizationProvider>
+              <FontProvider>
+                {children}
+              </FontProvider>
+            </LocalizationProvider>
+          </Notification>
         </AuthProvider>
       </ErrorProvider>
     </>
