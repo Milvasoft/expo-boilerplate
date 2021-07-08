@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View, InteractionManager } from 'react-native';
-import Milva from '@components/Milva';
+import Milva from '@components/page/example/Milva';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import GetLang from '@helpers/localization';
 
