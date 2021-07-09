@@ -14,6 +14,8 @@ Notifications.setNotificationHandler({
   }),
 });
 
+// TODO: https://docs.expo.io/versions/latest/sdk/notifications/
+// Rgister FCM and APN
 export default function Notification({ children }) {
 
   // const notificationListener = useRef();
