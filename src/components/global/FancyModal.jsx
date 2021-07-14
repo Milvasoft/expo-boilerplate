@@ -1,3 +1,6 @@
+/**
+ * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
+ */
 import React from 'react';
 import Modal from 'react-native-modal';
 import Color from '@assets/color';

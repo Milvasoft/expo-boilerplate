@@ -1,3 +1,6 @@
+/**
+ * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
+*/
 import ToastColor from '@assets/color/toast';
 import Toast from 'react-native-root-toast';
 import { wp } from './responsive';

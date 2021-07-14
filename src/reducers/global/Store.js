@@ -1,5 +1,4 @@
 const INITIAL_STATE = {
-  example: '',
   isSignedIn: false,
   user: {}
 };

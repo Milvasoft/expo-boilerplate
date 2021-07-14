@@ -1,3 +1,6 @@
+/**
+ * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
+*/
 import React from 'react';
 import moment from 'moment';
 import 'moment/min/locales';

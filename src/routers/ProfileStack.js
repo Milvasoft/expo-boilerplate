@@ -1,3 +1,6 @@
+/**
+ * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
+*/
 import * as React from 'react';
 import { createNativeStackNavigator } from 'react-native-screens/native-stack';
 import Profile from '@screens/ProfileStack/Profile';

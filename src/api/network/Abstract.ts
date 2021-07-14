@@ -1,3 +1,6 @@
+/**
+ * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
+ */
 
 export type Method =
 | 'get' | 'GET'
@@ -20,6 +23,7 @@ headers?: unknown,
 queryString?: string,
 data?: unknown,
 isToast?:boolean,
+isReturnWithResult?:boolean,
 }
 export interface NetworkParams extends ApiParams {
 method?: Method,

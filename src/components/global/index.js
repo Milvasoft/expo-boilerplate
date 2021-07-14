@@ -1,3 +1,6 @@
+/**
+ * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
+ */
 import SafeAreaComponent from './SafeAreaComponent';
 import GeneralActivityIndicator from './GeneralActivityIndicator';
 import DoubleClicker from './DoubleClicker';

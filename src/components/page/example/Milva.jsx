@@ -1,9 +1,12 @@
+/**
+ * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
+ */
 /* eslint-disable no-alert */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
 import { Text, View, Button } from 'react-native';
 import { getStoreDataAsync } from '@helpers/storage';
-import * as $AC from '@actions/Auth'; 
+import * as $AC from '@actions/Account'; 
 
 export default function Milva() {
 

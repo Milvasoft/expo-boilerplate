@@ -1,3 +1,6 @@
+/**
+ * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
+*/
 import Store from '../../Store';
 
 export const dispatcher = (action) => {

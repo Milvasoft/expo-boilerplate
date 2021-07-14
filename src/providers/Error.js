@@ -1,3 +1,6 @@
+/**
+ * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
+*/
 import * as React from 'react';
 import * as ErrorRecovery from 'expo-error-recovery';
 

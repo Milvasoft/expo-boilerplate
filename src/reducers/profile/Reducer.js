@@ -1,3 +1,6 @@
+/**
+ * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
+*/
 import * as $AT from '@actions/ActionTypes';
 import INITIAL_STATE from './Store';
 

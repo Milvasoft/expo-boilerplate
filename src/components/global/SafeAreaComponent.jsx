@@ -1,3 +1,6 @@
+/**
+ * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
+ */
 
 import { hp } from '@helpers/responsive';
 import React from 'react';

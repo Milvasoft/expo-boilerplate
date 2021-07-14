@@ -1,3 +1,6 @@
+/**
+ * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
+*/
 /* eslint-disable global-require */
 import React from 'react';
 import * as Font from 'expo-font';

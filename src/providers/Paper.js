@@ -1,3 +1,6 @@
+/**
+ * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
+*/
 import * as React from 'react';
 import { Provider, DefaultTheme } from 'react-native-paper';
 import Color from '@assets/color';

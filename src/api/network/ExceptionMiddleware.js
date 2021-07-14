@@ -1,11 +1,18 @@
+/**
+ * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
+ */
+
 import { showToast } from '@helpers/toast';
 import ToastColor from '@assets/color/toast';
 import GetLang from '@helpers/localization';
+import { removeStoreDataAsync } from '@helpers/storage';
+import { dispatcher } from '@helpers/redux';
+import * as $AT from '@actions/ActionTypes';
 import AxiosInstance from './AxiosInstance';
 
 // Change it for yourself
 // Multiple controls can be added
-const ExceptionMiddleware = (res, isToast) => {
+const ExceptionMiddleware = async (res, isToast) => {
 
   if (res?.data) {
  
@@ -20,8 +27,12 @@ const ExceptionMiddleware = (res, isToast) => {
   
       if (statusCode === 401) {
 
+        // Account clearUser function
+
         AxiosInstance.defaults.headers.common.Authorization = null;
-        // Other Process
+        await removeStoreDataAsync('token');
+        dispatcher({ type: $AT.GLOBAL_STATE_CHANGE, payload: { property: 'user', value: {} } });
+        dispatcher({ type: $AT.GLOBAL_STATE_CHANGE, payload: { property: 'isSignedIn', value: false } });
       
       }
     

@@ -1,3 +1,6 @@
+/**
+ * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
+*/
 import React from 'react';
 import { getStoreStringAsync } from '@helpers/storage';
 import AxiosInstance from '@api/network/AxiosInstance';

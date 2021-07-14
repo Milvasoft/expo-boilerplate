@@ -1,3 +1,6 @@
+/**
+ * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
+*/
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Text, View, Button } from 'react-native';
@@ -18,6 +21,7 @@ export default function Profile() {
     $ACS.decrement();
   
   };
+  
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>

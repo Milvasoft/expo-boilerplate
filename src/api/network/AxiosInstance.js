@@ -1,3 +1,7 @@
+/**
+ * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
+ */
+
 import axios from 'axios';
 
 // Using the same example everywhere 

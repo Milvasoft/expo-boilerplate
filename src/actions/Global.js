@@ -1,3 +1,6 @@
+/**
+ * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
+ */
 /* eslint-disable import/prefer-default-export */
 import * as $AT from '@actions/ActionTypes';
 import { dispatcher } from '@helpers/redux';

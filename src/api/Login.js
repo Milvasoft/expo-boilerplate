@@ -1,3 +1,7 @@
+/**
+ * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
+ */
+
 import Network from './network';
 
 /**

@@ -1,3 +1,6 @@
+/**
+ * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
+*/
 import { globalStateChange } from '@actions/Global';
 import Color from '@assets/color';
 import { wp } from '@helpers/responsive';

@@ -1,3 +1,6 @@
+/**
+ * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
+*/
 import * as $AT from '@actions/ActionTypes';
 import INITIAL_STATE from './Store';
 
@@ -11,11 +14,6 @@ const GlobalReducer = (state = INITIAL_STATE, { type, payload }) => {
     
     }
     
-    case $AT.EXAMPLE: {
-
-      return { ...state, example: payload?.example };
-    
-    }
     default:
       return state;
   }

@@ -1,3 +1,6 @@
+/**
+ * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
+*/
 import React from 'react';
 import { Text, View, InteractionManager } from 'react-native';
 import Milva from '@components/page/example/Milva';

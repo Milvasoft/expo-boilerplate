@@ -1,3 +1,7 @@
+/**
+ * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
+ */
+
 import AxiosInstance from './AxiosInstance';
 import { 
   Method, Result, ApiParams, NetworkParams 
@@ -21,7 +25,7 @@ export default class Network {
   static network(params: NetworkParams): Promise<Result> {
 
     const {
-      url, method, headers, data, isToast 
+      url, method, headers, data, isToast, isReturnWithResult 
     } = params;
     return new Promise((resolve, reject) => {
 
@@ -35,10 +39,18 @@ export default class Network {
           // Change it for yourself
           if (res?.data?.statusCode === 200) {         
               
-            return resolve(res.data);
+                       
+            if (isReturnWithResult) {
+
+              return resolve(res?.data);
+            
+            }
+
+            return resolve(res?.data?.result);            
           
-          }    
-          return reject(res.data);
+          }   
+
+          return reject(res?.data);
         
         })
         .catch((err) => reject(err));
@@ -77,15 +89,3 @@ export default class Network {
   
   }
 }
-
-// (function() {
-//     String token = store.getState().session.token;
-//     if (token) {
-//         axios.defaults.headers.common['Authorization'] = token;
-//     } else {
-//         axios.defaults.headers.common['Authorization'] = null;
-//         /*if setting null does not remove `Authorization` header then try     
-//           delete axios.defaults.headers.common['Authorization'];
-//         */
-//     }
-// })();
