@@ -19,7 +19,7 @@ export default function GeneralActivityIndicator({ text }) {
       <ActivityIndicator
         animating
         size="large"
-        color={Color.primary}
+        color={Color().primary}
       />
       <Text style={Styles.activityIndicatorText}>
         {text || GetLang('generalActivityIndicatorText')}
@@ -45,6 +45,6 @@ const Styles = StyleSheet.create({
     marginTop: hp(2),
     fontWeight: 'bold',
     fontSize: wp(4),
-    color: Color.primary
+    color: Color().primary
   },
 });

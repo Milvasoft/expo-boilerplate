@@ -1,6 +1,7 @@
 const INITIAL_STATE = {
   isSignedIn: false,
-  user: {}
+  user: {},
+  userColorScheme: ''
 };
 export default INITIAL_STATE;
   

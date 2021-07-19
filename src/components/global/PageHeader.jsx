@@ -29,7 +29,7 @@ export default function PageHaeder({ title }) {
           <MaterialIcons
             name="arrow-back-ios"
             size={wp(7)}
-            color={Color.primary}
+            color={Color().primary}
           />
         </TouchableWithoutFeedback>          
       </View>
@@ -50,7 +50,7 @@ const Styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     height: hp(8),
-    borderBottomColor: Color.primary,
+    borderBottomColor: Color().primary,
     borderBottomWidth: 1,
   },
 
@@ -59,7 +59,7 @@ const Styles = StyleSheet.create({
   },
 
   title: {
-    color: Color.primary,
+    color: Color().primary,
     fontSize: wp(6),
     paddingRight: wp(3),        
     fontWeight: 'bold',

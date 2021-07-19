@@ -11,12 +11,12 @@ const theme = {
   roundness: 2,
   colors: {
     ...DefaultTheme.colors,
-    primary: Color.primary,  
+    primary: Color().primary,  
     accent: '#ffffff',
     background: '#ffffff',
     surface: '#ffffff',
     text: '#000000',
-    placeholder: Color.primary
+    placeholder: Color().primary
 
   },
 };

@@ -33,7 +33,7 @@ export default function Login() {
         onPress={_goHomePage}
         uppercase={false}
         labelStyle={{
-          fontSize: wp(3), textAlign: 'center', fontWeight: 'bold', color: Color.primary 
+          fontSize: wp(3), textAlign: 'center', fontWeight: 'bold', color: Color().primary 
         }}
       >
         Login

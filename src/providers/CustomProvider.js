@@ -2,7 +2,7 @@
  * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
 */
 import React from 'react';
-import AuthProvider from './Auth';
+import AppLoadingProvider from './AppLoadingProvider';
 import FontProvider from './Font';
 import LocalizationProvider from './Localization';
 import ErrorProvider from './Error';
@@ -17,7 +17,7 @@ export default function CustomProvider({ children }) {
   return (
     <>
       <ErrorProvider>
-        <AuthProvider>
+        <AppLoadingProvider>
           <Notification>
             <LocalizationProvider>
               <FontProvider>
@@ -25,7 +25,7 @@ export default function CustomProvider({ children }) {
               </FontProvider>
             </LocalizationProvider>
           </Notification>
-        </AuthProvider>
+        </AppLoadingProvider>
       </ErrorProvider>
     </>
   );

@@ -12,7 +12,7 @@ function FancyModal({
   return (
     <Modal
       isVisible={isVisible}
-      backdropColor={Color.primary}
+      backdropColor={Color().primary}
       backdropOpacity={0.8}
       animationIn="zoomInDown"
       animationOut="zoomOutUp"

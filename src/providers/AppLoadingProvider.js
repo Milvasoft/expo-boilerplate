@@ -12,11 +12,16 @@ import AppLoading from 'expo-app-loading';
    it retrieves the token from `AsyncStorage` and
    adds it to the `AxiosInstance` object.
  */
-export default function AuthProvider({ children }) {
+export default function AppLoadingProvider({ children }) {
 
   const [loading, setLoading] = React.useState(true);
    
   const _check = async () => {
+
+    // Color Theme (USER)
+    const mode = await getStoreStringAsync('colorMode');
+
+    globalStateChange({ property: 'userColorScheme', value: mode });
 
     const token = await getStoreStringAsync('token');
     
@@ -25,7 +30,7 @@ export default function AuthProvider({ children }) {
 
       AxiosInstance.defaults.headers.common.Authorization = `Bearer ${token}`;      
 
-      // Requst Api Then
+      // Requst Api Then (Change)
       
       globalStateChange({ property: 'user', value: {} });
 
