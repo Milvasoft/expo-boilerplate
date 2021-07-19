@@ -55,6 +55,7 @@ export default function FontProvider({ children }) {
     return <AppLoading />;
   
   }
+  
   return (
     <>
       {children}

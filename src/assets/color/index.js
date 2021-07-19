@@ -1,17 +1,17 @@
 import { getState } from '@helpers/redux';
 import { Appearance } from 'react-native';
 
-const colorScheme = Appearance.getColorScheme();
-
-const light = {
+const lightTheme = {
   primary: 'black',
   secondary: 'yellow',
 };
 
-const dark = {
+const darkTheme = {
   primary: 'red',
   secondary: 'green',
 };
+
+const colorScheme = Appearance.getColorScheme();
 
 const Color = () => {
  
@@ -21,21 +21,21 @@ const Color = () => {
     
     if (userColorScheme === 'dark') {
 
-      return dark;
+      return darkTheme;
     
     }
     
-    return light;
+    return lightTheme;
     
   }
 
   if (colorScheme === 'dark') {
 
-    return dark;
+    return darkTheme;
   
   }
 
-  return light;
+  return lightTheme;
   
 
 };

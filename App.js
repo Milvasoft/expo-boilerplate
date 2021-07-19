@@ -7,7 +7,7 @@ import 'react-native-gesture-handler';
 import { Provider } from 'react-redux';
 import * as ScreenOrientation from 'expo-screen-orientation';
 import RootNavigation from './src/routers';
-import CustomProvider from './src/providers/CustomProvider';
+import CustomProvider from './src/providers';
 import Store from './Store';
 
 

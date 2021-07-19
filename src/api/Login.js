@@ -5,7 +5,7 @@
 import Network from './network';
 
 /**
-* Oturum açma
+* Sign In
 * @param  {object} LoginDTO
 * @url `Account/Login`
 * @ {
@@ -21,7 +21,7 @@ export const signInAPIAsync = async (LoginDTO) => {
 };
 
 /**
-* Oturum Kapatma
+* Sign Out
 * @url `Account/Login`
 */
 export const signOutAPIAsync = async () => {

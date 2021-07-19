@@ -27,7 +27,6 @@ export default function AppLoadingProvider({ children }) {
     
     if (token) {
 
-
       AxiosInstance.defaults.headers.common.Authorization = `Bearer ${token}`;      
 
       // Requst Api Then (Change)
@@ -44,7 +43,6 @@ export default function AppLoadingProvider({ children }) {
       globalStateChange({ property: 'user', value: {} });
 
       globalStateChange({ key: 'isSignedIn', value: false });
-
     
     }
   
