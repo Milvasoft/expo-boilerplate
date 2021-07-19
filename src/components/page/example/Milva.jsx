@@ -32,7 +32,7 @@ export default function Milva() {
   return (   
     <View style={{ justifyContent: 'space-between', alignItems: 'center' }}>  
 
-      <Text style={{ fontFamily: 'Inter-Black' }}>
+      <Text style={{ fontFamily: 'Montserrat_900Black' }}>
         MİLVASOFT      
       </Text>
 

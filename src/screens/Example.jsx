@@ -27,11 +27,11 @@ export default function Example() {
        
         <Milva />
 
-        <Text style={{ fontFamily: 'Inter-Black' }}>
+        <Text style={{ fontFamily: 'Montserrat_900Black' }}>
           {GetLang('name')}   
         </Text>  
 
-        <Text style={{ fontFamily: 'Inter-Black' }}>
+        <Text style={{ fontFamily: 'Montserrat_900Black' }}>
           {GetLang('welcome')}  
         </Text>       
       </View>

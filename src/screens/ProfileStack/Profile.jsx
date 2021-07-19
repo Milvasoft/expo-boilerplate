@@ -27,7 +27,7 @@ export default function Profile() {
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
 
     
-        <Text style={{ fontFamily: 'Inter-Black' }}>
+        <Text style={{ fontFamily: 'Montserrat_900Black' }}>
           Ali Burhan Keskin
         </Text>  
 
