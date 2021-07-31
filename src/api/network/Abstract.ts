@@ -9,22 +9,37 @@ export type Method =
 | 'put' | 'PUT'
 | 'patch' | 'PATCH'
 
-export interface Result{
-success? : boolean;
-message? : string;
-statusCode? : number;
-result? : unknown;
-errorCodes? : Array<number>;  
+export enum MethodEnum {
+  GET = 'GET',
+  DELETE= 'DELETE',
+  POST= 'POST',
+  PUT= 'PUT',
+  PATCH= 'PATCH',
 }
 
-export interface ApiParams {
-url?: string;
-headers?: unknown,
-queryString?: string,
-data?: unknown,
-isToast?:boolean,
-isReturnWithResult?:boolean,
+export interface IResult{
+  success? : boolean;
+  message? : string;
+  statusCode? : number;
+  result? : unknown;
+  errorCodes? : Array<number>;  
 }
-export interface NetworkParams extends ApiParams {
-method?: Method,
+export interface IApiResult {
+  data:{
+    data: unknown,
+    statusCode: number,
+    message: string
+  }
+}
+
+export interface IApiParams {
+  url?: string;
+  headers?: unknown,
+  queryString?: string,
+  data?: unknown,
+  isToast?:boolean,
+  isReturnWithResult?:boolean,
+}
+export interface INetworkParams extends IApiParams {
+  method?: Method,
 }

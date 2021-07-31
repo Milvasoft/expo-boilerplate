@@ -4,9 +4,9 @@
  */
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { isObjectLike } from '@helpers/global';
-import { storeType } from './Abstract';
+import { storeEnum } from './Abstract';
 
-export const addStoreDataAsync = async (key:storeType, value: string): Promise<void> => {
+export const addStoreDataAsync = async (key: storeEnum, value: string): Promise<void> => {
 
   try {
 
@@ -15,7 +15,7 @@ export const addStoreDataAsync = async (key:storeType, value: string): Promise<v
       value = JSON.stringify(value);
     
     }
-    await AsyncStorage.setItem(key, value);  
+    await AsyncStorage.setItem(key.toString(), value);  
   
   } catch (e) {
     // saving error
@@ -23,11 +23,12 @@ export const addStoreDataAsync = async (key:storeType, value: string): Promise<v
 
 };
 
-export const getStoreDataAsync = async (key:storeType):Promise<string> => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const getStoreDataAsync = async (key: storeEnum):Promise<any> => {
 
   try {
 
-    const value = await AsyncStorage.getItem(key);
+    const value = await AsyncStorage.getItem(key.toString());
     if (value !== null) {
 
       return JSON.parse(value);
@@ -43,11 +44,11 @@ export const getStoreDataAsync = async (key:storeType):Promise<string> => {
 
 };
 
-export const getStoreStringAsync = async (key:storeType):Promise<string> => {
+export const getStoreStringAsync = async (key: storeEnum):Promise<string> => {
 
   try {
 
-    const value = await AsyncStorage.getItem(key);
+    const value = await AsyncStorage.getItem(key.toString());
     if (value !== null) {
 
       return value;
@@ -62,11 +63,11 @@ export const getStoreStringAsync = async (key:storeType):Promise<string> => {
   } 
 
 };
-export const removeStoreDataAsync = async (key:storeType):Promise<void> => {
+export const removeStoreDataAsync = async (key: storeEnum):Promise<void> => {
 
   try {
 
-    await AsyncStorage.removeItem(key);
+    await AsyncStorage.removeItem(key.toString());
   
   } catch (exception) {
 

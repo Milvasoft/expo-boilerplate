@@ -1,32 +1,20 @@
 /**
  * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
- */
+*/
 
 import AxiosInstance from './AxiosInstance';
 import { 
-  Method, Result, ApiParams, NetworkParams 
+  MethodEnum, IResult, IApiParams, INetworkParams 
 } from './abstract';
 import ExceptionMiddleware from './ExceptionMiddleware';
 
-// ApiParams Mapping to NetworkParams
-export function networkParamsMap(param: ApiParams, method: Method): NetworkParams {
-  
-  const networkObject : NetworkParams = {};  
-
-  Object.assign(networkObject, param);
-  
-  networkObject.method = method;
-
-  return networkObject;
-
-}
-
 export default class Network {
-  static network(params: NetworkParams): Promise<Result> {
+  static network(params: IApiParams & INetworkParams): Promise<IResult> {
 
     const {
-      url, method, headers, data, isToast, isReturnWithResult 
+      url, method, headers, data, isToast = true, isReturnWithResult 
     } = params;
+    
     return new Promise((resolve, reject) => {
 
       AxiosInstance({
@@ -59,33 +47,33 @@ export default class Network {
   
   }
 
-  static getRequestAsync(params: ApiParams): Promise<Result> {
+  static getRequestAsync(params: IApiParams): Promise<IResult> {
 
-    return this.network(networkParamsMap(params, 'GET'));
+    return this.network({ ...params, method: MethodEnum.GET });
   
   }
 
-  static deleteRequestAsync(params: ApiParams): Promise<Result> {
+  static deleteRequestAsync(params: IApiParams): Promise<IResult> {
 
-    return this.network(networkParamsMap(params, 'DELETE'));
+    return this.network({ ...params, method: MethodEnum.DELETE });
   
   }
 
-  static postRequestAsync(params: ApiParams): Promise<Result> {
+  static postRequestAsync(params: IApiParams): Promise<IResult> {
 
-    return this.network(networkParamsMap(params, 'POST'));
-  
-  }
- 
-  static putRequestAsync(params: ApiParams): Promise<Result> {
-
-    return this.network(networkParamsMap(params, 'PUT'));
+    return this.network({ ...params, method: MethodEnum.POST });
   
   }
  
-  static patchRequestAsync(params: ApiParams): Promise<Result> {
+  static putRequestAsync(params: IApiParams): Promise<IResult> {
 
-    return this.network(networkParamsMap(params, 'PATCH'));
+    return this.network({ ...params, method: MethodEnum.PUT });
+  
+  }
+ 
+  static patchRequestAsync(params: IApiParams): Promise<IResult> {
+
+    return this.network({ ...params, method: MethodEnum.PATCH });
   
   }
 }
