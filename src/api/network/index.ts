@@ -5,7 +5,8 @@
 import AxiosInstance from './AxiosInstance';
 import { 
   MethodEnum, IResult, IApiParams, INetworkParams 
-} from './abstract';
+} from './Abstract';
+
 import ExceptionMiddleware from './ExceptionMiddleware';
 
 export default class Network {

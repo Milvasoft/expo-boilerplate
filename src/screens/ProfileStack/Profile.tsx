@@ -29,7 +29,7 @@ const Profile: React.FC = () => {
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
 
     
-        <Text style={{ fontFamily: 'Montserrat_900Black' }}>
+        <Text style={{ fontFamily: 'Black' }}>
           Ali Burhan Keskin
         </Text>  
 

@@ -27,11 +27,11 @@ const Example: React.FC = () => {
        
         <Milva />
 
-        <Text style={{ fontFamily: 'Montserrat_900Black' }}>
+        <Text style={{ fontFamily: 'Black' }}>
           {GetLang('name')}   
         </Text>  
 
-        <Text style={{ fontFamily: 'Montserrat_900Black' }}>
+        <Text style={{ fontFamily: 'Black' }}>
           {GetLang('welcome')}  
         </Text>       
       </View>

@@ -24,7 +24,7 @@ const Milva : React.FC = () => {
   return (   
     <View style={{ justifyContent: 'space-between', alignItems: 'center' }}>  
 
-      <Text style={{ fontFamily: 'Montserrat_900Black' }}>
+      <Text style={{ fontFamily: 'Black' }}>
         MİLVASOFT      
       </Text>
 
