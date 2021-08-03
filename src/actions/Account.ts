@@ -2,7 +2,7 @@
 import * as $API from '@api/Login';
 import { addStoreDataAsync, removeStoreDataAsync } from '@helpers/storage';
 import AxiosInstance from '@api/network/AxiosInstance';
-import * as Types from '@helpers/Types/Account';
+import * as Types from '@helpers/Types/IAccount';
 import { storeEnum } from '@helpers/storage/Abstract';
 import { globalStateChange } from './Global';
 

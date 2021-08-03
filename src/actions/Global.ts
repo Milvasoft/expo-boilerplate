@@ -3,7 +3,7 @@
  */
 import * as $AT from '@actions/ActionTypes';
 import { dispatcher } from '@helpers/redux';
-import * as Types from '@helpers/Types/Global';
+import * as Types from '@helpers/Types/IGlobal';
 
 /**
 * Change value for Global Reducer

@@ -1,7 +1,7 @@
 /**
  * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
  */
-import * as Types from '@helpers/Types/Account';
+import * as Types from '@helpers/Types/IAccount';
 import Network from './network';
 import { IResult } from './network/abstract';
 
