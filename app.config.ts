@@ -7,7 +7,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   description: 'Milvasoft',
   slug: 'milvasoft',
   version: '1.0.0',
-  sdkVersion: '41.0.0',
+  sdkVersion: '43.0.0',
   orientation: 'portrait',
   icon: './src/assets/image/icon.png',
   assetBundlePatterns: [
