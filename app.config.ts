@@ -3,7 +3,7 @@ import { ExpoConfig, ConfigContext } from '@expo/config';
 
 export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
-  name: 'Milvasoft',
+  name: 'milvasoft',
   description: 'Milvasoft',
   slug: 'milvasoft',
   version: '1.0.0',
