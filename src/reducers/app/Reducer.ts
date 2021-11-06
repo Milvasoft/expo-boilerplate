@@ -10,7 +10,7 @@ const AppReducer = (state: IAppReducer = INITIAL_STATE, { type, payload }: AnyAc
 
   switch (type) {
 
-    case $AT.GLOBAL_STATE_CHANGE: {
+    case $AT.APP_STATE_CHANGE: {
 
       return { ...state, ...payload };
     

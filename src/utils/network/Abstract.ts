@@ -17,29 +17,35 @@ export enum MethodEnum {
   PATCH= 'PATCH',
 }
 
-export interface IResult{
-  success? : boolean;
-  message? : string;
-  statusCode? : number;
-  result? : unknown;
-  errorCodes? : Array<number>;  
+export interface IResult<T> {
+  success: boolean;
+  message: string;
+  statusCode?: number;
+  result: T;
+  errorCodes?: Array<number>;
 }
+
+export type Result<T = any, Response = IResult<T>> = Response
+
 export interface IApiResult {
   data:{
     data: unknown,
     statusCode: number,
     message: string
-  }
+  },
+  errorMessaging: boolean
 }
 
 export interface IApiParams {
-  url?: string;
-  headers?: unknown,
+  url: string;
+  headers?: any,
   queryString?: string,
-  data?: unknown,
-  isToast?:boolean,
-  isReturnWithResult?:boolean,
+  data?: any,
+  successMessaging?:boolean,
+  errorMessaging?:boolean,
+  version? :string,
 }
+
 export interface INetworkParams extends IApiParams {
   method?: Method,
 }

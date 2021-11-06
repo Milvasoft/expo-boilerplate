@@ -13,4 +13,4 @@ import { IAppReducer } from '@helpers/Types/IApp';
 * @  `property`: `string`,
 * @  `value`: `value`,
 * @ } */
-export const appStateChange = (payload :IAppReducer): void => dispatcher({ type: $AT.GLOBAL_STATE_CHANGE, payload });
+export const appStateChange = (payload :IAppReducer): void => dispatcher({ type: $AT.APP_STATE_CHANGE, payload });
