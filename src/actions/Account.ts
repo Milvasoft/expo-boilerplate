@@ -47,7 +47,7 @@ export const clearUserAsync = async () => {
 
   await removeStoreDataAsync(storeEnum.Token);
 
-  AxiosInstance.defaults.headers.common.Authorization = null;
+  AxiosInstance.defaults.headers.common.Authorization = '';
 
   appStateChange({ user: {}, isSignedIn: false });    
 

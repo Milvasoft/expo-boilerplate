@@ -5,14 +5,6 @@
 import * as $AT from '@actions/ActionTypes';
 import { dispatcher } from '@helpers/redux';
 
-export const increment = (): void => {
+export const increment = () => dispatcher({ type: $AT.COUNTER_INC });
 
-  dispatcher({ type: $AT.COUNTER_INC });
-
-};
-
-export const decrement = (): void => {
-
-  dispatcher({ type: $AT.COUNTER_DEC });
-
-};
+export const decrement = () =>  dispatcher({ type: $AT.COUNTER_DEC });
