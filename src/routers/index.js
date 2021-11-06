@@ -6,10 +6,10 @@ import * as Linking from 'expo-linking';
 import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { createNativeStackNavigator, } from 'react-native-screens/native-stack';
-import { useSelector } from 'react-redux';
 import Login from '@screens/Login';
 import { CardStyleInterpolators, } from '@react-navigation/stack';
 import * as Notifications from 'expo-notifications';
+import { useAppSelector } from '@reducers/Store';
 import BottomNavigation from './BottomNavigation';
 
 const Stack = createNativeStackNavigator();
@@ -42,17 +42,18 @@ const config = {
   },
 };
 
+const screenOptions = {
+  gestureEnabled: true,
+  cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+  stackAnimation: 'slide_from_right',
+  headerShown: false,
+};
+
 export default function RootNavigation() {
 
-  const { isSignedIn } = useSelector((state) => state.GlobalReducer);  
+  const isSignedIn = useAppSelector((state) => state?.AppReducer?.isSignedIn);  
 
-  const screenOptions = {
-    gestureEnabled: true,
-    cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
-    stackAnimation: 'slide_from_right',
-    headerShown: false,
-  };
-
+ 
   const _linking = {
     prefixes: [prefix],
     config,
@@ -60,20 +61,13 @@ export default function RootNavigation() {
 
       const onReceiveURL = ({ url }) => listener(url);
 
-      // Listen to incoming links from deep linking
       Linking.addEventListener('url', onReceiveURL); 
 
-      // Listen to expo push notifications
       const subscription = Notifications.addNotificationResponseReceivedListener((response) => {
 
-        // From API
         const data = response?.notification?.request?.content.data;
       
-        if (data?.NotificationId === notificationType.Post) {
-
-          listener(`${baseUrl}/mypost/${data?.Data}`);
-          
-        } 
+        if (data?.NotificationId === notificationType.Post) listener(`${baseUrl}/mypost/${data?.Data}`);
       
       });
 
@@ -104,11 +98,7 @@ export default function RootNavigation() {
             isSignedIn
               ? (
                 <>
-                  <Stack.Screen
-                    name="Home" 
-                    component={BottomNavigation} 
-                    options={{ gestureEnabled: false }}
-                  />
+                  <Stack.Screen name="Home" component={BottomNavigation} options={{ gestureEnabled: false }} />
                 </>
               )
               : (

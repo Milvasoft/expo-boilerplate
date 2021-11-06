@@ -4,9 +4,9 @@ import { addStoreDataAsync, removeStoreDataAsync } from '@helpers/storage';
 import AxiosInstance from '@api/network/AxiosInstance';
 import * as Types from '@helpers/Types/IAccount';
 import { storeEnum } from '@helpers/storage/Abstract';
-import { globalStateChange } from './Global';
+import { appStateChange } from './App';
 
-export const signInAsync = async (loginDto : Types.ILoginDTOType) : Promise<boolean> => {
+export const signInAsync = async (loginDto : Types.ILoginDTOType) => {
   
   let isSignIn = false;
 
@@ -33,7 +33,7 @@ export const signInAsync = async (loginDto : Types.ILoginDTOType) : Promise<bool
 
 };
 
-export const signOutAsync = async (): Promise<void> => {
+export const signOutAsync = async () => {
 
   await $API.signOutAPIAsync()
     .then(() => {})
@@ -43,11 +43,12 @@ export const signOutAsync = async (): Promise<void> => {
 
 };
 
-export const clearUserAsync = async (): Promise<void> => {
+export const clearUserAsync = async () => {
 
   await removeStoreDataAsync(storeEnum.Token);
+
   AxiosInstance.defaults.headers.common.Authorization = null;
-  globalStateChange({ property: 'user', value: {} });    
-  globalStateChange({ property: 'isSignedIn', value: false });    
+
+  appStateChange({ user: {}, isSignedIn: false });    
 
 };

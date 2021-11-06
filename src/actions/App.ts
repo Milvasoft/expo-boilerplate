@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 /**
  * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
  */
@@ -12,6 +13,4 @@ import { IAppReducer } from '@helpers/Types/IApp';
 * @  `property`: `string`,
 * @  `value`: `value`,
 * @ } */
-// eslint-disable-next-line import/prefer-default-export
-export const globalStateChange = (payload :IAppReducer): void => dispatcher({ type: $AT.GLOBAL_STATE_CHANGE, payload });
-
+export const appStateChange = (payload :IAppReducer): void => dispatcher({ type: $AT.GLOBAL_STATE_CHANGE, payload });

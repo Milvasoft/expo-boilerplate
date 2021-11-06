@@ -1,7 +1,7 @@
 import React from 'react';
 import { getStoreDataAsync, getStoreStringAsync } from '@helpers/storage';
 import AxiosInstance from '@api/network/AxiosInstance';
-import { globalStateChange } from '@actions/Global';
+import { appStateChange } from '@actions/App';
 import AppLoading from 'expo-app-loading';
 import { storeEnum } from '@helpers/storage/Abstract';
 
@@ -18,7 +18,7 @@ function AppLoadingProvider({ children }: Props) {
     // Color Theme (USER)
     const mode = await getStoreStringAsync(storeEnum.ColorMode);
 
-    globalStateChange({ userColorScheme: mode });
+    appStateChange({ userColorScheme: mode });
 
     const token = await getStoreDataAsync(storeEnum.Token);
 
@@ -27,14 +27,14 @@ function AppLoadingProvider({ children }: Props) {
       AxiosInstance.defaults.headers.common.Authorization = `Bearer ${token?.accessToken}`;
 
       // Requst Api Then (Change)
-      globalStateChange({ user: {}, isSignedIn: true });
+      appStateChange({ user: {}, isSignedIn: true });
 
 
     } else {
 
       AxiosInstance.defaults.headers.common.Authorization = '';
 
-      globalStateChange({ user: {}, isSignedIn: false });
+      appStateChange({ user: {}, isSignedIn: false });
 
     }
 

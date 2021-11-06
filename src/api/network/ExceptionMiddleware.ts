@@ -1,6 +1,4 @@
-import { showToast } from '@helpers/toast';
 import ToastColor from '@assets/color/toast';
-import GetLang from '@helpers/localization';
 import { removeStoreDataAsync } from '@helpers/storage';
 import { dispatcher } from '@helpers/redux';
 import * as $AT from '@actions/ActionTypes';
@@ -19,7 +17,7 @@ const ExceptionMiddleware = async (res: IApiResult, isToast:boolean):Promise<voi
           
       const variant = ToastColor.warning;
 
-      isToast && showToast({ msg, backgroundColor: variant });
+      // isToast && showToast({ msg, backgroundColor: variant });
   
       if (statusCode === 401) {
 
@@ -39,7 +37,7 @@ const ExceptionMiddleware = async (res: IApiResult, isToast:boolean):Promise<voi
   
   } else {
 
-    showToast({ msg: GetLang('generalErrorText'), backgroundColor: ToastColor.error });
+    // showToast({ msg: GetLang('generalErrorText'), backgroundColor: ToastColor.error });
   
   }
 

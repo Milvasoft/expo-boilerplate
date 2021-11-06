@@ -1,7 +1,7 @@
 /**
  * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
 */
-import { globalStateChange } from '@actions/Global';
+import { appStateChange } from '@actions/App';
 import Color from '@assets/color';
 import { wp } from '@helpers/responsive';
 import React from 'react';
@@ -10,17 +10,15 @@ import { Button } from 'react-native-paper';
 import * as Notifications from 'expo-notifications';
 
 
-const Login: React.FC = () => {
-
+function Login() {
 
   const _goHomePage = async () => {
 
     const token = (await Notifications.getExpoPushTokenAsync()).data;
 
     console.log('token', token);
+    appStateChange({ isSignedIn: true });
 
-    globalStateChange({ property: 'isSignedIn', value: true });
-  
   };
 
   return (
@@ -29,20 +27,20 @@ const Login: React.FC = () => {
         Login
       </Text>
       <Button
-        mode="contained" 
+        mode="contained"
         style={{ width: wp(30), }}
         onPress={_goHomePage}
         uppercase={false}
         labelStyle={{
-          fontSize: wp(3), textAlign: 'center', fontWeight: 'bold', color: Color().primary 
+          fontSize: wp(3), textAlign: 'center', fontWeight: 'bold', color: Color().primary
         }}
       >
         Login
       </Button>
-          
+
     </View>
   );
 
-};
+}
 
 export default Login;

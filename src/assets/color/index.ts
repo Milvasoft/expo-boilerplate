@@ -1,4 +1,4 @@
-import { getState } from '@helpers/redux';
+import { getAppState } from '@reducers/Store';
 import { Appearance } from 'react-native';
 
 const lightTheme = {
@@ -15,25 +15,16 @@ const colorScheme = Appearance.getColorScheme();
 
 const Color = (): IMyTheme => {
  
-  const { GlobalReducer: { userColorScheme } } = getState();
+  const userColorScheme = getAppState()?.AppReducer?.userColorScheme;
 
   if (userColorScheme) {
     
-    if (userColorScheme === 'dark') {
-
-      return darkTheme;
-    
-    }
-    
+    if (userColorScheme === 'dark') return darkTheme;    
     return lightTheme;
     
   }
 
-  if (colorScheme === 'dark') {
-
-    return darkTheme;
-  
-  }
+  if (colorScheme === 'dark') return darkTheme;
 
   return lightTheme;
   

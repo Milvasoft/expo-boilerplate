@@ -2,10 +2,11 @@
  * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
 */
 import React from 'react';
-import AppLoadingProvider from './AppLoadingProvider';
-import FontProvider from './Font';
-import './Localization';
 import './Error';
+import './NetworkInfo';
+import AppLoadingProvider from './AppLoadingProvider';
+import './Localization';
+import FontProvider from './Font';
 import Notification from './Notification';
    
  type Props = {
