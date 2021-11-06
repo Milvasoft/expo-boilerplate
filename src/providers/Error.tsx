@@ -1,12 +1,8 @@
-/**
- * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
-*/
-import * as React from 'react';
 import * as ErrorRecovery from 'expo-error-recovery';
 
 const defaultErrorHandler = ErrorUtils.getGlobalHandler();
 
-const globalErrorHandler = (err, isFatal) => {
+const globalErrorHandler = (err: any, isFatal: any) => {
 
   console.log('globalErrorHandler called!');
   ErrorRecovery.setRecoveryProps({ info: err });
@@ -16,14 +12,4 @@ const globalErrorHandler = (err, isFatal) => {
 
 ErrorUtils.setGlobalHandler(globalErrorHandler);   
 
-type Props = {
-  children: React.ReactNode
-};
 
-const ErrorProvider : React.FC<Props> = ({ children }) => (
-  <>
-    {children}
-  </>
-);
-
-export default ErrorProvider;

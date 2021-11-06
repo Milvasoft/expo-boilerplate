@@ -2,18 +2,17 @@
  * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
 */
 import * as $AT from '@actions/ActionTypes';
-import { IGlobalState } from '@helpers/Types/IGlobal';
+import { IAppReducer } from '@helpers/Types/IApp';
 import { AnyAction } from 'redux';
 import INITIAL_STATE from './Store';
 
-// eslint-disable-next-line max-len
-const GlobalReducer = (state: IGlobalState = INITIAL_STATE, { type, payload }: AnyAction):IGlobalState => {
+const AppReducer = (state: IAppReducer = INITIAL_STATE, { type, payload }: AnyAction):IAppReducer => {
 
   switch (type) {
 
     case $AT.GLOBAL_STATE_CHANGE: {
 
-      return { ...state, [payload.property]: payload.value };
+      return { ...state, ...payload };
     
     }
     
@@ -22,4 +21,4 @@ const GlobalReducer = (state: IGlobalState = INITIAL_STATE, { type, payload }: A
   }
 
 };
-export default GlobalReducer;
+export default AppReducer;

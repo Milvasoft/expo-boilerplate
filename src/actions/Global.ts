@@ -3,7 +3,7 @@
  */
 import * as $AT from '@actions/ActionTypes';
 import { dispatcher } from '@helpers/redux';
-import * as Types from '@helpers/Types/IGlobal';
+import { IAppReducer } from '@helpers/Types/IApp';
 
 /**
 * Change value for Global Reducer
@@ -13,8 +13,5 @@ import * as Types from '@helpers/Types/IGlobal';
 * @  `value`: `value`,
 * @ } */
 // eslint-disable-next-line import/prefer-default-export
-export const globalStateChange = (payload : Types.IGlobalStateChangeType): void => {
+export const globalStateChange = (payload :IAppReducer): void => dispatcher({ type: $AT.GLOBAL_STATE_CHANGE, payload });
 
-  dispatcher({ type: $AT.GLOBAL_STATE_CHANGE, payload });
-
-};

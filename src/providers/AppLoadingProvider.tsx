@@ -9,52 +9,43 @@ import { storeEnum } from '@helpers/storage/Abstract';
    children: React.ReactNode
  };
 
-const AppLoadingProvider : React.FC<Props> = ({ children }) => {
+function AppLoadingProvider({ children }: Props) {
 
   const [loading, setLoading] = React.useState(true);
-   
+
   const _check = async () => {
 
     // Color Theme (USER)
     const mode = await getStoreStringAsync(storeEnum.ColorMode);
 
-    globalStateChange({ property: 'userColorScheme', value: mode });
+    globalStateChange({ userColorScheme: mode });
 
     const token = await getStoreDataAsync(storeEnum.Token);
 
     if (token) {
 
-      AxiosInstance.defaults.headers.common.Authorization = `Bearer ${token?.accessToken}`;      
+      AxiosInstance.defaults.headers.common.Authorization = `Bearer ${token?.accessToken}`;
 
       // Requst Api Then (Change)
-      
-      globalStateChange({ property: 'user', value: {} });
+      globalStateChange({ user: {}, isSignedIn: true });
 
-      globalStateChange({ property: 'isSignedIn', value: true });
-        
-    
+
     } else {
 
       AxiosInstance.defaults.headers.common.Authorization = '';
 
-      globalStateChange({ property: 'user', value: {} });
+      globalStateChange({ user: {}, isSignedIn: false });
 
-      globalStateChange({ property: 'isSignedIn', value: false });
-    
     }
-  
+
   };
 
   if (loading) {
 
     return (
-      <AppLoading
-        startAsync={_check}
-        onFinish={() => setLoading(false)}
-        onError={console.warn}
-      />
-    ); 
-  
+      <AppLoading startAsync={_check} onFinish={() => setLoading(false)} onError={console.warn} />
+    );
+
   }
 
   return (
@@ -63,6 +54,6 @@ const AppLoadingProvider : React.FC<Props> = ({ children }) => {
     </>
   );
 
-};
+}
 
 export default AppLoadingProvider;

@@ -1,7 +1,6 @@
 /**
  * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
 */
-import React from 'react';
 import moment from 'moment';
 import 'moment/min/locales';
 import * as Localization from 'expo-localization';
@@ -34,15 +33,3 @@ moment.locale(Localization.locale);
 // moment().startOf('day').fromNow();        // 20 hours ago
 // moment().endOf('day').fromNow();          // in 4 hours
 // moment().startOf('hour').fromNow();  
- type Props = {
-   children: React.ReactNode
- };
-
-const LocalizationProvider : React.FC<Props> = ({ children }) => (
-  <>
-    {children}
-  </>
-);
-
-
-export default LocalizationProvider;

@@ -22,11 +22,15 @@ const theme = {
    children: React.ReactNode
  };
 
-const PaperProvider : React.FC<Props> = ({ children }) => (
-  <Provider theme={theme}>
-    {children}
-  </Provider>
-);
+function PaperProvider({ children } : Props) {
+
+  return (
+    <Provider theme={theme}>
+      {children}
+    </Provider>
+  );
+
+}
 
 
 export default PaperProvider;

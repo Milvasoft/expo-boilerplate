@@ -18,12 +18,11 @@ import {
   Montserrat_900Black,
 } from '@expo-google-fonts/montserrat';
 
-
 type Props = {
   children: React.ReactNode
 };
 
-const FontProvider : React.FC<Props> = ({ children }) => {
+function FontProvider({ children }: Props) {
 
   const Thin = Montserrat_100Thin;
   const ExtraLight = Montserrat_200ExtraLight;
@@ -34,7 +33,7 @@ const FontProvider : React.FC<Props> = ({ children }) => {
   const Bold = Montserrat_700Bold;
   const ExtraBold = Montserrat_800ExtraBold;
   const Black = Montserrat_900Black;
-  
+
   const [fontsLoaded] = useFonts({
     Thin,
     ExtraLight,
@@ -50,15 +49,15 @@ const FontProvider : React.FC<Props> = ({ children }) => {
   if (!fontsLoaded) {
 
     return <AppLoading />;
-  
+
   }
-  
+
   return (
     <>
       {children}
     </>
   );
 
-};
+}
 
 export default FontProvider;
