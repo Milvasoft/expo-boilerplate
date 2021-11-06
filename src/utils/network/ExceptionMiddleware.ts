@@ -1,9 +1,10 @@
+/* eslint-disable consistent-return */
 import { dispatcher } from '@helpers/redux';
 import * as $AT from '@src/actionTypes';
 import AxiosInstance from './AxiosInstance';
 import { IApiResult } from './Abstract';
 
-const ExceptionMiddleware = async ({ data, errorMessaging }: IApiResult): Promise<any> => {
+const ExceptionMiddleware = async ({ data, errorMessaging }: IApiResult) => {
 
   // network logging
   process.env.NODE_ENV === 'development' && console.log('api', data);

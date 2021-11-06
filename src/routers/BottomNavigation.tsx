@@ -3,7 +3,7 @@
 */
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Example from '@screens/Example';
+import Home from '@src/screens/Home';
 import { AntDesign, Ionicons } from '@expo/vector-icons';
 import Color from '@assets/color';
 import ProfileStack from './ProfileStack';
@@ -22,7 +22,7 @@ export default function TabNavigator() {
     >
       <Tab.Screen
         name="Home"
-        component={Example}
+        component={Home}
         options={{ tabBarIcon: ({ color }) => (<AntDesign name="home" size={24} color={color} />) }}
       />
 

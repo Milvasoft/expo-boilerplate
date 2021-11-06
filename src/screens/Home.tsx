@@ -11,8 +11,10 @@ import {
   StyleSheet 
 } from 'react-native';
 import { wp } from '@src/helpers/responsive';
+import { Button } from 'react-native-paper';
+import { showToast } from '@src/modules/app/redux/actions';
 
-function Example() {
+function Home() {
 
   // ! Used to render after the page is opened
   useFocusEffect(
@@ -27,12 +29,16 @@ function Example() {
     <SafeAreaView style={styles.safeView}>
       
       <View style={styles.root}>
-        <View style={styles.container}>
 
+        <View style={styles.container}>
           <Text style={styles.fontBlack}>
             MİLVASOFT
           </Text>
         </View>
+
+        <Button onPress={() => showToast('ShowToast')}>
+          Show Toast
+        </Button>
 
         <Text style={styles.fontBlack}>
           {GetLang('name')}
@@ -70,4 +76,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default Example;
+export default Home;

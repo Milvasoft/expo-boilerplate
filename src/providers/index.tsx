@@ -6,6 +6,7 @@ import './Error';
 import './NetworkInfo';
 import AppLoadingProvider from './AppLoadingProvider';
 import './Localization';
+import Toast from './Toast';
 import FontProvider from './Font';
 import Notification from './Notification';
    
@@ -21,6 +22,9 @@ function CustomProvider({ children }:Props) {
 
   return (
     <>
+
+      <Toast />
+
       <AppLoadingProvider>
         <Notification>
           <FontProvider>
@@ -28,6 +32,7 @@ function CustomProvider({ children }:Props) {
           </FontProvider>
         </Notification>
       </AppLoadingProvider>
+      
     </>
   );
 

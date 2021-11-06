@@ -1,20 +1,22 @@
 /**
  * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
 */
-import { appStateChange } from '@modules/app/redux/actions';
+import { appStateChange, showToast } from '@modules/app/redux/actions';
 import { wp } from '@helpers/responsive';
 import React, { useCallback } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Button } from 'react-native-paper';
-import * as Notifications from 'expo-notifications';
+// import * as Notifications from 'expo-notifications';
 
 function Login() {
 
-  const _goHomePage = useCallback(async () => {
+  const _goHomePage = useCallback(() => {
 
-    const token = (await Notifications.getExpoPushTokenAsync()).data;
+    // const token = (await Notifications.getExpoPushTokenAsync()).data;
 
-    console.log('token', token);
+    // console.log('token', token);
+
+    showToast('Welcome');
 
     appStateChange({ isSignedIn: true });
 

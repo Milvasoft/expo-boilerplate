@@ -4,6 +4,12 @@ export interface IAppReducer {
   userColorScheme?: string,
   user?: any,
 }
+export interface IToastType{  
+  msg: string,
+  duration?: number,
+  type?: ToastColorEnum,
+  
+}
 export enum ToastColorEnum {
   Error = '#F44336', 
   Succes = '#4CAF50',
