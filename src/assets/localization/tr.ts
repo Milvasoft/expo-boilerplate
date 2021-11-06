@@ -5,8 +5,21 @@ const resource = {
   generalActivityIndicatorText: 'Yükleniyor...',
   pleaseWait: 'Lütfen Bekleyiniz... ',
   generalErrorText: 'Bir hata oluştu lütfen daha sonra tekrar deneyiniz.',  
-  search: 'Ara',
-  
+  search: 'Ara',  
+  noInternet: 'İnternet bağlantısı yok',
+  yes: 'Evet',
+  no: 'Hayır',
+  exit: 'Çıkış',
+  brand: 'Marka',
+  published: 'Yayında',
+  min: 'dk',
+  piece: 'Adet', 
+  time: 'Zaman',
+  description: 'Açıklama',
+  send: 'Gönder', 
+  next: 'İleri',
+  previous: 'Önceki',
+
   navigation: {
     home: 'Ana Sayfa',
     profile: 'Profil',

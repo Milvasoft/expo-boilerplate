@@ -2,6 +2,9 @@
 // import { ToastColorEnum } from '@globalTypes/IGlobal';
 import NetInfo from '@react-native-community/netinfo';
 // import GetLang from '@helpers/localization';
+import { ToastColorEnum } from '@src/helpers/Types/IApp';
+import { showToast } from '@src/modules/app/redux/actions';
+import GetLang from '@src/helpers/localization';
 import AxiosInstance from './AxiosInstance';
 import { 
   MethodEnum, 
@@ -45,7 +48,7 @@ export default class Network {
 
           if (res?.data?.statusCode === 200) {
                                    
-            // if (successMessaging) showToast(res.data.message, ToastColorEnum.Succes);
+            if (successMessaging) showToast(res.data.message, ToastColorEnum.Succes);
 
             return resolve(res?.data);
                       
@@ -58,15 +61,12 @@ export default class Network {
 
           NetInfo.fetch().then((state) => {
 
-            // if (!state.isConnected)showToast(GetLang('noInternet'), ToastColorEnum.Info);
-            if (!state.isConnected) console.log('');
-
+            if (!state.isConnected)showToast(GetLang('noInternet'), ToastColorEnum.Info);
+    
           });
          
-          // if (!err.response?.status) showToast('', ToastColorEnum.Error);
+          if (!err.response?.status) showToast('', ToastColorEnum.Error);
           
-          if (!err.response?.status)console.log('');
-
           else {
 
             const errorCallBack = await ExceptionMiddleware({ ...err.response, errorMessaging });
