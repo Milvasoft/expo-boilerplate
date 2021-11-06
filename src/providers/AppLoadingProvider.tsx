@@ -1,9 +1,9 @@
 import React from 'react';
 import { getStoreDataAsync, getStoreStringAsync } from '@helpers/storage';
-import AxiosInstance from '@api/network/AxiosInstance';
-import { appStateChange } from '@actions/App';
+import { appStateChange } from 'src/modules/app/redux/actions';
 import AppLoading from 'expo-app-loading';
 import { storeEnum } from '@helpers/storage/Abstract';
+import axiosInstance from '@utils/network/AxiosInstance';
 
  type Props = {
    children: React.ReactNode
@@ -24,15 +24,14 @@ function AppLoadingProvider({ children }: Props) {
 
     if (token) {
 
-      AxiosInstance.defaults.headers.common.Authorization = `Bearer ${token?.accessToken}`;
+      axiosInstance.defaults.headers.common.Authorization = `Bearer ${token?.accessToken}`;
 
       // Requst Api Then (Change)
       appStateChange({ user: {}, isSignedIn: true });
 
-
     } else {
 
-      AxiosInstance.defaults.headers.common.Authorization = '';
+      axiosInstance.defaults.headers.common.Authorization = '';
 
       appStateChange({ user: {}, isSignedIn: false });
 

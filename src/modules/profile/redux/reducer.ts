@@ -1,9 +1,10 @@
+
 /**
  * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
 */
-import * as $AT from '@actions/ActionTypes';
+import * as $AT from '@src/actionTypes';
 import { AnyAction } from 'redux';
-import INITIAL_STATE from './Store';
+import INITIAL_STATE from './store';
 
 interface IProfile{
   counter: number

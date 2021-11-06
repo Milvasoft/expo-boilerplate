@@ -1,5 +1,5 @@
 import { dispatcher } from '@helpers/redux';
-import * as $AT from '@actions/ActionTypes';
+import * as $AT from '@src/actionTypes';
 import AxiosInstance from './AxiosInstance';
 import { IApiResult } from './Abstract';
 

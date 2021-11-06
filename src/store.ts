@@ -1,7 +1,7 @@
 
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import { createStore } from 'redux';
-import RootReducer from '.';// Root reducer
+import RootReducer from './rootReducer';// Root reducer
 
 const Store = createStore(RootReducer);
 

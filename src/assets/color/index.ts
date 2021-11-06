@@ -1,4 +1,4 @@
-import { getAppState } from '@reducers/Store';
+import { getAppState } from '@src/store';
 import { Appearance } from 'react-native';
 
 const lightTheme = {
@@ -28,7 +28,6 @@ const Color = (): IMyTheme => {
 
   return lightTheme;
   
-
 };
 
 

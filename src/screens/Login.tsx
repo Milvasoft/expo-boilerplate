@@ -1,11 +1,10 @@
 /**
  * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
 */
-import { appStateChange } from '@actions/App';
-import Color from '@assets/color';
+import { appStateChange } from '@modules/app/redux/actions';
 import { wp } from '@helpers/responsive';
 import React, { useCallback } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { Button } from 'react-native-paper';
 import * as Notifications from 'expo-notifications';
 
@@ -22,18 +21,16 @@ function Login() {
   }, []);
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <View style={styles.root}>
 
-      <Text>Login</Text>
+      <Text style={styles.welcome}>Welcome !</Text>
 
       <Button
-        mode="contained"
-        style={{ width: wp(30), marginTop: 25 }}
+        mode="contained"        
+        style={styles.buttonStyle}
         onPress={_goHomePage}
         uppercase={false}
-        labelStyle={{
-          fontSize: wp(3), textAlign: 'center', fontWeight: 'bold', color: Color().primary       
-        }}
+        labelStyle={styles.labelStyle}
       >
         Login
       </Button>
@@ -42,5 +39,28 @@ function Login() {
   );
 
 }
+
+const styles = StyleSheet.create({
+  root: {
+    flex: 1,
+    justifyContent: 'center', 
+    alignItems: 'center'
+  },
+
+  welcome: {
+    fontFamily: 'Bold',
+    fontSize: wp(6),
+  },
+  buttonStyle: {
+    width: wp(30),
+    marginTop: 50,
+  },
+  labelStyle: {
+    fontSize: wp(3),
+    textAlign: 'center',
+    fontWeight: 'bold',
+  }
+});
+
 
 export default Login;

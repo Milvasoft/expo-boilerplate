@@ -24,8 +24,7 @@ const screenOptions: StackNavigationOptions = {
   headerStyle: { backgroundColor: '#FFF', },
   headerTintColor: Color().primary,
   headerTitleStyle: { fontFamily: 'Bold', }, 
-  headerTitleAlign: 'center'  
-  
+  headerTitleAlign: 'center'    
 };
 
 function ProfileStack() {
@@ -38,6 +37,7 @@ function ProfileStack() {
         component={Profile}
         options={{
           headerTitle: GetLang('navigation.profile'),
+          headerShown: false,
         }}
       />
 
@@ -50,23 +50,10 @@ function ProfileStack() {
       />
 
       <Stack.Screen
-        name={Routes.Post}
-        component={Post} 
-        options={{
-          headerTitle: GetLang('navigation.post'),
-        }}
+        name={Routes.Post} 
+        component={Post}
+        options={({ route }) => ({ headerTitle: route.params.username, })}
       />
-
-      {/* Example */}
-      
-      {/* <Stack.Screen
-        name={Routes.Product} 
-        component={Product}
-        options={({ route }) => ({
-          headerTitle: route.params.productName,           
-          headerRight: () => <Basket />,  
-        })}
-      /> */}
 
     </Stack.Navigator>
   );

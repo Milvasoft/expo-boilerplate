@@ -1,5 +1,4 @@
 const resource = {
-  welcome: 'Merhaba', 
   name: 'Ali Burhan Keskin',
   confirm: 'Onayla',
   cancel: 'İptal',  

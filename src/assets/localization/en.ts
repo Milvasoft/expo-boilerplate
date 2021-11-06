@@ -1,7 +1,6 @@
 import { ILocalization } from './tr';
 
 const resource : ILocalization = {
-  welcome: 'Hello',
   name: 'Ali Burhan Keskin',
   confirm: 'Confirm',
   cancel: 'Cancel',
@@ -12,7 +11,7 @@ const resource : ILocalization = {
 
   navigation: {
     home: 'Home Page',
-    profile: 'Profilw',
+    profile: 'Profile',
     settings: 'Settings',
     post: 'Post'
   }

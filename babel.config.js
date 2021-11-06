@@ -11,6 +11,7 @@ module.exports = function (api) {
           extensions: ['.js', '.jsx', '.ts', '.tsx'], 
           root: ['./'],
           alias: {
+            '@src': './src',
             '@components': './src/components',
             '@routers': './src/routers',
             '@screens': './src/screens',
@@ -23,7 +24,7 @@ module.exports = function (api) {
             '@icons': './src/assets/icons',
             '@providers': './src/providers',
             '@utils': './src/utils',
-            '@globalTypes': './src/globalTypes',
+            '@modules': './src/modules',
           }
         },
       ],      

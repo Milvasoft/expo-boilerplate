@@ -2,11 +2,15 @@
  * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
 */
 import React, { useCallback } from 'react';
-import Milva from '@components/page/example/Milva';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import GetLang from '@helpers/localization';
 import { useFocusEffect } from '@react-navigation/native';
-import { Text, View } from 'react-native';
+import {
+  Text, 
+  View, 
+  StyleSheet 
+} from 'react-native';
+import { wp } from '@src/helpers/responsive';
 
 function Example() {
 
@@ -20,19 +24,20 @@ function Example() {
   );
 
   return (
-    <SafeAreaView style={{ flex: 1, }}>
+    <SafeAreaView style={styles.safeView}>
       
-      <View style={{ flex: 1, justifyContent: 'space-between', alignItems: 'center' }}>
+      <View style={styles.root}>
+        <View style={styles.container}>
 
-        <Milva />
+          <Text style={styles.fontBlack}>
+            MİLVASOFT
+          </Text>
+        </View>
 
-        <Text style={{ fontFamily: 'Black' }}>
+        <Text style={styles.fontBlack}>
           {GetLang('name')}
         </Text>
 
-        <Text style={{ fontFamily: 'Black' }}>
-          {GetLang('welcome')}
-        </Text>
       </View>
 
     </SafeAreaView>
@@ -40,5 +45,29 @@ function Example() {
 
 }
 
+const styles = StyleSheet.create({
+  
+  safeView: {
+    flex: 1,
+  },
+
+  root: {
+    flex: 1,
+    justifyContent: 'space-around', 
+    alignItems: 'center'
+  },
+
+  container: {
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+
+  fontBlack: {
+    fontFamily: 'Black',
+    marginTop: 20,
+    fontSize: wp(6),
+  },
+
+});
 
 export default Example;

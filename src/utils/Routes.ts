@@ -16,7 +16,7 @@ export type RootStackParams = {
 export type ProfileStackParams = {
   [Routes.Profile]: undefined;
   [Routes.Settings]: undefined;
-  [Routes.Post]: { id:string };
+  [Routes.Post]: { id: string, username: string };
 };
   
 export default Routes;
