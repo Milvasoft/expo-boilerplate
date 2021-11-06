@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /**
  * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
 */

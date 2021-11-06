@@ -13,18 +13,22 @@ type Props = {
   text?: string
 };
   
-const GeneralActivityIndicator : React.FC<Props> = ({ text }) => (
-  <View style={Styles.activityIndicator}>
-    <ActivityIndicator
-      animating
-      size="large"
-      color={Color().primary}
-    />
-    <Text style={Styles.activityIndicatorText}>
-      {text || GetLang('generalActivityIndicatorText')}
-    </Text>
-  </View>
-);
+function GeneralActivityIndicator({ text }: Props) {
+
+  return (
+    <View style={Styles.activityIndicator}>
+      <ActivityIndicator
+        animating
+        size="large"
+        color={Color().primary}
+      />
+      <Text style={Styles.activityIndicatorText}>
+        {text || GetLang('generalActivityIndicatorText')}
+      </Text>
+    </View>
+  );
+
+}
 export default GeneralActivityIndicator;
 
 const Styles = StyleSheet.create({

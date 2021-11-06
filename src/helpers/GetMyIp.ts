@@ -1,7 +1,7 @@
 /**
  * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
 */
-export default async (): Promise<string> => {
+export default async () => {
 
   try {
   

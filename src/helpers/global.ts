@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /**
  * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
 */
-export function isValidJSON(str) {
+export function isValidJSON(str: any) {
 
   try {
 
@@ -17,5 +16,4 @@ export function isValidJSON(str) {
 
 }
   
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const isObjectLike = (val: any):any => val !== null && typeof val === 'object';
