@@ -4,17 +4,12 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { useRoute, RouteProp } from '@react-navigation/native';
+import Routes, { ProfileStackParams } from '@utils/Routes';
 
-type ParamList = {
-  Post: {
-    id?: string;
-  };
-};
+function Post() {
 
-const Post: React.FC = () => {
-
-  const route = useRoute<RouteProp<ParamList, 'Post'>>();
-  const { id } = route?.params; 
+  const route = useRoute<RouteProp<ProfileStackParams, Routes.Post>>();
+  const { id } = route?.params;
 
   console.log(id);
 
@@ -26,6 +21,6 @@ const Post: React.FC = () => {
     </View>
   );
 
-};
+}
 
 export default Post;

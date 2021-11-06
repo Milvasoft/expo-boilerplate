@@ -8,48 +8,48 @@ import { Text, View, Button } from 'react-native';
 import * as $AC from '@actions/Account'; 
 
   
-const Milva : React.FC = () => {  
+function Milva() {
 
   const _onRequestAsync = async () => {
-  
-    const loginDto = {      
+
+    const loginDto = {
       userName: 'username',
       password: 'password'
     };
 
     await $AC.signInAsync(loginDto);
-  
-  };  
 
-  return (   
-    <View style={{ justifyContent: 'space-between', alignItems: 'center' }}>  
+  };
+
+  return (
+    <View style={{ justifyContent: 'space-between', alignItems: 'center' }}>
 
       <Text style={{ fontFamily: 'Black' }}>
-        MİLVASOFT      
+        MİLVASOFT
       </Text>
 
       <View style={{ marginTop: 10 }}>
-        
+
         <Button onPress={_onRequestAsync} title="SignIn" />
 
       </View>
-      
+
       <View style={{ marginTop: 10 }}>
         <Button
           onPress={() => {
 
             // eslint-disable-next-line no-throw-literal
             throw 'Crash!';
-          
+
           }}
           title="Crash"
         />
 
       </View>
-    </View>    
+    </View>
 
   );
 
-};
+}
 
 export default Milva;

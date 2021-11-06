@@ -57,6 +57,17 @@ function ProfileStack() {
         }}
       />
 
+      {/* Example */}
+      
+      {/* <Stack.Screen
+        name={Routes.Product} 
+        component={Product}
+        options={({ route }) => ({
+          headerTitle: route.params.productName,           
+          headerRight: () => <Basket />,  
+        })}
+      /> */}
+
     </Stack.Navigator>
   );
 
