@@ -9,13 +9,13 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   version: '1.0.0',
   sdkVersion: '43.0.0',
   orientation: 'portrait',
-  icon: './src/assets/image/icon.png',
+  icon: './src/assets/images/icon.png',
   assetBundlePatterns: [
-    './src/assets/image/*',
+    './src/assets/images/*',
     './src/assets/svg/*'
   ],
   splash: {
-    image: './src/assets/image/splash.png',
+    image: './src/assets/images/splash.png',
     resizeMode: 'contain',
     backgroundColor: '#ffffff',
   },
@@ -25,7 +25,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   },
   android: {
     adaptiveIcon: {
-      foregroundImage: './src/assets/image/adaptive-icon.png',
+      foregroundImage: './src/assets/images/adaptive-icon.png',
       backgroundColor: '#ffffff',     
     },
     package: 'com.milvasoft.milvasoft',
