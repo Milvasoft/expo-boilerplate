@@ -3,12 +3,12 @@ import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { CardStyleInterpolators, createStackNavigator, StackNavigationOptions } from '@react-navigation/stack';
 import Login from '@screens/Login';
 import { useAppSelector } from '@src/store';
-import Color from '@assets/color';
 import { Dimensions } from 'react-native';
 import GetLang from '@helpers/localization';
 import { enableScreens } from 'react-native-screens';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Routes, { RootStackParams } from '@utils/Routes';
+import { useTheme } from '@src/hooks';
 import { navigationRef } from './Router';
 import BottomNavigation from './BottomNavigation';
 
@@ -22,7 +22,6 @@ const screenOptions: StackNavigationOptions = {
   headerShown: true,
   cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
   headerStyle: { backgroundColor: '#FFF', },
-  headerTintColor: Color().primary,
   headerTitleStyle: { fontFamily: 'Bold', },  
   headerTitleAlign: 'center'     
 };
@@ -38,6 +37,7 @@ const mainTheme = {
 function RootNavigation() {
 
   const isSignedIn = useAppSelector((s) => s.AppReducer?.isSignedIn);
+  const theme = useTheme();
 
   return (
     <SafeAreaProvider>
@@ -45,7 +45,7 @@ function RootNavigation() {
 
         <Stack.Navigator
           initialRouteName={isSignedIn ? Routes.Home : Routes.Login} 
-          screenOptions={screenOptions}
+          screenOptions={{ ...screenOptions, headerTintColor: theme.primary }}
         >
 
           {isSignedIn

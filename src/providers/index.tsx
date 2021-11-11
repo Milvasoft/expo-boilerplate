@@ -9,6 +9,7 @@ import './Localization';
 import Toast from './Toast';
 import FontProvider from './Font';
 import Notification from './Notification';
+import ThemeProvider from './ThemeProvider';
    
  type Props = {
    children: React.ReactNode
@@ -21,7 +22,7 @@ import Notification from './Notification';
 function CustomProvider({ children }:Props) {
 
   return (
-    <>
+    <ThemeProvider>
 
       <Toast />
 
@@ -33,7 +34,7 @@ function CustomProvider({ children }:Props) {
         </Notification>
       </AppLoadingProvider>
       
-    </>
+    </ThemeProvider>
   );
 
 }

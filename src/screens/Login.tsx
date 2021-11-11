@@ -1,7 +1,7 @@
 /**
  * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
 */
-import { appStateChange, showToast } from '@modules/app/redux/actions';
+import { updateAppState, showToast } from '@modules/app/redux/actions';
 import { wp } from '@helpers/responsive';
 import React, { useCallback } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
@@ -18,7 +18,7 @@ function Login() {
 
     showToast('Welcome');
 
-    appStateChange({ isSignedIn: true });
+    updateAppState({ isSignedIn: true });
 
   }, []);
 

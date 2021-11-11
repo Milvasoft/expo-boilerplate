@@ -1,6 +1,6 @@
 import React from 'react';
-import { getStoreDataAsync, getStoreStringAsync } from '@helpers/storage';
-import { appStateChange } from 'src/modules/app/redux/actions';
+import { getStoreDataAsync } from '@helpers/storage';
+import { updateAppState } from 'src/modules/app/redux/actions';
 import AppLoading from 'expo-app-loading';
 import { storeEnum } from '@helpers/storage/Abstract';
 import axiosInstance from '@utils/network/AxiosInstance';
@@ -15,26 +15,22 @@ function AppLoadingProvider({ children }: Props) {
 
   const _check = async () => {
 
-    // Color Theme (USER)
-    const mode = await getStoreStringAsync(storeEnum.ColorMode);
-
-    appStateChange({ userColorScheme: mode });
-
     const token = await getStoreDataAsync(storeEnum.Token);
 
     if (token) {
 
       axiosInstance.defaults.headers.common.Authorization = `Bearer ${token?.accessToken}`;
 
-      // Requst Api Then (Change)
-      appStateChange({ user: {}, isSignedIn: true });
+      updateAppState({ isSignedIn: true });
+
+      // TODO Asenkron process
 
     } else {
 
       axiosInstance.defaults.headers.common.Authorization = '';
 
-      appStateChange({ user: {}, isSignedIn: false });
-
+      updateAppState({ isSignedIn: false });
+    
     }
 
   };

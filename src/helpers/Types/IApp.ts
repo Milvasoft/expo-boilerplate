@@ -1,7 +1,8 @@
+import { ColorSchemeName } from 'react-native'; 
 
 export interface IAppReducer {
   isSignedIn?: boolean,
-  userColorScheme?: string,
+  userColorScheme?: ColorSchemeName,
   user?: any,
 }
 export interface IToastType{  

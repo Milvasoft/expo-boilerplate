@@ -7,8 +7,16 @@ import { IAppReducer, ToastColorEnum } from '@helpers/Types/IApp';
 import { toastActions } from '@src/providers/Toast';
 
 /**
-* Change value for Global Reducer
+* Change value for App Reducer
 */
-export const appStateChange = (payload :IAppReducer): void => dispatcher({ type: $AT.APP_STATE_CHANGE, payload });
+export function updateAppState(payload: IAppReducer): void {
 
-export const showToast = (msg: string, type?: ToastColorEnum, duration ?:number) => toastActions.open({ msg, type, duration });
+  dispatcher({ type: $AT.APP_STATE_CHANGE, payload });
+
+}
+
+export function showToast(msg: string, type?: ToastColorEnum, duration?: number) {
+
+  toastActions.open({ msg, type, duration });
+
+}

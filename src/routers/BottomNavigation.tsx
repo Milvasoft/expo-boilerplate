@@ -5,17 +5,18 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from '@src/screens/Home';
 import { AntDesign, Ionicons } from '@expo/vector-icons';
-import Color from '@assets/color';
+import { useTheme } from '@src/hooks';
 import ProfileStack from './ProfileStack';
 
 const Tab = createBottomTabNavigator();
 
 export default function TabNavigator() {
 
+  const theme = useTheme();
   return (
     <Tab.Navigator
       screenOptions={{        
-        tabBarActiveTintColor: Color().primary,
+        tabBarActiveTintColor: theme.primary,
         tabBarStyle: { backgroundColor: '#FFF', },        
         headerShown: false,
       }}

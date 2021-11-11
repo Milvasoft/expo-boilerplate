@@ -8,9 +8,9 @@ import Post from '@screens/ProfileStack/Post';
 import { CardStyleInterpolators, createStackNavigator, StackNavigationOptions } from '@react-navigation/stack';
 import { Dimensions } from 'react-native';
 import Routes, { ProfileStackParams } from '@utils/Routes';
-import Color from '@assets/color';
 import GetLang from '@helpers/localization';
 import { enableScreens } from 'react-native-screens';
+import { useTheme } from '@src/hooks';
 
 enableScreens();
 
@@ -22,15 +22,15 @@ const screenOptions: StackNavigationOptions = {
   headerShown: true,
   cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
   headerStyle: { backgroundColor: '#FFF', },
-  headerTintColor: Color().primary,
   headerTitleStyle: { fontFamily: 'Bold', }, 
   headerTitleAlign: 'center'    
 };
 
 function ProfileStack() {
 
+  const theme = useTheme();
   return (
-    <Stack.Navigator initialRouteName={Routes.Profile} screenOptions={screenOptions}>
+    <Stack.Navigator initialRouteName={Routes.Profile} screenOptions={{ ...screenOptions, headerTintColor: theme.primary }}>
 
       <Stack.Screen
         name={Routes.Profile}

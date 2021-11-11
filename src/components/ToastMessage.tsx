@@ -16,16 +16,18 @@ import {
 
 let stop = false;
 
+const toastHeight = 100;
+
 const ToastMessage = forwardRef((props, ref) => {
 
-  const animatedValue = useRef(new Animated.Value(-120)).current;
+  const animatedValue = useRef(new Animated.Value(-toastHeight)).current;
   const [state, setState] = useState<IToastType>({ type: ToastColorEnum.Info, msg: '' });
    
   const closeToast = useCallback(() => {
 
     setTimeout(() => {
 
-      if (!stop) Animated.timing(animatedValue, { toValue: -120, duration: 300, useNativeDriver: true }).start();
+      if (!stop) Animated.timing(animatedValue, { toValue: -toastHeight, duration: 300, useNativeDriver: true }).start();
     
     }, state?.duration || 1500);
 
@@ -48,7 +50,7 @@ const ToastMessage = forwardRef((props, ref) => {
 
     stop = false;
 
-    Animated.timing(animatedValue, { toValue: -120, duration: 300, useNativeDriver: true }).start();
+    Animated.timing(animatedValue, { toValue: -toastHeight, duration: 300, useNativeDriver: true }).start();
   
   }, [animatedValue]);
 
@@ -81,7 +83,7 @@ export default memo(ToastMessage);
 
 const styles = StyleSheet.create({
   root: {
-    height: 120,
+    height: toastHeight,
     position: 'absolute',
     left: 0,
     top: 0,

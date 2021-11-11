@@ -5,9 +5,10 @@ import {
   ActivityIndicator,
   StyleSheet 
 } from 'react-native';
-import Color from '@assets/color';
 import { hp, wp } from '@helpers/responsive';
 import GetLang from '@helpers/localization';
+import { ITheme } from '@src/assets/color/LightTheme';
+import { useTheme, useThemedStyles } from '@src/hooks';
 
 type Props = {
   text?: string
@@ -15,14 +16,17 @@ type Props = {
   
 function GeneralActivityIndicator({ text }: Props) {
 
+  const theme = useTheme();
+  const themedStyles = useThemedStyles<typeof styles>(styles);
+
   return (
-    <View style={Styles.activityIndicator}>
+    <View style={themedStyles.activityIndicator}>
       <ActivityIndicator
         animating
         size="large"
-        color={Color().primary}
+        color={theme.primary}
       />
-      <Text style={Styles.activityIndicatorText}>
+      <Text style={themedStyles.activityIndicatorText}>
         {text || GetLang('generalActivityIndicatorText')}
       </Text>
     </View>
@@ -31,7 +35,7 @@ function GeneralActivityIndicator({ text }: Props) {
 }
 export default GeneralActivityIndicator;
 
-const Styles = StyleSheet.create({
+const styles = (theme: ITheme) => StyleSheet.create({
   activityIndicator: {
     position: 'absolute',
     zIndex: 9999999999,
@@ -47,6 +51,6 @@ const Styles = StyleSheet.create({
     marginTop: hp(2),
     fontWeight: 'bold',
     fontSize: wp(4),
-    color: Color().primary
+    color: theme.primary
   },
 });

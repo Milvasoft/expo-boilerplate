@@ -25,9 +25,9 @@ function Profile() {
   const _counterInc = useCallback(() => $ACS.increment(), []);
   const _counterDec = useCallback(() => $ACS.decrement(), []);
   
-  const goToSettings = useCallback(() => navigate(Routes.Settings),[]);
+  const goToSettings = useCallback(() => navigate(Routes.Settings), []);
 
-  const goToPost = useCallback(() => navigation.navigate(Routes.Post, { id: '1', username: 'Milvasoft' }),[]);
+  const goToPost = useCallback(() => navigation.navigate(Routes.Post, { id: '1', username: 'Milvasoft' }), [navigation]);
  
   return (
     <SafeAreaView style={styles.safeView}>

@@ -2,29 +2,29 @@ import { removeStoreDataAsync } from '@src/helpers/storage';
 import { storeEnum } from '@src/helpers/storage/Abstract';
 import axiosInstance from '@src/utils/network/AxiosInstance';
 import { ILoginDTO } from '../utils/Types';
-import { appStateChange } from './actions';
+import { updateAppState } from './actions';
 
-export const signIn = async (loginDto : ILoginDTO) => {  
- 
+export async function signIn(loginDto: ILoginDTO) {
+
   console.log(loginDto);
+
+  updateAppState({ isSignedIn: true });
+
+}
   
-  appStateChange({ isSignedIn: true });
-  
-};
-  
-export const signOut = async () => {
-  
+export async function signOut() {
+
   await clearUser();
+
+}
   
-};
-  
-export const clearUser = async () => {
-  
+export async function clearUser() {
+
   await removeStoreDataAsync(storeEnum.Token);
-  
+
   axiosInstance.defaults.headers.common.Authorization = '';
-  
-  appStateChange({ user: {}, isSignedIn: false });    
-  
-};
+
+  updateAppState({ user: {}, isSignedIn: false });
+
+}
   
