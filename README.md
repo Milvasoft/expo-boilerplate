@@ -78,6 +78,12 @@ The Modules is a special folder. It allows you to manage your application more e
 - API (API request, routes)
 - Services 
 
+<br>
+
+![](https://i.hizliresim.com/awu1k6o.PNG)
+
+<br>
+
 In this way, it provides a simpler and easier development process by searching the codes related to the Module only in that folder.
 <br>
 
