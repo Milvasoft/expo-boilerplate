@@ -1,0 +1,25 @@
+<h2 align="center">Expo Boilerplate Project</h2>
+
+<br>
+
+<h3 align="center">Architectures, methods and much more that We use while developing mobile applications</h3>
+
+<br>
+
+***
+
+<br>
+
+## Run project in development
+
+***
+
+- Setting up the development environment: https://reactnative.dev/docs/environment-setup.
+
+- Install dependencies: `yarn install` (or `npm install`).
+
+- Run on Android: `yarn android` (or `npm run android`).
+
+- Run on iOS: `yarn ios` (or `npm run ios`).
+
+- Run on both Android & iOS: `expo start` (or `yarn start`).
