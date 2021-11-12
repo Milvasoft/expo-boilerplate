@@ -14,8 +14,6 @@
 
 ## Run project in development
 
-***
-
 - Setting up the development environment: https://reactnative.dev/docs/environment-setup.
 
 - Install dependencies: `yarn install` (or `npm install`).
