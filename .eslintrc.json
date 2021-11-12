@@ -73,7 +73,8 @@
       "padded-blocks": ["error", { "blocks": "always" }],
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
-      "react/require-default-props": "off"
+      "react/require-default-props": "off",
+      "prefer-arrow-callback":"off"
   },
   
   "overrides": [
