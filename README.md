@@ -42,8 +42,15 @@ src
          ├── redux
          ├── services
          └── utils
+     └── profile
+         ├── api
+         ├── components
+         ├── redux
+         ├── services
+         └── utils	 
  ├── providers
  ├── routers
+     └── components
  ├── screens
      ├── stack-1
      ├── stack-2
