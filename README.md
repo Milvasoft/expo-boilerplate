@@ -28,12 +28,14 @@
 ```
 src
  ├── assets
+     ├── animation
      ├── color
+     ├── enums
      ├── images
      └── localization
-	├── components
-	├── helpers
+ ├── helpers
      └── storage
+ ├── components
  ├── hooks
  ├── modules
      └── app
@@ -41,12 +43,14 @@ src
          ├── components
          ├── redux
          ├── services
+	 ├── types
          └── utils
      └── profile
          ├── api
          ├── components
          ├── redux
          ├── services
+	 ├── types
          └── utils	 
  ├── providers
  ├── routers
