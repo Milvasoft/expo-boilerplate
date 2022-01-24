@@ -2,7 +2,7 @@
 /**
  * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
 */
-import * as $AT from '@src/actionTypes';
+import * as $AT from '@utils/redux/actionTypes';
 import { AnyAction } from 'redux';
 import INITIAL_STATE from './store';
 

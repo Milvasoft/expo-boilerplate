@@ -1,7 +1,7 @@
 /**
  * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
  */
-import * as $AT from '@src/actionTypes';
+import * as $AT from '@utils/redux/actionTypes';
 import { dispatcher } from '@helpers/redux';
 import { IAppReducer, ToastColorEnum } from '@helpers/Types/IApp';
 import { toastActions } from '@src/providers/Toast';

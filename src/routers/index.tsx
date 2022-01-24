@@ -2,7 +2,7 @@ import * as React from 'react';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { CardStyleInterpolators, createStackNavigator, StackNavigationOptions } from '@react-navigation/stack';
 import Login from '@screens/Login';
-import { useAppSelector } from '@src/store';
+import { useAppSelector } from '@utils/redux/store';
 import { Dimensions } from 'react-native';
 import GetLang from '@helpers/localization';
 import { enableScreens } from 'react-native-screens';

@@ -6,14 +6,18 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   name: 'milvasoft',
   description: 'Milvasoft',
   slug: 'milvasoft',
+  scheme: 'milvasoft',
   version: '1.0.0',
   sdkVersion: '43.0.0',
   orientation: 'portrait',
   icon: './src/assets/images/icon.png',
   assetBundlePatterns: [
     './src/assets/images/*',
-    './src/assets/svg/*'
   ],
+  locales: {
+    tr: './src/assets/languages/turkish.json',
+    en: './src/assets/languages/english.json',
+  },
   splash: {
     image: './src/assets/images/splash.png',
     resizeMode: 'contain',
@@ -32,7 +36,6 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     versionCode: 1,
     useNextNotificationsApi: true,
   },
-  scheme: 'milvasoft',
   userInterfaceStyle: 'automatic'
 
 });

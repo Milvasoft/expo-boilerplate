@@ -1,5 +1,5 @@
 import Network from '@utils/network';
-import { IAccountInfoDTO } from '../utils/Types';
+import { IAccountInfoDTO } from '../types/IAccountInfoDTO';
 import * as Routes from './routes';
 
 export function personnelLogin(LoginDTO: any) {

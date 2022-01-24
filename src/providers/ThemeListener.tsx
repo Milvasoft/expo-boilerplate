@@ -1,8 +1,31 @@
-import { updateAppState } from '@src/modules/app/redux/actions';
+import React, { useEffect } from 'react';
+import { updateAppState } from '@modules/app/redux/actions';
 import { Appearance } from 'react-native';
+import throttle from 'lodash.throttle';
 
-Appearance.addChangeListener(async (param) => {
+export default function ThemeListener() {
 
-  updateAppState({ userColorScheme: param?.colorScheme });
+  useEffect(() => {
+    
+    const handleColorModeChange = async (preferences: Appearance.AppearancePreferences) => {
+      
+      updateAppState({ userColorScheme: preferences?.colorScheme });
+    
+    };
 
-});
+    Appearance.addChangeListener(throttle(handleColorModeChange, 100, { leading: false, trailing: true }));
+
+    return () => {
+
+      Appearance.removeChangeListener(handleColorModeChange);
+    
+    };
+
+    
+  }, []);
+
+
+  return <></>;
+
+}
+

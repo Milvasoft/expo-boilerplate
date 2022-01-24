@@ -1,7 +1,7 @@
 import { removeStoreDataAsync } from '@src/helpers/storage';
 import { storeEnum } from '@src/helpers/storage/Abstract';
 import axiosInstance from '@src/utils/network/AxiosInstance';
-import { ILoginDTO } from '../utils/Types';
+import { ILoginDTO } from '../types/ILoginDTO';
 import { updateAppState } from './actions';
 
 export async function signIn(loginDto: ILoginDTO) {

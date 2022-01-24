@@ -19,7 +19,6 @@
     "isolatedModules": true,
     "baseUrl": "./",
     "paths": {
-      "@src/*": ["./src/*"],
       "@components/*": ["./src/components/*"],
       "@routers/*": ["./src/routers/*"],
       "@screens/*": ["./src/screens/*"],
@@ -33,6 +32,7 @@
       "@providers/*": ["./src/providers/*"],
       "@utils/*": ["./src/utils/*"],
       "@modules/*": ["./src/modules/*"],
+      "@src/*": ["./src/*"]
     }
   },
   "include": ["src/**/*","custom.d.ts"],

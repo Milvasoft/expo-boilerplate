@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import * as $ACS from '@modules/profile/redux/actions';
-import { useAppSelector } from '@src/store';
+import { useAppSelector } from '@utils/redux/store';
 import { navigate } from '@src/routers/Router';
 import Routes, { ProfileStackParams } from '@src/utils/Routes';
 import { Button } from 'react-native-paper';

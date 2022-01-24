@@ -10,6 +10,7 @@ import Toast from './Toast';
 import FontProvider from './Font';
 import Notification from './Notification';
 import ThemeProvider from './ThemeProvider';
+import ThemeListener from './ThemeListener';
    
  type Props = {
    children: React.ReactNode
@@ -22,19 +23,24 @@ import ThemeProvider from './ThemeProvider';
 function CustomProvider({ children }:Props) {
 
   return (
-    <ThemeProvider>
+    <AppLoadingProvider>
+      <ThemeProvider>
 
-      <Toast />
+        <Toast />
 
-      <AppLoadingProvider>
         <Notification>
+
           <FontProvider>
+
             {children}
+            
+            <ThemeListener />
+
           </FontProvider>
         </Notification>
-      </AppLoadingProvider>
       
-    </ThemeProvider>
+      </ThemeProvider>
+    </AppLoadingProvider>
   );
 
 }

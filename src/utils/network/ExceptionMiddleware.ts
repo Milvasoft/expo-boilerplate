@@ -1,6 +1,6 @@
 /* eslint-disable consistent-return */
 import { dispatcher } from '@helpers/redux';
-import * as $AT from '@src/actionTypes';
+import * as $AT from '@utils/redux/actionTypes';
 import { showToast } from '@src/modules/app/redux/actions';
 import { ToastColorEnum } from '@src/helpers/Types/IApp';
 // import { removeStoreDataAsync } from '@src/helpers/storage';
@@ -14,7 +14,7 @@ const ExceptionMiddleware = async ({ data, errorMessaging }: IApiResult) => {
     
   const statusCode = data?.statusCode || 400;
 
-  if ([400, 401, 403, 204, 500].includes(statusCode)) {
+  if ([400, 401, 403, 500].includes(statusCode)) {
 
     errorMessaging && showToast(data.message, ToastColorEnum.Warning);
 
