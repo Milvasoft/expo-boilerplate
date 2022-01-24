@@ -5,14 +5,14 @@ import React, { useCallback } from 'react';
 import {
   Text, 
   View, 
-  StyleSheet 
+  StyleSheet,
+  Button 
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import * as $ACS from '@modules/profile/redux/actions';
 import { useAppSelector } from '@utils/redux/store';
 import { navigate } from '@src/routers/Router';
 import Routes, { ProfileStackParams } from '@src/utils/Routes';
-import { Button } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 
@@ -43,29 +43,21 @@ function Profile() {
 
         <View style={styles.button}>
 
-          <Button onPress={_counterInc}>
-            Increment
-          </Button>
+          <Button onPress={_counterInc} title="Increment" />
 
         </View>
 
         <View style={styles.button}>
 
-          <Button onPress={_counterDec}>
-            Decrement
-          </Button>
+          <Button onPress={_counterDec} title="Decrement" />
 
         </View>
 
         <View style={styles.siginButton}>
 
-          <Button onPress={goToPost} style={styles.button} mode="contained">
-            Go To Post
-          </Button>
+          <Button onPress={goToPost} title="Go To Post" />
 
-          <Button onPress={goToSettings} style={styles.button} mode="contained">
-            Go To Settings
-          </Button>
+          <Button onPress={goToSettings} title=" Go To Settings" />
 
         </View>
 

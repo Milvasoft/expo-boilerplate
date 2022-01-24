@@ -8,10 +8,10 @@ import { useFocusEffect } from '@react-navigation/native';
 import {
   Text, 
   View, 
-  StyleSheet 
+  StyleSheet,
+  Button
 } from 'react-native';
 import { wp } from '@src/helpers/responsive';
-import { Button } from 'react-native-paper';
 import { showToast } from '@src/modules/app/redux/actions';
 
 function Home() {
@@ -36,9 +36,7 @@ function Home() {
           </Text>
         </View>
 
-        <Button onPress={() => showToast('ShowToast')}>
-          Show Toast
-        </Button>
+        <Button onPress={() => showToast('ShowToast')} title=" Show Toast" />
 
         <Text style={styles.fontBlack}>
           {GetLang('name')}

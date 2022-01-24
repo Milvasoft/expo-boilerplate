@@ -1,20 +1,19 @@
 /**
  * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
 */
+import React, { useCallback } from 'react';
 import { updateAppState, showToast } from '@modules/app/redux/actions';
 import { wp } from '@helpers/responsive';
-import React, { useCallback } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { Button } from 'react-native-paper';
-// import * as Notifications from 'expo-notifications';
+import {
+  View, 
+  Text,
+  StyleSheet,
+  Button 
+} from 'react-native';
 
-function Login() {
+export default function Login() {
 
-  const _goHomePage = useCallback(() => {
-
-    // const token = (await Notifications.getExpoPushTokenAsync()).data;
-
-    // console.log('token', token);
+  const goHomePage = useCallback(() => {
 
     showToast('Welcome');
 
@@ -27,15 +26,7 @@ function Login() {
 
       <Text style={styles.welcome}>Welcome !</Text>
 
-      <Button
-        mode="contained"        
-        style={styles.buttonStyle}
-        onPress={_goHomePage}
-        uppercase={false}
-        labelStyle={styles.labelStyle}
-      >
-        Login
-      </Button>
+      <Button onPress={goHomePage} title="Login" />
 
     </View>
   );
@@ -64,5 +55,3 @@ const styles = StyleSheet.create({
   }
 });
 
-
-export default Login;
