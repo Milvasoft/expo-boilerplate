@@ -6,6 +6,7 @@ import { enableScreens } from 'react-native-screens';
 import 'react-native-gesture-handler';
 import { Provider } from 'react-redux';
 import * as ScreenOrientation from 'expo-screen-orientation';
+import { Platform } from 'react-native';
 import RootNavigation from './src/routers';
 import CustomProvider from './src/providers';
 import Store from './src/utils/redux/store';
@@ -16,7 +17,11 @@ function App() {
 
   useEffect(() => {
 
-    ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT_UP);
+    if (Platform.OS !== 'web') {
+
+      ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT_UP);
+
+    }
 
   }, []);
 

@@ -32,12 +32,16 @@ const Notification : React.FC<Props> = ({ children }) => {
 
   useEffect(() => {
 
-    registerForPushNotificationsAsync()
-      .then(async (token) => {
+    if (Platform.OS !== 'web') {
 
-        await addStoreDataAsync(storeEnum.Token, token);
+      registerForPushNotificationsAsync()
+        .then(async (token) => {
+
+          await addStoreDataAsync(storeEnum.Token, token || '');
       
-      });
+        });
+
+    }
       
 
     // This listener is fired whenever a notification is received while the app is foregrounded
