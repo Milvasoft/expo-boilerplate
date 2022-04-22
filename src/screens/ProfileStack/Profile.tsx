@@ -57,9 +57,13 @@ function Profile() {
 
           <Button onPress={goToPost} title="Go To Post" />
 
+        </View>
+        
+        <View style={styles.siginButton}>
+
           <Button onPress={goToSettings} title=" Go To Settings" />
 
-        </View>
+        </View>              
 
       </View>
     </SafeAreaView>
