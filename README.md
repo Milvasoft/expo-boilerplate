@@ -5,8 +5,7 @@
 <br>
 
 ![milva-bird](https://user-images.githubusercontent.com/13048645/141461853-dbacad32-2150-4276-a848-45b81f2eeeb2.jpg)
-
-
+	
 - [Structure](#Structure)
 	- [Assets](#Assets)
 	- [Components](#Components)
@@ -18,7 +17,9 @@
 	- [Screens](#Screens)
 	- [Utils](#Utils)
 - [Run in Dev Environment](#Run)
-
+- [Code Push](#Push)
+- [Run Expo Go](#ExpoGo)
+- [Expo Project Link](#ExpoProjectLink)
 
 <br>
 
@@ -151,3 +152,24 @@ Sample: Routes Type, Network etc.
 - Run on Android: `yarn android` (or `npm run android`).
 - Run on iOS: `yarn ios` (or `npm run ios`).
 - ✨ Don't forget to enable eslint ✨
+
+<a id="Push"></a>
+# Run in Dev Environment
+
+- expo-update documentation link : https://docs.expo.dev/workflow/publishing/
+- Run on `expo publish` 
+
+<a id="ExpoGo"></a>
+# Run Expo Go
+
+![expo-go](https://user-images.githubusercontent.com/32386753/164703014-1fe16d0d-c5e7-4be0-97fe-5f807e82f5ab.svg)
+
+<br>
+
+<a id="ExpoProjectLink"></a>
+
+# Expo Project Link
+
+```
+https://expo.dev/@alikeskin/milvasoft
+```
