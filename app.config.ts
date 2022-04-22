@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { ExpoConfig, ConfigContext } from '@expo/config';
 
 export default ({ config }: ConfigContext): ExpoConfig => ({
@@ -10,7 +9,12 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   version: '1.0.0',
   sdkVersion: '44.0.0',
   orientation: 'portrait',
-  icon: './src/assets/images/icon.png',
+  icon: './src/assets/images/icon.png',  
+  userInterfaceStyle: 'automatic',
+  jsEngine: 'hermes',
+  updates: {
+    enabled: true,    
+  },
   assetBundlePatterns: [
     './src/assets/images/*',
   ],
@@ -25,7 +29,10 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   },
   ios: {
     bundleIdentifier: 'com.milvasoft.milvasoft',
-    buildNumber: '1.0.0'
+    buildNumber: '1.0.0',
+    infoPlist: {
+      CFBundleAllowMixedLocalizations: true,
+    },
   },
   android: {
     adaptiveIcon: {
@@ -36,6 +43,5 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     versionCode: 1,
     useNextNotificationsApi: true,
   },
-  userInterfaceStyle: 'automatic'
 
 });
