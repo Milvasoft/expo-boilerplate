@@ -154,7 +154,7 @@ Sample: Routes Type, Network etc.
 - ✨ Don't forget to enable eslint ✨
 
 <a id="Push"></a>
-# Run in Dev Environment
+# Code Push
 
 - expo-update documentation link : https://docs.expo.dev/workflow/publishing/
 - Run on `expo publish` 
