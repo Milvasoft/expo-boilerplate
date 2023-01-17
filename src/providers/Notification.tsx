@@ -1,11 +1,13 @@
+/* eslint-disable react/jsx-no-useless-fragment */
+/* eslint-disable react/function-component-definition */
 /* eslint-disable @typescript-eslint/no-use-before-define */
 /* eslint-disable no-alert */
-import { addStoreDataAsync } from '@helpers/storage';
 import Constants from 'expo-constants';
 import * as Notifications from 'expo-notifications';
 import React, { useEffect } from 'react';
 import { Platform } from 'react-native';
-import { storeEnum } from '@helpers/storage/Abstract';
+import { useDispatch } from 'react-redux';
+import { SetExpoToken } from '@modules/app/redux/appSlice';
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -23,6 +25,8 @@ Notifications.setNotificationHandler({
 
 const Notification : React.FC<Props> = ({ children }) => {
 
+  const dispatch = useDispatch();
+
   // const notificationListener = useRef();
   // const responseListener = useRef();
 
@@ -35,9 +39,9 @@ const Notification : React.FC<Props> = ({ children }) => {
     if (Platform.OS !== 'web') {
 
       registerForPushNotificationsAsync()
-        .then(async (token) => {
+        .then((token) => {
 
-          await addStoreDataAsync(storeEnum.Token, token || '');
+          dispatch(SetExpoToken(token));
       
         });
 
@@ -65,7 +69,7 @@ const Notification : React.FC<Props> = ({ children }) => {
     
     // };
   
-  }, []);
+  }, [dispatch]);
 
   return (
     <>

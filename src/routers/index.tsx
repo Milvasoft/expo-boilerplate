@@ -4,7 +4,7 @@ import { CardStyleInterpolators, createStackNavigator, StackNavigationOptions } 
 import Login from '@screens/Login';
 import { useAppSelector } from '@utils/redux/store';
 import { Dimensions } from 'react-native';
-import GetLang from '@helpers/localization';
+import translate from '@helpers/localization';
 import { enableScreens } from 'react-native-screens';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Routes, { RootStackParams } from '@utils/Routes';
@@ -55,7 +55,7 @@ function RootNavigation() {
                 <Stack.Screen
                   name={Routes.Home}
                   component={BottomNavigation} 
-                  options={{ gestureEnabled: false, headerShown: false, headerTitle: GetLang('navigation.home'), }}
+                  options={{ gestureEnabled: false, headerShown: false, headerTitle: translate('navigation.home'), }}
                 />
               </>
             )

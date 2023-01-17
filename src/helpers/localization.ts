@@ -1,8 +1,9 @@
 /**
  * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
 */
-import i18n from 'i18n-js';
+import { Scope, TranslateOptions } from 'i18n-js';
+import i18n from '@providers/Localization';
 
-const GetLang = (key: i18n.Scope, props?: i18n.TranslateOptions):string => i18n.t(key, props);
+const translate = (key: Scope, props?: TranslateOptions):string => i18n.t(key, props);
 
-export default GetLang;
+export default translate;

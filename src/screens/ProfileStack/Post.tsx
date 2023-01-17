@@ -9,14 +9,15 @@ import Routes, { ProfileStackParams } from '@utils/Routes';
 function Post() {
 
   const route = useRoute<RouteProp<ProfileStackParams, Routes.Post>>();
-  const { id } = route?.params;
+  const id = route?.params?.id;
 
-  console.log(id);
 
   return (
     <View style={styles.root}>
       <Text>
-        Post
+        Post - 
+        {' '}
+        {id}
       </Text>
     </View>
   );

@@ -8,7 +8,7 @@ import Post from '@screens/ProfileStack/Post';
 import { CardStyleInterpolators, createStackNavigator, StackNavigationOptions } from '@react-navigation/stack';
 import { Dimensions } from 'react-native';
 import Routes, { ProfileStackParams } from '@utils/Routes';
-import GetLang from '@helpers/localization';
+import translate from '@helpers/localization';
 import { enableScreens } from 'react-native-screens';
 import { useTheme } from '@src/hooks';
 
@@ -36,7 +36,7 @@ function ProfileStack() {
         name={Routes.Profile}
         component={Profile}
         options={{
-          headerTitle: GetLang('navigation.profile'),
+          headerTitle: translate('navigation.profile'),
           headerShown: false,
         }}
       />
@@ -45,7 +45,7 @@ function ProfileStack() {
         name={Routes.Settings}
         component={Settings} 
         options={{
-          headerTitle: GetLang('navigation.settings'),
+          headerTitle: translate('navigation.settings'),
         }}
       />
 

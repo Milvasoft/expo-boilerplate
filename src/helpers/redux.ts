@@ -1,4 +1,4 @@
-import Store, { RootState } from '@utils/redux/store';
+import { RootState, Store } from '@utils/redux/store';
 
 export const dispatcher = (action: any) => Store.dispatch(action);
 

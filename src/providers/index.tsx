@@ -2,7 +2,6 @@
  * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
 */
 import React from 'react';
-import './Error';
 import './NetworkInfo';
 import AppLoadingProvider from './AppLoadingProvider';
 import './Localization';

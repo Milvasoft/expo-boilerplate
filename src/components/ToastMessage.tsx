@@ -1,4 +1,5 @@
-import { IToastType, ToastColorEnum } from '@src/helpers/Types/IApp';
+import { ToastColorEnum } from '@src/helpers/Types/ToastColorEnum';
+import { IToastType } from '@src/helpers/Types/IToastType';
 import React, {
   forwardRef,
   memo, 
@@ -55,7 +56,8 @@ const ToastMessage = forwardRef((props, ref) => {
   }, [animatedValue]);
 
   // Parent Component Func
-  useImperativeHandle(ref,
+  useImperativeHandle(
+    ref,
     () => ({
         
       open(param: IToastType) {
@@ -65,7 +67,8 @@ const ToastMessage = forwardRef((props, ref) => {
         showToast();
       
       }
-    }));
+    })
+  );
 
   return (
     <TouchableWithoutFeedback onPressIn={handlePressIn} onPressOut={handlePressOut}>

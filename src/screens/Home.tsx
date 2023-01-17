@@ -3,7 +3,7 @@
 */
 import React, { useCallback } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import GetLang from '@helpers/localization';
+import translate from '@helpers/localization';
 import { useFocusEffect } from '@react-navigation/native';
 import {
   Text, 
@@ -12,7 +12,7 @@ import {
   Button
 } from 'react-native';
 import { wp } from '@src/helpers/responsive';
-import { showToast } from '@src/modules/app/redux/actions';
+import { showToast } from '@src/modules/app/services/appService';
 
 function Home() {
 
@@ -39,7 +39,7 @@ function Home() {
         <Button onPress={() => showToast('ShowToast')} title=" Show Toast" />
 
         <Text style={styles.fontBlack}>
-          {GetLang('name')}
+          {translate('name')}
         </Text>
 
       </View>

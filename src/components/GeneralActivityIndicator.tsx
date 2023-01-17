@@ -6,7 +6,7 @@ import {
   StyleSheet 
 } from 'react-native';
 import { hp, wp } from '@helpers/responsive';
-import GetLang from '@helpers/localization';
+import translate from '@helpers/localization';
 import { ITheme } from '@src/assets/color/LightTheme';
 import { useTheme, useThemedStyles } from '@src/hooks';
 
@@ -19,6 +19,7 @@ function GeneralActivityIndicator({ text }: Props) {
   const theme = useTheme();
   const themedStyles = useThemedStyles<typeof styles>(styles);
 
+  // TODO Modal
   return (
     <View style={themedStyles.activityIndicator}>
       <ActivityIndicator
@@ -27,7 +28,7 @@ function GeneralActivityIndicator({ text }: Props) {
         color={theme.primary}
       />
       <Text style={themedStyles.activityIndicatorText}>
-        {text || GetLang('generalActivityIndicatorText')}
+        {text || translate('generalActivityIndicatorText')}
       </Text>
     </View>
   );

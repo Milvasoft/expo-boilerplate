@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 /**
  * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
 */

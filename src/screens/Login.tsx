@@ -2,7 +2,7 @@
  * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
 */
 import React, { useCallback } from 'react';
-import { updateAppState, showToast } from '@modules/app/redux/actions';
+import { showToast } from '@src/modules/app/services/appService';
 import { wp } from '@helpers/responsive';
 import {
   View, 
@@ -10,6 +10,8 @@ import {
   StyleSheet,
   Button 
 } from 'react-native';
+import { dispatcher } from '@helpers/redux';
+import { SetUser } from '@modules/app/redux/appSlice';
 
 export default function Login() {
 
@@ -17,7 +19,7 @@ export default function Login() {
 
     showToast('Welcome');
 
-    updateAppState({ isSignedIn: true });
+    dispatcher(SetUser({ name: 'Ali Burhan Keskin' }));
 
   }, []);
 

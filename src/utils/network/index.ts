@@ -2,9 +2,9 @@
 // import { ToastColorEnum } from '@globalTypes/IGlobal';
 import NetInfo from '@react-native-community/netinfo';
 // import GetLang from '@helpers/localization';
-import { ToastColorEnum } from '@src/helpers/Types/IApp';
-import { showToast } from '@src/modules/app/redux/actions';
-import GetLang from '@src/helpers/localization';
+import { ToastColorEnum } from "@src/helpers/Types/ToastColorEnum";
+import { showToast } from '@src/modules/app/services/appService';
+import translate from '@src/helpers/localization';
 import AxiosInstance from './AxiosInstance';
 import { 
   MethodEnum, 
@@ -61,7 +61,7 @@ export default class Network {
 
           NetInfo.fetch().then((state) => {
 
-            if (!state.isConnected)showToast(GetLang('noInternet'), ToastColorEnum.Info);
+            if (!state.isConnected)showToast(translate('noInternet'), ToastColorEnum.Info);
     
           });
          

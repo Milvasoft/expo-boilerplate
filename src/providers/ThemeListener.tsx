@@ -1,15 +1,20 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 import React, { useEffect } from 'react';
-import { updateAppState } from '@modules/app/redux/actions';
 import { Appearance } from 'react-native';
 import throttle from 'lodash.throttle';
+import { useDispatch } from 'react-redux';
+import { SetColorShceme } from '@modules/app/redux/appSlice';
 
 export default function ThemeListener() {
+
+  const dispatch = useDispatch();
+  
 
   useEffect(() => {
     
     const handleColorModeChange = async (preferences: Appearance.AppearancePreferences) => {
       
-      updateAppState({ userColorScheme: preferences?.colorScheme });
+      dispatch(SetColorShceme(preferences?.colorScheme));
     
     };
 
@@ -17,12 +22,12 @@ export default function ThemeListener() {
 
     return () => {
 
-      Appearance.removeChangeListener(handleColorModeChange);
+      // Appearance.removeChangeListener(handleColorModeChange);
     
     };
 
     
-  }, []);
+  }, [dispatch]);
 
 
   return <></>;
