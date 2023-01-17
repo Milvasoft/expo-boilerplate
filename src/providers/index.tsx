@@ -6,7 +6,6 @@ import './NetworkInfo';
 import AppLoadingProvider from './AppLoadingProvider';
 import './Localization';
 import Toast from './Toast';
-import FontProvider from './Font';
 import Notification from './Notification';
 import ThemeProvider from './ThemeProvider';
 import ThemeListener from './ThemeListener';
@@ -29,13 +28,11 @@ function CustomProvider({ children }:Props) {
 
         <Notification>
 
-          <FontProvider>
 
-            {children}
+          {children}
             
-            <ThemeListener />
+          <ThemeListener />
 
-          </FontProvider>
         </Notification>
       
       </ThemeProvider>
