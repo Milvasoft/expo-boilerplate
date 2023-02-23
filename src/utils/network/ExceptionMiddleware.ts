@@ -2,7 +2,7 @@
 import { dispatcher } from '@helpers/redux';
 import * as $AT from '@utils/redux/actionTypes';
 import { showToast } from '@src/modules/app/services/appService';
-import { ToastColorEnum } from "@src/helpers/Types/ToastColorEnum";
+import { ToastColorEnum } from '@src/helpers/Types/ToastColorEnum';
 // import { removeStoreDataAsync } from '@src/helpers/storage';
 import AxiosInstance from './AxiosInstance';
 import { IApiResult } from './Abstract';
