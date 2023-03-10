@@ -6,6 +6,25 @@
 
 ![milva-bird](https://user-images.githubusercontent.com/13048645/141461853-dbacad32-2150-4276-a848-45b81f2eeeb2.jpg)
 
+- [Boilerplate Features](#Boilerplate-Features)	
+- [Structure](#Structure)
+	- [Assets](#Assets)
+	- [Components](#Components)
+	- [Helpers](#Helpers)
+	- [Hooks](#Hooks)
+	- [Modules](#Modules)
+	- [Providers](#Providers)
+	- [Routers](#Routers)
+	- [Screens](#Screens)
+	- [Utils](#Utils)
+- [Run in Dev Environment](#Run)
+- [Code Push](#Push)
+- [Run Expo Go](#ExpoGo)
+- [Expo Project Link](#ExpoProjectLink)
+
+<br>
+
+<a id="Boilerplate-Features"></a>
 ## Boilerplate Features:
 
 * Routing
@@ -24,21 +43,6 @@
 * Splash
 * Code Push
 * Toast Message
-	
-- [Structure](#Structure)
-	- [Assets](#Assets)
-	- [Components](#Components)
-	- [Helpers](#Helpers)
-	- [Hooks](#Hooks)
-	- [Modules](#Modules)
-	- [Providers](#Providers)
-	- [Routers](#Routers)
-	- [Screens](#Screens)
-	- [Utils](#Utils)
-- [Run in Dev Environment](#Run)
-- [Code Push](#Push)
-- [Run Expo Go](#ExpoGo)
-- [Expo Project Link](#ExpoProjectLink)
 
 <br>
 
