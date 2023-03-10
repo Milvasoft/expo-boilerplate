@@ -5,6 +5,25 @@
 <br>
 
 ![milva-bird](https://user-images.githubusercontent.com/13048645/141461853-dbacad32-2150-4276-a848-45b81f2eeeb2.jpg)
+
+## Boilerplate Features:
+
+* Routing
+* Theme
+* Network
+* Local Storage
+* Redux
+* Provider example
+* Notifications
+* Dark Theme Support
+* Multilingual Support 
+* Folder Structure
+* TypeScript
+* Eslint 
+* Font
+* Splash
+* Code Push
+* Toast Message
 	
 - [Structure](#Structure)
 	- [Assets](#Assets)
