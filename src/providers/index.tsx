@@ -9,14 +9,14 @@ import Toast from './Toast';
 import Notification from './Notification';
 import ThemeProvider from './ThemeProvider';
 import ThemeListener from './ThemeListener';
-   
- type Props = {
-   children: React.ReactNode
- };
+
+type Props = {
+  children: React.ReactNode
+};
 
 /**
  * Providers for `global` transactions.
-   The `CustomProvider` is used to `monitor` and take action at every moment of the application.
+ * The `CustomProvider` is used to `monitor` and take action at every moment of the application.
  */   
 function CustomProvider({ children }:Props) {
 
@@ -40,6 +40,6 @@ function CustomProvider({ children }:Props) {
   );
 
 }
-   
+
 export default CustomProvider;
-   
+

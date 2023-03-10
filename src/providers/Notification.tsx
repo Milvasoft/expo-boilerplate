@@ -19,9 +19,9 @@ Notifications.setNotificationHandler({
 
 // TODO: https://docs.expo.io/versions/latest/sdk/notifications/
 // Register FCM and APN
- type Props = {
-   children: React.ReactNode
- };
+type Props = {
+  children: React.ReactNode
+};
 
 const Notification : React.FC<Props> = ({ children }) => {
 

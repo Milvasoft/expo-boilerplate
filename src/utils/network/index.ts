@@ -2,7 +2,7 @@
 // import { ToastColorEnum } from '@globalTypes/IGlobal';
 import NetInfo from '@react-native-community/netinfo';
 // import GetLang from '@helpers/localization';
-import { ToastColorEnum } from "@src/helpers/Types/ToastColorEnum";
+import { ToastColorEnum } from '@src/helpers/Types/ToastColorEnum';
 import { showToast } from '@src/modules/app/services/appService';
 import translate from '@src/helpers/localization';
 import AxiosInstance from './AxiosInstance';
