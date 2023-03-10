@@ -35,7 +35,7 @@
 * Provider example
 * Notifications
 * Dark Theme Support
-* Multilingual Support 
+* Multi Language Support 
 * Folder Structure
 * TypeScript
 * Eslint 
