@@ -6,31 +6,23 @@ import { useDispatch } from 'react-redux';
 import { SetColorShceme } from '@modules/app/redux/appSlice';
 
 export default function ThemeListener() {
-
   const dispatch = useDispatch();
-  
 
   useEffect(() => {
-    
-    const handleColorModeChange = async (preferences: Appearance.AppearancePreferences) => {
-      
+    const handleColorModeChange = async (
+      preferences: Appearance.AppearancePreferences
+    ) => {
       dispatch(SetColorShceme(preferences?.colorScheme));
-    
     };
 
-    Appearance.addChangeListener(throttle(handleColorModeChange, 100, { leading: false, trailing: true }));
+    Appearance.addChangeListener(
+      throttle(handleColorModeChange, 100, { leading: false, trailing: true })
+    );
 
     return () => {
-
       // Appearance.removeChangeListener(handleColorModeChange);
-    
     };
-
-    
   }, [dispatch]);
 
-
   return <></>;
-
 }
-

@@ -1,4 +1,4 @@
-const _controller = '/Account';
+const controller = '/Account';
 
-export const sigIn = `${_controller}/SignIn`;
-export const sigOut = `${_controller}/SignIn`;
+export const sigIn = `${controller}/SignIn`;
+export const sigOut = `${controller}/SignIn`;

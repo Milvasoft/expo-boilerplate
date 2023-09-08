@@ -1,6 +1,6 @@
 /**
  * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
-*/
+ */
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from '@src/screens/Home';
@@ -11,31 +11,34 @@ import ProfileStack from './ProfileStack';
 const Tab = createBottomTabNavigator();
 
 export default function TabNavigator() {
-
   const theme = useTheme();
   return (
     <Tab.Navigator
-      screenOptions={{        
+      screenOptions={{
         tabBarActiveTintColor: theme.primary,
-        tabBarStyle: { backgroundColor: '#FFF', },        
+        tabBarStyle: { backgroundColor: '#FFF' },
         headerShown: false,
       }}
     >
       <Tab.Screen
         name="Home"
         component={Home}
-        options={{ tabBarIcon: ({ color }) => (<AntDesign name="home" size={24} color={color} />) }}
+        options={{
+          tabBarIcon: ({ color }) => (
+            <AntDesign name="home" size={24} color={color} />
+          ),
+        }}
       />
 
       <Tab.Screen
         name="Profile"
         component={ProfileStack}
         options={{
-          tabBarIcon: ({ color }) => (<Ionicons name="person-outline" color={color} size={24} />) 
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="person-outline" color={color} size={24} />
+          ),
         }}
       />
-
     </Tab.Navigator>
   );
-
 }

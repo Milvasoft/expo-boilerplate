@@ -20,11 +20,10 @@ Notifications.setNotificationHandler({
 // TODO: https://docs.expo.io/versions/latest/sdk/notifications/
 // Register FCM and APN
 type Props = {
-  children: React.ReactNode
+  children: React.ReactNode;
 };
 
-const Notification : React.FC<Props> = ({ children }) => {
-
+const Notification: React.FC<Props> = ({ children }) => {
   const dispatch = useDispatch();
 
   // const notificationListener = useRef();
@@ -35,18 +34,11 @@ const Notification : React.FC<Props> = ({ children }) => {
   // };
 
   useEffect(() => {
-
     if (Platform.OS !== 'web') {
-
-      registerForPushNotificationsAsync()
-        .then((token) => {
-
-          dispatch(SetExpoToken(token));
-      
-        });
-
+      registerForPushNotificationsAsync().then((token) => {
+        dispatch(SetExpoToken(token));
+      });
     }
-      
 
     // This listener is fired whenever a notification is received while the app is foregrounded
     // notificationListener.current = Notifications
@@ -54,10 +46,10 @@ const Notification : React.FC<Props> = ({ children }) => {
     //     console.log(_notification);
     //   });
 
-    // This listener is fired whenever a user taps on or interacts with a notification 
+    // This listener is fired whenever a user taps on or interacts with a notification
     // (works when app is foregrounded, backgrounded, or killed)
 
-    // responseListener.current = 
+    // responseListener.current =
     // Notifications.addNotificationResponseReceivedListener((response) => {
     //   console.log(response);
     // });
@@ -66,40 +58,29 @@ const Notification : React.FC<Props> = ({ children }) => {
 
     //   Notifications.removeNotificationSubscription(notificationListener.current);
     //   Notifications.removeNotificationSubscription(responseListener.current);
-    
+
     // };
-  
   }, [dispatch]);
 
-  return (
-    <>
-      {children}
-    </>
-  );
-
+  return <>{children}</>;
 };
 
 export default Notification;
 
 async function registerForPushNotificationsAsync() {
-
   let token;
-  
-  if (Constants.isDevice) {
 
-    const { status: existingStatus } = await Notifications.getPermissionsAsync();
+  if (Constants.isDevice) {
+    const { status: existingStatus } =
+      await Notifications.getPermissionsAsync();
 
     if (existingStatus !== 'granted' || Platform.OS === 'android') {
-
       await Notifications.requestPermissionsAsync();
-    
     }
 
     token = (await Notifications.getExpoPushTokenAsync()).data;
-  
-  } 
+  }
 
   // eslint-disable-next-line consistent-return
   return token;
-
 }

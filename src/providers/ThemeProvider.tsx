@@ -6,20 +6,19 @@ import { useAppSelector } from '@utils/redux/store';
 export const ThemeContext = React.createContext<ITheme>(LightTheme);
 
 type Props = {
-  children: React.ReactNode
+  children: React.ReactNode;
 };
 
-
-function ThemeProvider({ children }:Props) {
-
+function ThemeProvider({ children }: Props) {
   const userColorScheme = useAppSelector((s) => s.AppReducer.userColorScheme);
 
   return (
-    <ThemeContext.Provider value={userColorScheme === 'dark' ? DarkTheme : LightTheme}>
+    <ThemeContext.Provider
+      value={userColorScheme === 'dark' ? DarkTheme : LightTheme}
+    >
       {children}
     </ThemeContext.Provider>
   );
-
 }
 
 export default ThemeProvider;
