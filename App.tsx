@@ -9,31 +9,26 @@ import * as ScreenOrientation from 'expo-screen-orientation';
 import { Platform } from 'react-native';
 import RootNavigation from './src/routers';
 import CustomProvider from './src/providers';
-import Store from './src/utils/redux/store';
-  
+import store from './src/utils/redux/store';
+
 enableScreens();
- 
+
 function App() {
-
   useEffect(() => {
-
     if (Platform.OS !== 'web') {
-
-      ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT_UP);
-
+      ScreenOrientation.lockAsync(
+        ScreenOrientation.OrientationLock.PORTRAIT_UP
+      );
     }
-
   }, []);
 
   return (
-    <Provider store={Store}>
+    <Provider store={store}>
       <CustomProvider>
         <RootNavigation />
       </CustomProvider>
     </Provider>
   );
-
 }
 
 export default App;
-

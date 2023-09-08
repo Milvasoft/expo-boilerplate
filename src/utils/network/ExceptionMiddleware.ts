@@ -24,10 +24,10 @@ const ExceptionMiddleware = async ({ data, errorMessaging }: IApiResult) => {
 
       // await removeStoreDataAsync();
 
-      dispatcher({
-        type: $AT.APP_STATE_CHANGE,
-        payload: { isSignedIn: false, } 
-      });      
+      // dispatcher({
+      //   type: $AT.APP_STATE_CHANGE,
+      //   payload: { isSignedIn: false, } 
+      // });      
 
     }
 
