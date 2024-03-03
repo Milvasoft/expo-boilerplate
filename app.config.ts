@@ -7,7 +7,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   slug: 'milvasoft',
   scheme: 'milvasoft',
   version: '1.0.0',
-  sdkVersion: '47.0.0',
+  sdkVersion: '50.0.0',
   orientation: 'portrait',
   icon: './src/assets/images/icon.png',
   userInterfaceStyle: 'automatic',
@@ -41,7 +41,6 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     },
     package: 'com.milvasoft.milvasoft',
     versionCode: 1,
-    useNextNotificationsApi: true
   }
 
 })
