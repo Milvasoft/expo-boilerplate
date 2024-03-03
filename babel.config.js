@@ -1,14 +1,13 @@
 module.exports = function (api) {
-
-  api.cache(true);
+  api.cache(true)
   return {
     presets: ['babel-preset-expo', '@babel/preset-typescript', 'module:metro-react-native-babel-preset'],
     plugins: [
-      'react-native-reanimated/plugin',      
+      'react-native-reanimated/plugin',
       [
         'module-resolver',
-        {         
-          extensions: ['.js', '.jsx', '.ts', '.tsx'], 
+        {
+          extensions: ['.js', '.jsx', '.ts', '.tsx'],
           root: ['./'],
           alias: {
             '@components': './src/components',
@@ -24,12 +23,11 @@ module.exports = function (api) {
             '@providers': './src/providers',
             '@utils': './src/utils',
             '@modules': './src/modules',
-            '@src': './src',
+            '@src': './src'
           }
-        },
-      ],      
-    
-    ],
-  };
+        }
+      ]
 
-};
+    ]
+  }
+}
