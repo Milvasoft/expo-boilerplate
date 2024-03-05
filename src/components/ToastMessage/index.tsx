@@ -6,21 +6,18 @@ import React, {
   useRef,
   useState,
 } from "react";
-import {
-  StyleSheet,
-  Text,
-  Animated,
-  TouchableWithoutFeedback,
-} from "react-native";
-import { ToastColorEnum } from "@src/helpers/Types/ToastColorEnum";
+import { Text, Animated, TouchableWithoutFeedback } from "react-native";
 import { IToastType } from "@src/helpers/Types/IToastType";
+import { styles } from "./style";
+import { ToastColorEnum } from "@src/helpers/Types/ToastColorEnum";
 
 let stop = false;
 
-const toastHeight = 100;
+export const toastHeight = 100;
 
 const ToastMessage = forwardRef((props, ref) => {
   const animatedValue = useRef(new Animated.Value(-toastHeight)).current;
+
   const [state, setState] = useState<IToastType>({
     type: ToastColorEnum.Info,
     msg: "",
@@ -95,25 +92,3 @@ const ToastMessage = forwardRef((props, ref) => {
 });
 
 export default memo(ToastMessage);
-
-const styles = StyleSheet.create({
-  root: {
-    height: toastHeight,
-    position: "absolute",
-    left: 0,
-    top: 0,
-    right: 0,
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    zIndex: 99999,
-    paddingLeft: 30,
-    paddingRight: 30,
-    paddingTop: 35,
-  },
-  text: {
-    fontWeight: "700",
-    color: "white",
-    fontSize: 16,
-  },
-});
