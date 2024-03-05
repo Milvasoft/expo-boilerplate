@@ -1,3 +1,6 @@
+/**
+ * Represents the typography styles for the application.
+ */
 export default {
     XSMALL: 10,
     SMALL: 13,

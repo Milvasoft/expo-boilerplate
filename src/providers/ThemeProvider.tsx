@@ -9,6 +9,13 @@ type Props = {
   children: React.ReactNode;
 };
 
+/**
+ * Provides the theme for the application based on the user's color scheme.
+ *
+ * @param {Props} props - The component props.
+ * @param {ReactNode} props.children - The child components to be wrapped by the theme provider.
+ * @returns {JSX.Element} The JSX element representing the theme provider.
+ */
 function ThemeProvider({ children }: Props) {
   const userColorScheme = useAppSelector((s) => s?.AppReducer?.userColorScheme);
   const selectedTheme = userColorScheme === "dark" ? DarkTheme : LightTheme;

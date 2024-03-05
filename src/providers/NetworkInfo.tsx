@@ -1,8 +1,8 @@
-import NetInfo from '@react-native-community/netinfo';
+import NetInfo from "@react-native-community/netinfo";
 
 const unsubscribe = NetInfo.addEventListener((state) => {
   if (!state.isConnected) {
-    console.log('No Internet');
+    console.log("No Internet");
   }
 });
 

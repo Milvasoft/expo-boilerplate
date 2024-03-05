@@ -7,6 +7,25 @@ import * as Localization from "expo-localization";
 import { I18n } from "i18n-js";
 import { TrResource, EnResource } from "@src/localization/index";
 
+/**
+ * The internationalization object used for localization.
+ *
+ * @remarks
+ * This object is responsible for managing the localization resources and settings.
+ *
+ * @example
+ * const i18n = new I18n(
+ *   {
+ *     en: EnResource,
+ *     tr: TrResource,
+ *   },
+ *   {
+ *     locale: Localization.locale,
+ *     enableFallback: true,
+ *     defaultLocale: "en",
+ *   }
+ * );
+ */
 const i18n = new I18n(
   {
     en: EnResource,
@@ -20,12 +39,6 @@ const i18n = new I18n(
 );
 
 export default i18n;
-
-// Example
-// import i18n from 'i18n-js';
-// i18n.t('login.email')
-
-// Moment.js Settings
 
 moment.locale(Localization.locale);
 

@@ -24,6 +24,9 @@ const Bold = Montserrat_700Bold;
 const ExtraBold = Montserrat_800ExtraBold;
 const Black = Montserrat_900Black;
 
+/**
+ * Represents the Montserrat font object.
+ */
 const MontserratFont = {
   Thin,
   ExtraLight,

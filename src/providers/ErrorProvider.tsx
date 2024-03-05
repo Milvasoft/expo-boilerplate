@@ -5,6 +5,10 @@ type ErrorBoundaryProps = {
   children: React.ReactElement;
 };
 
+/**
+ * ErrorBoundary is a React component that catches and handles errors in its child components.
+ * It renders an error page when an error occurs, otherwise it renders its children.
+ */
 export default class ErrorBoundary extends React.Component<ErrorBoundaryProps> {
   state = {
     hasError: false,

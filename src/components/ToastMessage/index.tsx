@@ -15,6 +15,15 @@ let stop = false;
 
 export const toastHeight = 100;
 
+/**
+ * A customizable toast message component.
+ *
+ * @component
+ * @example
+ * ```tsx
+ * <ToastMessage ref={toastRef} />
+ * ```
+ */
 const ToastMessage = forwardRef((props, ref) => {
   const animatedValue = useRef(new Animated.Value(-toastHeight)).current;
 
@@ -58,6 +67,14 @@ const ToastMessage = forwardRef((props, ref) => {
 
   // Parent Component Func
   useImperativeHandle(ref, () => ({
+    /**
+     * Opens the toast message with the specified parameters.
+     *
+     * @param {IToastType} param - The toast message parameters.
+     * @param {string} param.msg - The message to be displayed.
+     * @param {number} param.duration - The duration of the toast message in milliseconds.
+     * @param {ToastColorEnum} param.type - The type of the toast message (e.g., "Info", "Success", "Error").
+     */
     open(param: IToastType) {
       setState({
         msg: param?.msg || "",

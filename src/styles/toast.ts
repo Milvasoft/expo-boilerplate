@@ -1,3 +1,6 @@
+/**
+ * Defines the colors for different types of toasts.
+ */
 const ToastColor = {
   error: '#F44336',
   warning: '#FF9800',
