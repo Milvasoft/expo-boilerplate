@@ -4,7 +4,6 @@
 import React, { useCallback } from "react";
 import { Text, View, StyleSheet, Button } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useAppSelector } from "@utils/redux/store";
 import { navigate } from "@utils/Router";
 import Routes, { ProfileStackParams } from "@src/utils/Routes";
 import { useNavigation } from "@react-navigation/native";

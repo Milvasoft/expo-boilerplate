@@ -1,11 +1,11 @@
 /**
  * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
  */
-import moment from 'moment';
-import 'moment/min/locales';
-import * as Localization from 'expo-localization';
-import { I18n } from 'i18n-js';
-import { TrResource, EnResource } from '@assets/localization/index';
+import moment from "moment";
+import "moment/min/locales";
+import * as Localization from "expo-localization";
+import { I18n } from "i18n-js";
+import { TrResource, EnResource } from "@src/localization/index";
 
 const i18n = new I18n(
   {
@@ -15,7 +15,7 @@ const i18n = new I18n(
   {
     locale: Localization.locale,
     enableFallback: true,
-    defaultLocale: 'en',
+    defaultLocale: "en",
   }
 );
 

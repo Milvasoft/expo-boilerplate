@@ -1,24 +1,20 @@
-import React from 'react'
-import { ErrorBoundaryPage } from '@components'
+import React from "react";
+import ErrorBoundaryPage from "@screens/ErrorBoundaryPage";
 
 type ErrorBoundaryProps = {
   children: React.ReactElement;
 };
 
-/**
- * Since hooks doesn't support componentDidCatch, we need to use class component
- * https://legacy.reactjs.org/docs/hooks-faq.html#do-hooks-cover-all-use-cases-for-classes
- */
 export default class ErrorBoundary extends React.Component<ErrorBoundaryProps> {
   state = {
-    hasError: false
+    hasError: false,
+  };
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
   }
 
-  static getDerivedStateFromError () {
-    return { hasError: true }
-  }
-
-  componentDidCatch (error: any, errorInfo: any): void {
+  componentDidCatch(error: any, errorInfo: any): void {
     /**
      * We can capture the error with any error tracking tool
      * Like:
@@ -28,13 +24,13 @@ export default class ErrorBoundary extends React.Component<ErrorBoundaryProps> {
      *  Bugsnag.notify(error)
      *  rollbar.error(error)
      */
-    console.log('error', error, errorInfo)
+    console.log("error", error, errorInfo);
   }
 
-  render (): React.ReactElement {
+  render(): React.ReactElement {
     if (this.state.hasError) {
-      return <ErrorBoundaryPage />
+      return <ErrorBoundaryPage />;
     }
-    return this.props.children
+    return this.props.children;
   }
 }

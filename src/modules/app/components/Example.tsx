@@ -1,7 +1,7 @@
-import React from 'react';
-import { ITheme } from '@src/assets/color/LightTheme';
-import { useThemedStyles } from '@src/hooks';
-import { View, Text, StyleSheet } from 'react-native';
+import React from "react";
+import { View, Text, StyleSheet } from "react-native";
+import { useThemedStyles } from "@src/hooks";
+import { ITheme } from "@styles/theme";
 
 const Example = () => {
   const themedStyles = useThemedStyles<typeof styles>(styles);

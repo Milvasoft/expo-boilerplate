@@ -3,8 +3,8 @@
  */
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import translate from "@helpers/localization";
 import { Text, View, StyleSheet, Button } from "react-native";
+import translate from "@helpers/localization";
 import { showToast } from "@src/modules/app/services/appService";
 
 function Home() {

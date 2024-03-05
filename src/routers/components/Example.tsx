@@ -1,14 +1,9 @@
-import React, { memo } from 'react';
-import { ITheme } from '@src/assets/color/LightTheme';
-import { useThemedStyles } from '@src/hooks';
-import { 
-  View,
-  Text,
-  StyleSheet
-} from 'react-native';
+import React, { memo } from "react";
+import { useThemedStyles } from "@src/hooks";
+import { View, Text, StyleSheet } from "react-native";
+import { ITheme } from "@styles/theme";
 
-export default memo(function Example() {
-
+function Example() {
   const themedStyles = useThemedStyles<typeof styles>(styles);
 
   return (
@@ -16,15 +11,15 @@ export default memo(function Example() {
       <Text style={themedStyles.text}>example</Text>
     </View>
   );
+}
 
-});
+const styles = (theme: ITheme) =>
+  StyleSheet.create({
+    root: {},
 
-const styles = (theme: ITheme) => StyleSheet.create({
-  root: {
+    text: {
+      color: theme.secondary,
+    },
+  });
 
-  },
-
-  text: {
-    color: theme.secondary,
-  }
-});
+export default memo(Example);

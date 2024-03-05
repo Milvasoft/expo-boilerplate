@@ -2,7 +2,7 @@ import React from "react";
 import { Text, View, ActivityIndicator, StyleSheet } from "react-native";
 import { useTheme, useThemedStyles } from "@src/hooks";
 import translate from "@helpers/localization";
-import { ITheme } from "@src/assets/color/LightTheme";
+import type { ITheme } from "@styles/theme";
 
 type Props = {
   text?: string;

@@ -1,9 +1,8 @@
-/* eslint-disable react/jsx-no-useless-fragment */
-import React, { useEffect } from 'react';
-import { Appearance } from 'react-native';
-import throttle from 'lodash.throttle';
-import { useDispatch } from 'react-redux';
-import { SetColorShceme } from '@modules/app/redux/appSlice';
+import React, { useEffect } from "react";
+import { Appearance } from "react-native";
+import throttle from "lodash.throttle";
+import { useDispatch } from "react-redux";
+import { SetColorShceme } from "@modules/app/redux/appSlice";
 
 export default function ThemeListener() {
   const dispatch = useDispatch();
@@ -19,9 +18,7 @@ export default function ThemeListener() {
       throttle(handleColorModeChange, 100, { leading: false, trailing: true })
     );
 
-    return () => {
-      // Appearance.removeChangeListener(handleColorModeChange);
-    };
+    return () => {};
   }, [dispatch]);
 
   return <></>;
