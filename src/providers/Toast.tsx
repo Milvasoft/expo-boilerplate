@@ -1,6 +1,6 @@
 import React from "react";
 import { ToastMessage } from "@src/components";
-import { IToastType } from "@src/helpers/Types/IToastType";
+import { IToastType } from "@components/ToastMessage/IToastType";
 
 let useToastRef: any;
 

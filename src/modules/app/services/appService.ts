@@ -5,7 +5,7 @@ import axiosInstance from '@src/utils/network/AxiosInstance';
 import { toastActions } from '@src/providers/Toast';
 import { ClearUser } from '../redux/appSlice';
 import { ILoginDTO } from '../types/ILoginDTO';
-import { ToastColorEnum } from '../../../helpers/Types/ToastColorEnum';
+import { ToastColorEnum } from '../../../components/ToastMessage/ToastColorEnum';
 
 export async function signIn(loginDto: ILoginDTO) {
   console.log(loginDto);

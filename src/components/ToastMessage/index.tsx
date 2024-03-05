@@ -7,9 +7,9 @@ import React, {
   useState,
 } from "react";
 import { Text, Animated, TouchableWithoutFeedback } from "react-native";
-import { IToastType } from "@src/helpers/Types/IToastType";
+import { IToastType } from "@components/ToastMessage/IToastType";
 import { styles } from "./style";
-import { ToastColorEnum } from "@src/helpers/Types/ToastColorEnum";
+import { ToastColorEnum } from "@components/ToastMessage/ToastColorEnum";
 
 let stop = false;
 

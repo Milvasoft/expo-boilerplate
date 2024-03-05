@@ -1,7 +1,7 @@
 /* eslint-disable no-promise-executor-return */
 /* eslint-disable consistent-return */
 import { showToast } from '@src/modules/app/services/appService';
-import { ToastColorEnum } from '@src/helpers/Types/ToastColorEnum';
+import { ToastColorEnum } from '@components/ToastMessage/ToastColorEnum';
 // import { removeStoreDataAsync } from '@src/helpers/storage';
 import AxiosInstance from './AxiosInstance';
 import { IApiResult } from './Abstract';
