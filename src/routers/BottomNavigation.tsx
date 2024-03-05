@@ -1,12 +1,12 @@
 /**
  * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
  */
-import React from 'react';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Home from '@src/screens/Home';
-import { AntDesign, Ionicons } from '@expo/vector-icons';
-import { useTheme } from '@src/hooks';
-import ProfileStack from './ProfileStack';
+import React from "react";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import Home from "@src/screens/Home";
+import { AntDesign, Ionicons } from "@expo/vector-icons";
+import { useTheme } from "@src/hooks";
+import ProfileStack from "./ProfileStack";
 
 const Tab = createBottomTabNavigator();
 
@@ -16,7 +16,7 @@ export default function TabNavigator() {
     <Tab.Navigator
       screenOptions={{
         tabBarActiveTintColor: theme.primary,
-        tabBarStyle: { backgroundColor: '#FFF' },
+        tabBarStyle: { backgroundColor: "#FFF" },
         headerShown: false,
       }}
     >

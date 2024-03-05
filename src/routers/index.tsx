@@ -1,82 +1,65 @@
-import * as React from 'react';
-import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
-import { CardStyleInterpolators, createStackNavigator, StackNavigationOptions } from '@react-navigation/stack';
-import Login from '@screens/Login';
-import { useAppSelector } from '@utils/redux/store';
-import { Dimensions } from 'react-native';
-import translate from '@helpers/localization';
-import { enableScreens } from 'react-native-screens';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import Routes, { RootStackParams } from '@utils/Routes';
-import { useTheme } from '@src/hooks';
-import { navigationRef } from './Router';
-import BottomNavigation from './BottomNavigation';
+import * as React from "react";
+import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import { useAppSelector } from "@utils/redux/store";
+import translate from "@helpers/localization";
+import { enableScreens } from "react-native-screens";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import { useTheme } from "@src/hooks";
+import { navigationRef } from "../utils/Router";
+import Login from "@screens/Login";
+import BottomNavigation from "./BottomNavigation";
+import { ScreenOptions } from "@utils/ScreenOptions";
+import Routes, { RootStackParams } from "@utils/Routes";
 
 enableScreens();
 
 const Stack = createStackNavigator<RootStackParams>();
 
-const screenOptions: StackNavigationOptions = {
-  gestureEnabled: true,
-  gestureResponseDistance: Dimensions.get('screen').width,
-  headerShown: true,
-  cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
-  headerStyle: { backgroundColor: '#FFF', },
-  headerTitleStyle: { fontFamily: 'Bold', },  
-  headerTitleAlign: 'center'     
-};
-
 const mainTheme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    background: '#FFF',
+    background: "#FFF",
   },
 };
 
 function RootNavigation() {
-
   const isSignedIn = useAppSelector((s) => s.AppReducer?.isSignedIn);
   const theme = useTheme();
 
   return (
     <SafeAreaProvider>
       <NavigationContainer ref={navigationRef} theme={mainTheme}>
-
         <Stack.Navigator
-          initialRouteName={isSignedIn ? Routes.Home : Routes.Login} 
-          screenOptions={{ ...screenOptions, headerTintColor: theme.primary }}
+          initialRouteName={isSignedIn ? Routes.Home : Routes.Login}
+          screenOptions={{ ...ScreenOptions, headerTintColor: theme.primary }}
         >
-
-          {isSignedIn
-            ? (
-              <>
-
-                <Stack.Screen
-                  name={Routes.Home}
-                  component={BottomNavigation} 
-                  options={{ gestureEnabled: false, headerShown: false, headerTitle: translate('navigation.home'), }}
-                />
-              </>
-            )
-            : (
-              <>
-
-                <Stack.Screen
-                  name={Routes.Login} 
-                  component={Login} 
-                  options={{ headerShown: false }} 
-                />
-
-              </>
-            )}
-
+          {isSignedIn ? (
+            <>
+              <Stack.Screen
+                name={Routes.Home}
+                component={BottomNavigation}
+                options={{
+                  gestureEnabled: false,
+                  headerShown: false,
+                  headerTitle: translate("navigation.home"),
+                }}
+              />
+            </>
+          ) : (
+            <>
+              <Stack.Screen
+                name={Routes.Login}
+                component={Login}
+                options={{ headerShown: false }}
+              />
+            </>
+          )}
         </Stack.Navigator>
-
       </NavigationContainer>
     </SafeAreaProvider>
   );
-
 }
 
 export default React.memo(RootNavigation);
@@ -96,7 +79,7 @@ export default React.memo(RootNavigation);
 //   screens: {
 //     Home: {
 //       screens: {
-        
+
 //         Profile: {
 
 //           screens: {
@@ -106,7 +89,7 @@ export default React.memo(RootNavigation);
 //         }
 
 //       },
-//     },   
+//     },
 //   },
 // };
 
