@@ -7,9 +7,9 @@ import "react-native-gesture-handler";
 import { Provider } from "react-redux";
 import * as ScreenOrientation from "expo-screen-orientation";
 import { Platform } from "react-native";
+import Store from "./src/store";
 import RootNavigation from "./src/routers";
 import CustomProvider from "./src/providers";
-import store from "./src/utils/redux/store";
 import ErrorBounday from "./src/providers/ErrorProvider";
 
 enableScreens();
@@ -26,7 +26,7 @@ function App() {
 
   return (
     <ErrorBounday>
-      <Provider store={store}>
+      <Provider store={Store}>
         <CustomProvider>
           <RootNavigation />
         </CustomProvider>

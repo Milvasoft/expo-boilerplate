@@ -4,7 +4,7 @@ export interface IAppReducer {
   isSignedIn?: boolean,
   userColorScheme?: ColorSchemeName,
   user?: any,
-  token?: string,
+  authToken?: string,
   expoToken?: string,
 }
 

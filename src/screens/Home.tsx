@@ -5,7 +5,7 @@ import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Text, View, StyleSheet, Button } from "react-native";
 import translate from "@helpers/localization";
-import { showToast } from "@src/modules/app/services/appService";
+import { showToast } from "@helpers/toast/showToast";
 
 function Home() {
   return (

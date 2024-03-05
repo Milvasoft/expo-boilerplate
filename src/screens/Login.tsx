@@ -4,7 +4,7 @@
 import React, { useCallback } from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
 import { useDispatch } from "react-redux";
-import { showToast } from "@src/modules/app/services/appService";
+import { showToast } from "@helpers/toast/showToast";
 import { SetUser } from "@modules/app/redux/appSlice";
 
 export default function Login() {
