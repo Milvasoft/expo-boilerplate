@@ -1,4 +1,4 @@
-import { IAppReducer } from '@helpers/Types/IApp';
+import { IAppReducer } from '@modules/app/redux/IAppReducer';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 
