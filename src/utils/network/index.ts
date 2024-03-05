@@ -4,7 +4,7 @@ import NetInfo from '@react-native-community/netinfo';
 // import GetLang from '@helpers/localization';
 import { ToastColorEnum } from '@components/ToastMessage/ToastColorEnum';
 import { showToast } from '@src/modules/app/services/appService';
-import translate from '@src/helpers/localization';
+import translate from '@helpers/localization';
 import AxiosInstance from './AxiosInstance';
 import { 
   MethodEnum, 

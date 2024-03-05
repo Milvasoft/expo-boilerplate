@@ -1,6 +1,6 @@
 import { dispatcher } from '@helpers/redux';
 import { removeStoreDataAsync } from '@src/helpers/storage';
-import { storeEnum } from '@src/helpers/storage/Abstract';
+import { StoreEnum } from "@helpers/storage/storeEnum";
 import axiosInstance from '@src/utils/network/AxiosInstance';
 import { toastActions } from '@src/providers/Toast';
 import { ClearUser } from '../redux/appSlice';
@@ -14,7 +14,7 @@ export async function signIn(loginDto: ILoginDTO) {
 }
 
 export async function clearUser() {
-  await removeStoreDataAsync(storeEnum.Token);
+  await removeStoreDataAsync(StoreEnum.Token);
 
   axiosInstance.defaults.headers.common.Authorization = '';
 
