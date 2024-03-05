@@ -1,14 +1,14 @@
 /**
  * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
  */
-import React, { useCallback } from 'react';
-import { Text, View, StyleSheet, Button } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { useAppSelector } from '@utils/redux/store';
-import { navigate } from '@src/routers/Router';
-import Routes, { ProfileStackParams } from '@src/utils/Routes';
-import { useNavigation } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
+import React, { useCallback } from "react";
+import { Text, View, StyleSheet, Button } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { useAppSelector } from "@utils/redux/store";
+import { navigate } from "@utils/Router";
+import Routes, { ProfileStackParams } from "@src/utils/Routes";
+import { useNavigation } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
 
 function Profile() {
   const navigation = useNavigation<StackNavigationProp<ProfileStackParams>>();
@@ -16,7 +16,7 @@ function Profile() {
   const goToSettings = useCallback(() => navigate(Routes.Settings), []);
 
   const goToPost = useCallback(
-    () => navigation.navigate(Routes.Post, { id: '1', username: 'Milvasoft' }),
+    () => navigation.navigate(Routes.Post, { id: "1", username: "Milvasoft" }),
     [navigation]
   );
 
@@ -44,24 +44,24 @@ const styles = StyleSheet.create({
 
   root: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
 
   container: {
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     marginTop: 30,
   },
 
   fontBlack: {
-    fontFamily: 'Black',
+    fontFamily: "Black",
   },
 
   counter: {
     marginTop: 30,
     fontSize: 30,
-    color: 'red',
+    color: "red",
   },
 
   button: {
