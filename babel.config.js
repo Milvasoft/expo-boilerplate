@@ -1,33 +1,33 @@
 module.exports = function (api) {
-  api.cache(true)
+  api.cache(true);
   return {
-    presets: ['babel-preset-expo', '@babel/preset-typescript', 'module:metro-react-native-babel-preset'],
+    presets: [
+      "babel-preset-expo",
+      "@babel/preset-typescript",
+      "module:metro-react-native-babel-preset",
+    ],
     plugins: [
-      'react-native-reanimated/plugin',
+      "react-native-reanimated/plugin",
       [
-        'module-resolver',
+        "module-resolver",
         {
-          extensions: ['.js', '.jsx', '.ts', '.tsx'],
-          root: ['./'],
+          extensions: [".js", ".jsx", ".ts", ".tsx"],
+          root: ["./"],
           alias: {
-            '@components': './src/components',
-            '@routers': './src/routers',
-            '@screens': './src/screens',
-            '@api': './src/api',
-            '@reducers': './src/reducers',
-            '@actions': './src/actions',
-            '@helpers': './src/helpers',
-            '@assets': './src/assets',
-            '@constants': './src/assets/constants',
-            '@icons': './src/assets/icons',
-            '@providers': './src/providers',
-            '@utils': './src/utils',
-            '@modules': './src/modules',
-            '@src': './src'
-          }
-        }
-      ]
-
-    ]
-  }
-}
+            "@components": "./src/components",
+            "@modules": "./src/modules",
+            "@routers": "./src/routers",
+            "@screens": "./src/screens",
+            "@helpers": "./src/helpers",
+            "@assets": "./src/assets",
+            "@icons": "./src/assets/icons",
+            "@providers": "./src/providers",
+            "@utils": "./src/utils",
+            "@src": "./src",
+            "@styles": "./src/styles",
+          },
+        },
+      ],
+    ],
+  };
+};
