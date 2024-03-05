@@ -1,4 +1,4 @@
-import { dispatcher } from '@helpers/redux';
+import Store from '@store/index';
 import { removeStoreDataAsync } from '@src/helpers/storage';
 import { StoreEnum } from "@helpers/storage/storeEnum";
 import axiosInstance from '@src/utils/network/AxiosInstance';
@@ -10,7 +10,7 @@ import { ToastColorEnum } from '../../../components/ToastMessage/ToastColorEnum'
 export async function signIn(loginDto: ILoginDTO) {
   console.log(loginDto);
 
-  dispatcher(UpdateAppState({ isSignedIn: true }));
+  // Store.dispatch();
 }
 
 export async function clearUser() {
@@ -18,7 +18,7 @@ export async function clearUser() {
 
   axiosInstance.defaults.headers.common.Authorization = '';
 
-  dispatcher(ClearUser());
+  Store.dispatch(ClearUser());
 }
 
 export function showToast(msg: string, type?: ToastColorEnum, duration?: number) {

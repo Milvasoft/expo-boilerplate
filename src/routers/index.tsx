@@ -1,7 +1,7 @@
 import * as React from "react";
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { useAppSelector } from "@utils/redux/store";
+import { useAppSelector } from "@src/store";
 import translate from "@helpers/localization";
 import { enableScreens } from "react-native-screens";
 import { SafeAreaProvider } from "react-native-safe-area-context";

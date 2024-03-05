@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import axios from 'axios';
-import { getReduxStore } from '../redux/store';
+import { getReduxStore } from '../../store';
 
 const options = {
   baseURL: '',

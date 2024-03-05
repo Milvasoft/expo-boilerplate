@@ -1,5 +1,5 @@
 import React from "react";
-import { useAppSelector } from "@utils/redux/store";
+import { useAppSelector } from "@src/store";
 import { DarkTheme, LightTheme } from "@styles/theme";
 import type { ITheme } from "@styles/theme";
 

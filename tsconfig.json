@@ -27,6 +27,7 @@
       "@routers/*": ["./src/routers/*"],
       "@providers/*": ["./src/providers/*"],
       "@screens/*": ["./src/screens/*"],
+      "@store/*": ["./src/store/*"],
       "@styles/*": ["./src/styles/*"],
       "@utils/*": ["./src/utils/*"],
       "@src/*": ["./src/*"],
