@@ -6,9 +6,9 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { enableScreens } from "react-native-screens";
 import { useTheme } from "@src/hooks";
 import Routes, { ProfileStackParams } from "@utils/Routes";
-import Profile from "@screens/ProfileStack/Profile";
-import Settings from "@screens/ProfileStack/Settings";
-import Post from "@screens/ProfileStack/Post";
+import Profile from "@modules/profile/screens/Profile";
+import Settings from "@modules/profile/screens/Settings";
+import Post from "@modules/profile/screens/Post";
 import translate from "@helpers/localization";
 import { ScreenOptions } from "@utils/ScreenOptions";
 

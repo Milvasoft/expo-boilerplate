@@ -1,5 +1,5 @@
 import React from "react";
-import ErrorBoundaryPage from "@screens/ErrorBoundaryPage";
+import ErrorBoundaryPage from "@modules/app/screens/ErrorBoundaryPage";
 
 type ErrorBoundaryProps = {
   children: any;

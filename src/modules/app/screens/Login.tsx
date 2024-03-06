@@ -19,7 +19,9 @@ export default function Login() {
   return (
     <View style={styles.root}>
       <Text style={styles.welcome}>Welcome !</Text>
-      <Button onPress={goHomePage} title="Login" />
+      <View style={styles.buttonStyle}>
+        <Button onPress={goHomePage} title="Login" />
+      </View>
     </View>
   );
 }
@@ -33,11 +35,10 @@ const styles = StyleSheet.create({
 
   welcome: {
     fontFamily: "Bold",
-    fontSize: 6,
+    fontSize: 25,
   },
   buttonStyle: {
-    width: 30,
-    marginTop: 50,
+    marginTop: 20,
   },
   labelStyle: {
     fontSize: 3,

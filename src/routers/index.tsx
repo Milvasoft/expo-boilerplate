@@ -7,7 +7,7 @@ import { enableScreens } from "react-native-screens";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { useTheme } from "@src/hooks";
 import { navigationRef } from "../helpers/router";
-import Login from "@screens/Login";
+import Login from "@modules/app/screens/Login";
 import BottomNavigation from "./BottomNavigation";
 import { ScreenOptions } from "@utils/ScreenOptions";
 import Routes, { RootStackParams } from "@utils/Routes";
