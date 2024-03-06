@@ -1,4 +1,4 @@
 export interface ErrorComponentProps{
-    errorMessage: string;
-    onRetry: () => void;
+    errorMessage?: string;
+    onRetry?: () => void;
 }

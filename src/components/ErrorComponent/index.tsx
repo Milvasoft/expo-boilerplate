@@ -6,10 +6,11 @@ import translate from "@helpers/localization";
 import type { ErrorComponentProps } from "./type";
 import { styles } from "./style";
 
+const testID = "errorcomponent";
 const ErrorComponent = ({ errorMessage, onRetry }: ErrorComponentProps) => {
   const theme = useTheme();
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID={testID + "-" + "container"}>
       <MaterialIcons name="error" size={50} color={theme.primary} />
 
       <Text style={styles.message}>{errorMessage}</Text>

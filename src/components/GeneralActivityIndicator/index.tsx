@@ -5,6 +5,7 @@ import translate from "@helpers/localization";
 import { styles } from "./style";
 import type { GeneralActivityIndicatorProps } from "./type";
 
+const testID = "generalactivityindicator";
 /**
  * Renders a general activity indicator with an optional text.
  *
@@ -18,8 +19,16 @@ function GeneralActivityIndicator({ text }: GeneralActivityIndicatorProps) {
 
   // TODO Modal
   return (
-    <View style={themedStyles.activityIndicator}>
-      <ActivityIndicator animating size="large" color={theme.primary} />
+    <View
+      testID={`${testID}-container-view`}
+      style={themedStyles.activityIndicator}
+    >
+      <ActivityIndicator
+        testID={`${testID}-container-activityindicator`}
+        animating
+        size="large"
+        color={theme.primary}
+      />
       <Text style={themedStyles.activityIndicatorText}>
         {text || translate("generalActivityIndicatorText")}
       </Text>
