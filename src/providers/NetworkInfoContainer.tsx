@@ -4,10 +4,11 @@ import { View, Text, Modal, Button, StyleSheet } from "react-native";
 
 const NetworkInfoContainer = ({ children }: any) => {
   const { isConnected } = useNetInfo();
+  console.log("isConnected", isConnected);
   const [modalVisible, setModalVisible] = useState(false);
 
   useEffect(() => {
-    if (!isConnected) {
+    if (isConnected === false) {
       setModalVisible(true);
     } else {
       setModalVisible(false);

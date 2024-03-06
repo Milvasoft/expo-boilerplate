@@ -25,11 +25,11 @@ function CustomProvider({ children }: Props) {
         <ThemeProvider>
           <Toast />
 
-          <Notification>
-            {children}
+          <Notification />
 
-            <ThemeListener />
-          </Notification>
+          {children}
+
+          <ThemeListener />
         </ThemeProvider>
       </NetworkInfoContainer>
     </AppLoadingProvider>

@@ -8,12 +8,10 @@ import React, {
 } from "react";
 import { Text, Animated, TouchableWithoutFeedback } from "react-native";
 import { IToastType } from "@components/ToastMessage/IToastType";
-import { styles } from "./style";
+import { styles, toastHeight } from "./style";
 import { ToastColorEnum } from "@components/ToastMessage/ToastColorEnum";
 
 let stop = false;
-
-export const toastHeight = 100;
 
 /**
  * A customizable toast message component.

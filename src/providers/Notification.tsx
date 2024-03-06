@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { Platform } from "react-native";
 import * as Device from "expo-device";
 import * as Notifications from "expo-notifications";
-import Constants from "expo-constants";
 import { useDispatch } from "react-redux";
 import { SetExpoToken } from "@modules/app/redux/appSlice";
 
@@ -14,24 +13,22 @@ Notifications.setNotificationHandler({
   }),
 });
 
-type Props = {
-  children: React.ReactNode;
-};
-
-const Notification: React.FC<Props> = ({ children }) => {
+const Notification: React.FC<any> = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    registerForPushNotificationsAsync().then((token) =>
-      dispatch(SetExpoToken(token))
-    );
+    try {
+      registerForPushNotificationsAsync().then((token) =>
+        dispatch(SetExpoToken(token))
+      );
+    } catch (error) {}
 
     // Notifications.addNotificationReceivedListener((notification) => {
     //   setNotification(notification);
     // });
   }, []);
 
-  return <>{children}</>;
+  return <></>;
 };
 
 export default Notification;
@@ -64,7 +61,7 @@ async function registerForPushNotificationsAsync() {
     // https://docs.expo.dev/push-notifications/push-notifications-setup/#configure-projectid
     token = (
       await Notifications.getExpoPushTokenAsync({
-        projectId: Constants?.expoConfig?.extra?.eas.projectI,
+        projectId: "3731c78d-db2d-4ba8-955a-86ab3168c3eb",
       })
     ).data;
     console.log(token);
