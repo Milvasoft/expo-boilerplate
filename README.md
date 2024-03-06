@@ -12,10 +12,13 @@
 	- [Components](#Components)
 	- [Helpers](#Helpers)
 	- [Hooks](#Hooks)
+	- [Localization](#Localization)
 	- [Modules](#Modules)
+	- [Network](#Network)
 	- [Providers](#Providers)
 	- [Routers](#Routers)
-	- [Screens](#Screens)
+	- [Store](#Store)
+	- [Styles](#Styles)
 	- [Utils](#Utils)
 - [Run in Dev Environment](#Run)
 - [Code Push](#Push)
@@ -28,10 +31,11 @@
 ## Boilerplate Features:
 
 * Routing
-* Theme
+* Redux Toolkit
+* Test
 * Network
+* Theme
 * Local Storage
-* Redux
 * Provider example
 * Notifications
 * Dark Theme Support
@@ -53,38 +57,71 @@
 src
  ├── assets
      ├── animation
-     ├── color
      ├── enums
      ├── images
-     └── localization
- ├── helpers
-     └── storage
+     └── languages
+ ├── helpers,  
+     ├── global
+     ├── localization
+     ├── router
+     ├── storage
+     └── toast
  ├── components
+     ├── ErrorComponent
+        ├── ErrorComponent.test
+        ├── index
+	    ├── style
+        └── type	
+     ├── GeneralActivityIndicator
+     ├── NotFoundComponent
+     └── ToastMessage
  ├── hooks
+     ├── useTheme
+     └── useThemedStyles
+ ├── localization
+     ├── en
+     └── tr
  ├── modules
      └── app
          ├── api
          ├── components
          ├── redux
+         ├── screens
          ├── services
-	 ├── types
+	     ├── types
          └── utils
      └── profile
          ├── api
          ├── components
          ├── redux
+         ├── screens
          ├── services
-	 ├── types
+	     ├── types
          └── utils	 
- ├── providers
+ ├── providers 
+     ├── AppLoadingProvider
+     ├── ErrorBoundary
+     ├── Localization
+     ├── NetworkInfoContainer
+     ├── Notification
+     ├── ThemeListener
+     ├── ThemeProvider
+     └── Toast
  ├── routers
-     └── components
- ├── screens
-     ├── stack-1
-     ├── stack-2
-     └── stack-3
+     ├── BottomNavigation
+     └── ProfileStack
+ ├── store
+     ├── rootReducer
+     └── store
+ ├── styles
+     ├── fonts
+     ├── padding
+     ├── theme
+     ├── toast
+     └── typography
  └── utils
-     └── network
+     ├── Routes
+     └── ScreenOptions
 ```
 
 <a id="Assets"></a>
@@ -101,7 +138,7 @@ Sample: color, images, svg etc.
 
 Components Folder containing base components in the project.
 <br>
-Sample: ToastMessage etc.
+Sample: ErrorComponent, ToastMessage etc.
 
 <br>
 
@@ -122,6 +159,14 @@ Sample: useTheme etc.
 
 <br>
 
+<a id="Localization"></a>
+# Localization
+Localization Settings.
+<br>
+Sample: tr, en etc.
+
+<br>
+
 <a id="Modules"></a>
 # Modules
 The Modules is a special folder. It allows you to manage your application more easily by dividing it into modules according to business logic.
@@ -129,6 +174,7 @@ The Modules is a special folder. It allows you to manage your application more e
  Modules have their own files inside;
 
 - Component (CustomButton, CustomLayout etc.)
+- Screens (HomeScreen, ProfileScreen etc.)
 - Redux (Actions, Reducers, Store etc.)
 - Utils (Type etc. )
 - API (API request, routes)
@@ -136,7 +182,7 @@ The Modules is a special folder. It allows you to manage your application more e
 
 <br>
 
-![modules+expo](https://user-images.githubusercontent.com/13048645/141460013-9a31548f-0df2-45e8-992e-81592be9f401.jpg)
+![abk-expo-boilerplate-modules](https://github.com/Milvasoft/milva-admin-generator/assets/32386753/b9cfff14-48d5-4e52-92af-a4d37700f2bd)
 
 
 <br>
@@ -154,17 +200,23 @@ Sample: ThemeProvider, Localization etc.
 # Routers
 Everything about routing.
 
-<a id="Screens"></a>
+
+<a id="Store"></a>
 # Screens
-The folder where the pages in the application are located. Stack-based grouping simplifies management.
+Store Settings
 <br>
-Sample: ProfileStack { Profile, Post, Settings } etc.
+
+<a id="Styles"></a>
+# Styles
+Base Style Settings
+<br>
+Sample: fonts, padding etc.
 
 <a id="Utils"></a>
 # Utils
 Utils Folder containing base utils and container in the project.
 <br>
-Sample: Routes Type, Network etc.
+Sample: Routes Type, ScreenOptions etc.
 
 <a id="Run"></a>
 # Run in Dev Environment
