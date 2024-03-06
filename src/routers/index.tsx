@@ -16,21 +16,27 @@ enableScreens();
 
 const Stack = createStackNavigator<RootStackParams>();
 
-const mainTheme = {
-  ...DefaultTheme,
-  colors: {
-    ...DefaultTheme.colors,
-    background: "#FFF",
-  },
-};
-
 function RootNavigation() {
   const isSignedIn = useAppSelector((s) => s.AppReducer?.isSignedIn);
+  const userColorScheme = useAppSelector((s) => s?.AppReducer?.userColorScheme);
   const theme = useTheme();
+  const isDarkTheme = userColorScheme === "dark";
+
+  const navigationTheme = {
+    dark: isDarkTheme,
+    colors: {
+      primary: theme.primary,
+      background: theme.background,
+      card: theme.card,
+      text: theme.text,
+      border: theme.border,
+      notification: theme.notification,
+    },
+  };
 
   return (
     <SafeAreaProvider>
-      <NavigationContainer ref={navigationRef} theme={mainTheme}>
+      <NavigationContainer ref={navigationRef} theme={navigationTheme}>
         <Stack.Navigator
           initialRouteName={isSignedIn ? Routes.Home : Routes.Login}
           screenOptions={{ ...ScreenOptions, headerTintColor: theme.primary }}
