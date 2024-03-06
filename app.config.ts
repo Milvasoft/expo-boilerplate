@@ -2,10 +2,10 @@ import { ExpoConfig, ConfigContext } from '@expo/config'
 
 export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
-  name: 'milvasoft',
-  description: 'Milvasoft',
+  name: 'Milvasoft',
+  description: 'Milvasoft App Description',
   slug: 'milvasoft',
-  scheme: 'milvasoft',
+  scheme: 'com.milvasoft.milvasoft',
   version: '1.0.0',
   sdkVersion: '50.0.0',
   orientation: 'portrait',

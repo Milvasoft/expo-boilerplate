@@ -68,7 +68,7 @@ function RootNavigation() {
   );
 }
 
-export default React.memo(RootNavigation);
+export default RootNavigation;
 
 // import * as Linking from 'expo-linking';
 // import * as Notifications from 'expo-notifications';

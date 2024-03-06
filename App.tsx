@@ -10,7 +10,7 @@ import { Platform } from "react-native";
 import Store from "./src/store";
 import RootNavigation from "./src/routers";
 import CustomProvider from "./src/providers";
-import ErrorBounday from "./src/providers/ErrorProvider";
+import ErrorBoundary from "./src/providers/ErrorBoundary";
 
 enableScreens();
 
@@ -25,13 +25,16 @@ function App() {
   }, []);
 
   return (
-    <ErrorBounday>
+    // @ts-ignore
+    <ErrorBoundary>
       <Provider store={Store}>
+        {/* @ts-ignore */}
         <CustomProvider>
+          {/* @ts-ignore */}
           <RootNavigation />
         </CustomProvider>
       </Provider>
-    </ErrorBounday>
+    </ErrorBoundary>
   );
 }
 

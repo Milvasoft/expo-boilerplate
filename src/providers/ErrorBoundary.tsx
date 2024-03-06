@@ -2,7 +2,7 @@ import React from "react";
 import ErrorBoundaryPage from "@screens/ErrorBoundaryPage";
 
 type ErrorBoundaryProps = {
-  children: React.ReactElement;
+  children: any;
 };
 
 /**
