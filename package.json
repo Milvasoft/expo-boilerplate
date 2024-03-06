@@ -10,6 +10,7 @@
     "@react-navigation/native": "^6.1.14",
     "@react-navigation/stack": "^6.3.25",
     "@reduxjs/toolkit": "^2.2.1",
+    "@testing-library/react-native": "^12.4.3",
     "expo": "^50.0.8",
     "expo-constants": "^15.4.5",
     "expo-device": "^5.9.3",
@@ -21,6 +22,7 @@
     "expo-splash-screen": "^0.26.4",
     "expo-updates": "^0.24.11",
     "i18n-js": "^4.4.3",
+    "jest-expo": "~50.0.2",
     "lodash.throttle": "^4.1.1",
     "metro-react-native-babel-preset": "^0.66.2",
     "moment": "^2.29.4",
@@ -44,6 +46,7 @@
     "@types/lodash.throttle": "^4.1.6",
     "@types/react-native": "^0.70.8",
     "@types/react-redux": "^7.1.25",
+    "@types/redux-mock-store": "^1.0.6",
     "@typescript-eslint/eslint-plugin": "^6.6.0",
     "@typescript-eslint/parser": "^6.6.0",
     "babel-plugin-module-resolver": "^5.0.0",
@@ -53,7 +56,10 @@
     "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.33.2",
+    "jest": "^29.3.1",
     "prettier": "^2.8.2",
+    "react-test-renderer": "^18.2.0",
+    "redux-mock-store": "^1.5.4",
     "typescript": "^5.3.0"
   },
   "scripts": {
@@ -61,7 +67,11 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "test": "jest --coverage=false",
+    "testDebug": "jest -o --watch --coverage=false",
+    "testFinal": "jest",
+    "updateSnapshots": "jest -u --coverage=false"
   },
   "private": true
 }
