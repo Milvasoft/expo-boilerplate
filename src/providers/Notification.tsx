@@ -1,24 +1,19 @@
-/* eslint-disable react/jsx-no-useless-fragment */
-/* eslint-disable react/function-component-definition */
-/* eslint-disable @typescript-eslint/no-use-before-define */
-/* eslint-disable no-alert */
-import Constants from 'expo-constants';
-import * as Notifications from 'expo-notifications';
-import React, { useEffect } from 'react';
-import { Platform } from 'react-native';
-import { useDispatch } from 'react-redux';
-import { SetExpoToken } from '@modules/app/redux/appSlice';
+import { useEffect } from "react";
+import { Platform } from "react-native";
+import * as Device from "expo-device";
+import * as Notifications from "expo-notifications";
+import Constants from "expo-constants";
+import { useDispatch } from "react-redux";
+import { SetExpoToken } from "@modules/app/redux/appSlice";
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
     shouldShowAlert: true,
-    shouldPlaySound: true,
+    shouldPlaySound: false,
     shouldSetBadge: false,
   }),
 });
 
-// TODO: https://docs.expo.io/versions/latest/sdk/notifications/
-// Register FCM and APN
 type Props = {
   children: React.ReactNode;
 };
@@ -26,41 +21,15 @@ type Props = {
 const Notification: React.FC<Props> = ({ children }) => {
   const dispatch = useDispatch();
 
-  // const notificationListener = useRef();
-  // const responseListener = useRef();
-
-  // const _clearBadge = async () => {
-  //   await Notifications.setBadgeCountAsync(0);
-  // };
-
   useEffect(() => {
-    if (Platform.OS !== 'web') {
-      registerForPushNotificationsAsync().then((token) => {
-        dispatch(SetExpoToken(token));
-      });
-    }
+    registerForPushNotificationsAsync().then((token) =>
+      dispatch(SetExpoToken(token))
+    );
 
-    // This listener is fired whenever a notification is received while the app is foregrounded
-    // notificationListener.current = Notifications
-    //   .addNotificationReceivedListener((_notification) => {
-    //     console.log(_notification);
-    //   });
-
-    // This listener is fired whenever a user taps on or interacts with a notification
-    // (works when app is foregrounded, backgrounded, or killed)
-
-    // responseListener.current =
-    // Notifications.addNotificationResponseReceivedListener((response) => {
-    //   console.log(response);
+    // Notifications.addNotificationReceivedListener((notification) => {
+    //   setNotification(notification);
     // });
-
-    // return () => {
-
-    //   Notifications.removeNotificationSubscription(notificationListener.current);
-    //   Notifications.removeNotificationSubscription(responseListener.current);
-
-    // };
-  }, [dispatch]);
+  }, []);
 
   return <>{children}</>;
 };
@@ -70,17 +39,38 @@ export default Notification;
 async function registerForPushNotificationsAsync() {
   let token;
 
-  if (Constants.isDevice) {
-    const { status: existingStatus } =
-      await Notifications.getPermissionsAsync();
-
-    if (existingStatus !== 'granted' || Platform.OS === 'android') {
-      await Notifications.requestPermissionsAsync();
-    }
-
-    token = (await Notifications.getExpoPushTokenAsync()).data;
+  if (Platform.OS === "android") {
+    await Notifications.setNotificationChannelAsync("default", {
+      name: "default",
+      importance: Notifications.AndroidImportance.MAX,
+      vibrationPattern: [0, 250, 250, 250],
+      lightColor: "#FF231F7C",
+    });
   }
 
-  // eslint-disable-next-line consistent-return
+  if (Device.isDevice) {
+    const { status: existingStatus } =
+      await Notifications.getPermissionsAsync();
+    let finalStatus = existingStatus;
+    if (existingStatus !== "granted") {
+      const { status } = await Notifications.requestPermissionsAsync();
+      finalStatus = status;
+    }
+    if (finalStatus !== "granted") {
+      alert("Failed to get push token for push notification!");
+      return;
+    }
+    // Learn more about projectId:
+    // https://docs.expo.dev/push-notifications/push-notifications-setup/#configure-projectid
+    token = (
+      await Notifications.getExpoPushTokenAsync({
+        projectId: Constants?.expoConfig?.extra?.eas.projectI,
+      })
+    ).data;
+    console.log(token);
+  } else {
+    alert("Must use physical device for Push Notifications");
+  }
+
   return token;
 }
