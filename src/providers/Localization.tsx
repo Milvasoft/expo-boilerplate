@@ -9,7 +9,7 @@ import { TrResource, EnResource } from "@src/localization/index";
 
 const defaultLocale = "en";
 const deviceLanguage =
-  Localization.getLocales()[0].languageCode || defaultLocale;
+  Localization.getLocales()?.[0]?.languageCode || defaultLocale;
 
 /**
  * The internationalization object used for localization.

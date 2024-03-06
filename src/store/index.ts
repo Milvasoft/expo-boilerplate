@@ -1,4 +1,4 @@
-import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
+import { TypedUseSelectorHook, useSelector } from 'react-redux'
 import { configureStore } from '@reduxjs/toolkit'
 import RootReducer from './rootReducer'// Root reducer
 
