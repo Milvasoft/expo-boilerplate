@@ -21,7 +21,8 @@ const resource : ILocalization = {
   send: 'Send', 
   next: 'Next',
   previous: 'Previous',
-
+  retry: "Retry",  
+  
   navigation: {
     home: 'Home Page',
     profile: 'Profile',

@@ -19,6 +19,7 @@ const resource = {
   send: 'Gönder', 
   next: 'İleri',
   previous: 'Önceki',
+  retry: "Tekrar Dene",
 
   navigation: {
     home: 'Ana Sayfa',
