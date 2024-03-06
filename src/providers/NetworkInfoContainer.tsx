@@ -27,9 +27,9 @@ const NetworkInfoContainer = ({ children }: any) => {
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
             <Text style={styles.modalText}>
-              İnternet bağlantınızı kontrol edin!
+              Check your internet connection!
             </Text>
-            <Button title="Tamam" onPress={() => setModalVisible(false)} />
+            <Button title="Ok" onPress={() => setModalVisible(false)} />
           </View>
         </View>
       </Modal>
