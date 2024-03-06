@@ -35,8 +35,9 @@ export function pop(count:number) {
  * @param name - The name of the route to navigate to.
  * @param params - Optional parameters to pass to the route.
  */
-export function navigate<RouteName extends keyof NavigationParams>(name: Routes, params?: NavigationParams[RouteName]) {
+export function navigate<RouteName extends keyof NavigationParams>(name: string, params?: NavigationParams[RouteName]) {
 
+  // @ts-ignore
   if (navigationRef.isReady()) navigationRef.navigate(name, params);
 
 }

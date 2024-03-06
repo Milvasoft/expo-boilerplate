@@ -4,7 +4,7 @@
 import React, { useCallback } from "react";
 import { Text, View, StyleSheet, Button } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { navigate } from "@utils/Router";
+import { navigate } from "@helpers/router";
 import Routes, { ProfileStackParams } from "@src/utils/Routes";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";

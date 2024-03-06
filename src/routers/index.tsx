@@ -6,7 +6,7 @@ import translate from "@helpers/localization";
 import { enableScreens } from "react-native-screens";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { useTheme } from "@src/hooks";
-import { navigationRef } from "../utils/Router";
+import { navigationRef } from "../helpers/router";
 import Login from "@screens/Login";
 import BottomNavigation from "./BottomNavigation";
 import { ScreenOptions } from "@utils/ScreenOptions";
