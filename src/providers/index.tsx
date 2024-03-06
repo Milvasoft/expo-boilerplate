@@ -1,14 +1,14 @@
 /**
  * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
  */
-import React from 'react';
-import './NetworkInfo';
-import AppLoadingProvider from './AppLoadingProvider';
-import './Localization';
-import Toast from './Toast';
-import Notification from './Notification';
-import ThemeProvider from './ThemeProvider';
-import ThemeListener from './ThemeListener';
+import React from "react";
+import NetworkInfoContainer from "./NetworkInfoContainer";
+import AppLoadingProvider from "./AppLoadingProvider";
+import "./Localization";
+import Toast from "./Toast";
+import Notification from "./Notification";
+import ThemeProvider from "./ThemeProvider";
+import ThemeListener from "./ThemeListener";
 
 type Props = {
   children: React.ReactNode;
@@ -21,15 +21,17 @@ type Props = {
 function CustomProvider({ children }: Props) {
   return (
     <AppLoadingProvider>
-      <ThemeProvider>
-        <Toast />
+      <NetworkInfoContainer>
+        <ThemeProvider>
+          <Toast />
 
-        <Notification>
-          {children}
+          <Notification>
+            {children}
 
-          <ThemeListener />
-        </Notification>
-      </ThemeProvider>
+            <ThemeListener />
+          </Notification>
+        </ThemeProvider>
+      </NetworkInfoContainer>
     </AppLoadingProvider>
   );
 }
