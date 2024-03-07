@@ -233,7 +233,8 @@ Sample: Routes Type, ScreenOptions etc.
 # Code Push
 
 - expo-update documentation link : https://docs.expo.dev/workflow/publishing/
-- Run on `expo publish` 
+- Run on `eas update` 
+- ✨ Don't forget to local expo-cli and node version check ✨
 
 <a id="ExpoGo"></a>
 # Run Expo Go
