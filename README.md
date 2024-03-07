@@ -70,7 +70,7 @@ src
      ├── ErrorComponent
         ├── ErrorComponent.test
         ├── index
-	    ├── style
+	├── style
         └── type	
      ├── GeneralActivityIndicator
      ├── NotFoundComponent
@@ -88,7 +88,7 @@ src
          ├── redux
          ├── screens
          ├── services
-	     ├── types
+         ├── types
          └── utils
      └── profile
          ├── api
@@ -96,7 +96,7 @@ src
          ├── redux
          ├── screens
          ├── services
-	     ├── types
+         ├── types
          └── utils	 
  ├── providers 
      ├── AppLoadingProvider
