@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Platform } from "react-native";
+import * as Constants from "expo-constants";
 import * as Device from "expo-device";
 import * as Notifications from "expo-notifications";
 import { useDispatch } from "react-redux";
@@ -61,7 +62,7 @@ async function registerForPushNotificationsAsync() {
     // https://docs.expo.dev/push-notifications/push-notifications-setup/#configure-projectid
     token = (
       await Notifications.getExpoPushTokenAsync({
-        projectId: "3731c78d-db2d-4ba8-955a-86ab3168c3eb",
+        projectId: Constants.default.easConfig?.projectId, // You can get your projectId from app.config.ts file. It is located in the extra.eas.projectId field. If you don't have it, you can get it from the link in the comment above.
       })
     ).data;
     console.log(token);

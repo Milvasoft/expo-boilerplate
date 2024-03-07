@@ -2,10 +2,10 @@ import { ExpoConfig, ConfigContext } from '@expo/config'
 
 export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
-  name: 'Milvasoft',
-  description: 'Milvasoft App Description',
-  slug: 'milvasoft',
-  scheme: 'com.milvasoft.milvasoft',
+  name: 'Milvasoft Expo BoilerPalte',
+  description: 'Milvasoft Expo BoilerPalte Description',
+  slug: 'milvasoft-expo-boilerplate',
+  scheme: 'com.milvasoft.expoboilerplate',
   version: '1.0.0',
   sdkVersion: '50.0.0',
   orientation: 'portrait',
@@ -27,7 +27,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     backgroundColor: '#ffffff'
   },
   ios: {
-    bundleIdentifier: 'com.milvasoft.milvasoft',
+    bundleIdentifier: 'com.milvasoft.expoboilerplate',
     buildNumber: '1.0.0',
     infoPlist: {
       CFBundleAllowMixedLocalizations: true
@@ -41,16 +41,16 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       foregroundImage: './src/assets/images/adaptive-icon.png',
       backgroundColor: '#ffffff'
     },
-    package: 'com.milvasoft.milvasoft',
+    package: 'com.milvasoft.expoboilerplate',
     versionCode: 1,
   },
   updates: {
     enabled: true,
-    url: "https://u.expo.dev/ac035dbc-1a05-4965-9d13-244fe7b5aad5"
+    url: "https://u.expo.dev/49e4e24d-c928-4ff1-815d-f1a58ca580bd"
   },
   extra:{
     eas:{
-      projectId: "ac035dbc-1a05-4965-9d13-244fe7b5aad5"
+      projectId: "49e4e24d-c928-4ff1-815d-f1a58ca580bd"
     }
   }
 
