@@ -11,9 +11,8 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   orientation: 'portrait',
   icon: './src/assets/images/icon.png',
   userInterfaceStyle: 'automatic',
-  jsEngine: 'hermes',
-  updates: {
-    enabled: true
+  runtimeVersion: {
+    policy: "sdkVersion"
   },
   assetBundlePatterns: [
     './src/assets/images/*'
@@ -41,6 +40,10 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     },
     package: 'com.milvasoft.milvasoft',
     versionCode: 1,
+  },
+  updates: {
+    enabled: true,
+    url: "https://u.expo.dev/ac035dbc-1a05-4965-9d13-244fe7b5aad5"
   }
 
 })

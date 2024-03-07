@@ -20,7 +20,7 @@
     "expo-notifications": "^0.27.6",
     "expo-screen-orientation": "^6.4.1",
     "expo-splash-screen": "^0.26.4",
-    "expo-updates": "^0.24.11",
+    "expo-updates": "~0.24.11",
     "i18n-js": "^4.4.3",
     "jest-expo": "~50.0.2",
     "lodash.throttle": "^4.1.1",
