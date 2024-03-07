@@ -33,6 +33,9 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       CFBundleAllowMixedLocalizations: true
     }
   },
+  web: {
+    bundler: "metro"
+  },
   android: {
     adaptiveIcon: {
       foregroundImage: './src/assets/images/adaptive-icon.png',
@@ -44,6 +47,11 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   updates: {
     enabled: true,
     url: "https://u.expo.dev/ac035dbc-1a05-4965-9d13-244fe7b5aad5"
+  },
+  extra:{
+    eas:{
+      projectId: "ac035dbc-1a05-4965-9d13-244fe7b5aad5"
+    }
   }
 
 })
