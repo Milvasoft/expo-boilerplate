@@ -176,7 +176,7 @@ The Modules is a special folder. It allows you to manage your application more e
 - Component (CustomButton, CustomLayout etc.)
 - Screens (HomeScreen, ProfileScreen etc.)
 - Redux (AppSlice, Store etc.)
-- Utils (Type etc. )
+- Utils (Helper Function etc. )
 - API (API request, routes)
 - Services 
 
