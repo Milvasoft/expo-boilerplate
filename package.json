@@ -32,7 +32,7 @@
     "react-native-gesture-handler": "~2.16.1",
     "react-native-modal": "^13.0.1",
     "react-native-reanimated": "~3.10.1",
-    "react-native-safe-area-context": "4.10.1",
+    "react-native-safe-area-context": "4.10.5",
     "react-native-screens": "3.31.1",
     "react-native-svg": "15.2.0",
     "react-native-web": "~0.19.6",
@@ -59,7 +59,7 @@
     "prettier": "^2.8.2",
     "react-test-renderer": "^18.2.0",
     "redux-mock-store": "^1.5.4",
-    "typescript": "^5.3.0"
+    "typescript": "~5.3.3"
   },
   "scripts": {
     "start": "expo start",
