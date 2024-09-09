@@ -25,12 +25,9 @@ function App() {
   }, []);
 
   return (
-    // @ts-ignore
     <ErrorBoundary>
       <Provider store={Store}>
-        {/* @ts-ignore */}
         <CustomProvider>
-          {/* @ts-ignore */}
           <RootNavigation />
         </CustomProvider>
       </Provider>
