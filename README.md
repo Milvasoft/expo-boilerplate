@@ -34,6 +34,7 @@
 * Redux Toolkit
 * Test
 * Network
+* Axios
 * Theme
 * Local Storage
 * Provider example
@@ -97,7 +98,10 @@ src
          ├── screens
          ├── services
          ├── types
-         └── utils	 
+         └── utils
+ ├── network
+     ├── axiosInstance
+     └── baseQuery	 
  ├── providers 
      ├── AppLoadingProvider
      ├── ErrorBoundary
@@ -189,6 +193,10 @@ The Modules is a special folder. It allows you to manage your application more e
 
 In this way, it provides a simpler and easier development process by searching the codes related to the Module only in that folder.
 <br>
+
+<a id="network"></a>
+# Network
+Network Folder containing base RTK and axiosInstance in the project.
 
 <a id="Providers"></a>
 # Providers
