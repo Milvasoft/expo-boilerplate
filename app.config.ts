@@ -7,7 +7,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   slug: "milvasoft-expo-boilerplate",
   scheme: "com.milvasoft.expoboilerplate",
   version: "1.0.0",
-  sdkVersion: "51.0.0",
+  sdkVersion: "52.0.0",
   orientation: "portrait",
   icon: "./src/assets/images/icon.png",
   userInterfaceStyle: "automatic",
@@ -51,4 +51,5 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       projectId: "49e4e24d-c928-4ff1-815d-f1a58ca580bd",
     },
   },
+  plugins: ["expo-font", "expo-localization"],
 });
