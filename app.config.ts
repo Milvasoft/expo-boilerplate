@@ -7,7 +7,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   slug: "milvasoft-expo-boilerplate",
   scheme: "com.milvasoft.expoboilerplate",
   version: "1.0.0",
-  sdkVersion: "52.0.0",
+  sdkVersion: "53.0.0",
   orientation: "portrait",
   icon: "./src/assets/images/icon.png",
   userInterfaceStyle: "automatic",
