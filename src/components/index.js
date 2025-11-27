@@ -3,5 +3,13 @@
  */
 import GeneralActivityIndicator from "./GeneralActivityIndicator";
 import ToastMessage from "./ToastMessage";
+import BottomSheetContainer, {
+  BottomSheetContext,
+} from "./BottomSheetContainer";
 
-export { GeneralActivityIndicator, ToastMessage };
+export {
+  GeneralActivityIndicator,
+  ToastMessage,
+  BottomSheetContainer,
+  BottomSheetContext,
+};

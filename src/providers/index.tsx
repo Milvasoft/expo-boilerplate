@@ -9,6 +9,7 @@ import Toast from "./Toast";
 import Notification from "./Notification";
 import ThemeProvider from "./ThemeProvider";
 import ThemeListener from "./ThemeListener";
+import { BottomSheetContainer } from "@src/components";
 
 type Props = {
   children: React.ReactNode;
@@ -23,13 +24,15 @@ function CustomProvider({ children }: Props) {
     <AppLoadingProvider>
       <NetworkInfoContainer>
         <ThemeProvider>
-          <Toast />
+          <BottomSheetContainer>
+            <Toast />
 
-          <Notification />
+            <Notification />
 
-          {children}
+            {children}
 
-          <ThemeListener />
+            <ThemeListener />
+          </BottomSheetContainer>
         </ThemeProvider>
       </NetworkInfoContainer>
     </AppLoadingProvider>
