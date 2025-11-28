@@ -197,10 +197,6 @@ Modules have their own files inside;
 
 <br>
 
-![abk-expo-boilerplate-modules](https://github.com/Milvasoft/milva-admin-generator/assets/32386753/b9cfff14-48d5-4e52-92af-a4d37700f2bd)
-
-<br>
-
 In this way, it provides a simpler and easier development process by searching the codes related to the Module only in that folder.
 <br>
 
