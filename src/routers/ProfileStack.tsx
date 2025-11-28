@@ -3,47 +3,35 @@
  */
 import * as React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { enableScreens } from "react-native-screens";
 import { useTheme } from "@src/hooks";
-import Routes, { ProfileStackParams } from "@utils/Routes";
-import Profile from "@modules/profile/screens/Profile";
-import Settings from "@modules/profile/screens/Settings";
-import Post from "@modules/profile/screens/Post";
 import translate from "@helpers/localization";
-import { ScreenOptions } from "@utils/ScreenOptions";
+import NewsList from "@modules/news/screens/NewsList";
 
-enableScreens();
-
-const Stack = createStackNavigator<ProfileStackParams>();
+const Stack = createStackNavigator();
 
 function ProfileStack() {
   const theme = useTheme();
+
   return (
     <Stack.Navigator
-      initialRouteName={Routes.Profile}
-      screenOptions={{ ...ScreenOptions, headerTintColor: theme.primary }}
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: theme.primary,
+          elevation: 0,
+          shadowOpacity: 0,
+        },
+        headerTintColor: "#fff",
+        headerTitleStyle: {
+          fontWeight: "bold",
+        },
+      }}
     >
       <Stack.Screen
-        name={Routes.Profile}
-        component={Profile}
+        name="NewsList"
+        component={NewsList}
         options={{
-          headerTitle: translate("navigation.profile"),
-          headerShown: false,
+          headerTitle: translate("navigation.news"),
         }}
-      />
-
-      <Stack.Screen
-        name={Routes.Settings}
-        component={Settings}
-        options={{
-          headerTitle: translate("navigation.settings"),
-        }}
-      />
-
-      <Stack.Screen
-        name={Routes.Post}
-        component={Post}
-        options={({ route }) => ({ headerTitle: route.params.username })}
       />
     </Stack.Navigator>
   );

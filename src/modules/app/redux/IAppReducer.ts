@@ -1,10 +1,10 @@
-import { ColorSchemeName } from 'react-native'; 
+import { ColorSchemeName } from "react-native";
 
 export interface IAppReducer {
-  isSignedIn?: boolean,
-  userColorScheme?: ColorSchemeName,
-  user?: any,
-  authToken?: string,
-  expoToken?: string,
+  isSignedIn?: boolean;
+  hasSeenOnboarding?: boolean;
+  userColorScheme?: ColorSchemeName;
+  user?: any;
+  authToken?: string;
+  expoToken?: string;
 }
-

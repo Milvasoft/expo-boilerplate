@@ -21,5 +21,5 @@ export default {
   /**
    * Huge padding value.
    */
-  HUGE: 32,
+  XLARGE: 32,
 };

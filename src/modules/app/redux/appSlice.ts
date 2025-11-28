@@ -1,7 +1,9 @@
 import { IAppReducer } from "@modules/app/redux/IAppReducer";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-const initialState: IAppReducer = {};
+const initialState: IAppReducer = {
+  hasSeenOnboarding: false,
+};
 
 export const appSlice = createSlice({
   name: "appReducer",
@@ -12,7 +14,12 @@ export const appSlice = createSlice({
       return state;
     },
     SetUser: (state, action: PayloadAction<any>) => {
-      state = { ...state, isSignedIn: true, user: action.payload };
+      state = {
+        ...state,
+        isSignedIn: true,
+        user: action.payload,
+        hasSeenOnboarding: true,
+      };
       return state;
     },
     LoggedOut: (state) => {
@@ -27,6 +34,10 @@ export const appSlice = createSlice({
       state = { ...state, expoToken: action.payload };
       return state;
     },
+    SetHasSeenOnboarding: (state, action: PayloadAction<boolean>) => {
+      state = { ...state, hasSeenOnboarding: action.payload };
+      return state;
+    },
   },
 });
 
@@ -36,6 +47,9 @@ export const {
   LoggedOut,
   SetColorShceme,
   SetExpoToken,
+  SetHasSeenOnboarding,
 } = appSlice.actions;
+
+export const Logout = LoggedOut;
 
 export default appSlice.reducer;

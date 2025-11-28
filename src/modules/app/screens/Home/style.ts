@@ -1,0 +1,186 @@
+/**
+ * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
+ */
+import padding from "@styles/padding";
+import { StyleSheet } from "react-native";
+import { ITheme } from "@styles/theme";
+
+export const styles = (theme: ITheme) =>
+  StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: theme.background,
+    },
+    header: {
+      paddingHorizontal: padding.LARGE,
+      paddingTop: padding.LARGE,
+      paddingBottom: padding.XLARGE,
+      borderBottomLeftRadius: 30,
+      borderBottomRightRadius: 30,
+    },
+    headerTop: {
+      flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "flex-start",
+      marginBottom: padding.LARGE,
+    },
+    welcomeText: {
+      fontSize: 16,
+      color: "#fff",
+      opacity: 0.9,
+      marginBottom: 4,
+    },
+    nameText: {
+      fontSize: 32,
+      fontWeight: "bold",
+      color: "#fff",
+      letterSpacing: 0.5,
+    },
+    notificationButton: {
+      width: 44,
+      height: 44,
+      borderRadius: 22,
+      backgroundColor: "rgba(255,255,255,0.2)",
+      justifyContent: "center",
+      alignItems: "center",
+      position: "relative",
+    },
+    notificationBadge: {
+      position: "absolute",
+      top: 8,
+      right: 8,
+      width: 18,
+      height: 18,
+      borderRadius: 9,
+      backgroundColor: "#FF3B30",
+      justifyContent: "center",
+      alignItems: "center",
+      borderWidth: 2,
+      borderColor: "#fff",
+    },
+    badgeText: {
+      color: "#fff",
+      fontSize: 10,
+      fontWeight: "bold",
+    },
+    statsContainer: {
+      flexDirection: "row",
+      justifyContent: "space-between",
+      gap: padding.MEDIUM,
+    },
+    statCard: {
+      flex: 1,
+      backgroundColor: "rgba(255,255,255,0.15)",
+      borderRadius: 16,
+      padding: padding.MEDIUM,
+      alignItems: "center",
+    },
+    statValue: {
+      fontSize: 24,
+      fontWeight: "bold",
+      color: "#fff",
+      marginTop: padding.SMALL,
+    },
+    statLabel: {
+      fontSize: 11,
+      color: "#fff",
+      opacity: 0.9,
+      marginTop: 2,
+      textAlign: "center",
+    },
+    content: {
+      padding: padding.LARGE,
+    },
+    sectionHeader: {
+      flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "center",
+      marginBottom: padding.MEDIUM,
+      marginTop: padding.SMALL,
+    },
+    sectionTitle: {
+      fontSize: 22,
+      fontWeight: "bold",
+      color: theme.text,
+    },
+    seeAll: {
+      fontSize: 14,
+      color: theme.primary,
+      fontWeight: "600",
+    },
+    actionGrid: {
+      flexDirection: "row",
+      flexWrap: "wrap",
+      justifyContent: "space-between",
+      marginBottom: padding.LARGE,
+    },
+    actionCard: {
+      width: "48%",
+      backgroundColor: theme.card,
+      borderRadius: 20,
+      padding: padding.LARGE,
+      marginBottom: padding.MEDIUM,
+      alignItems: "center",
+      elevation: 3,
+      shadowColor: "#000",
+      shadowOffset: { width: 0, height: 4 },
+      shadowOpacity: 0.1,
+      shadowRadius: 8,
+    },
+    actionIconContainer: {
+      width: 64,
+      height: 64,
+      borderRadius: 32,
+      justifyContent: "center",
+      alignItems: "center",
+      marginBottom: padding.MEDIUM,
+    },
+    actionTitle: {
+      fontSize: 15,
+      fontWeight: "700",
+      color: theme.text,
+      textAlign: "center",
+      marginBottom: 4,
+    },
+    actionSubtitle: {
+      fontSize: 11,
+      color: theme.text,
+      opacity: 0.6,
+      textAlign: "center",
+    },
+    activityItem: {
+      backgroundColor: theme.card,
+      borderRadius: 16,
+      padding: padding.MEDIUM,
+      marginBottom: padding.MEDIUM,
+      flexDirection: "row",
+      alignItems: "center",
+      elevation: 2,
+      shadowColor: "#000",
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.08,
+      shadowRadius: 6,
+    },
+    activityIconContainer: {
+      width: 48,
+      height: 48,
+      borderRadius: 24,
+      justifyContent: "center",
+      alignItems: "center",
+      marginRight: padding.MEDIUM,
+    },
+    activityContent: {
+      flex: 1,
+    },
+    activityTitle: {
+      fontSize: 15,
+      fontWeight: "600",
+      color: theme.text,
+      marginBottom: 4,
+    },
+    activityTime: {
+      fontSize: 13,
+      color: theme.text,
+      opacity: 0.6,
+    },
+  });

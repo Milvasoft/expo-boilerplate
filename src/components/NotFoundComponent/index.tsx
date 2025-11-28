@@ -9,9 +9,10 @@ const testID = "errorcomponent";
  *
  * @param {Object} props - The component props.
  * @param {string} props.title - The title to be displayed.
+ * @param {function} props.onPress - The function to be called when the component is pressed.
  * @returns {JSX.Element} The rendered component.
  */
-const NotFoundComponent = ({ title }: NotFoundComponentrProps) => (
+const NotFoundComponent = ({ title, onPress }: NotFoundComponentrProps) => (
   <View style={styles.root} testID={`${testID}-container-view`}>
     <Text style={styles.title} testID={`${testID}-title-text`}>
       {title}

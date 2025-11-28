@@ -2,28 +2,26 @@
  * Enum representing the available routes in the application.
  */
 export enum Routes {
-  Home = 'Home',
-  Login = 'Login',
-  Profile = 'Profile',
-  Settings = 'Settings',
-  Post = 'Post'
+  Onboarding = "Onboarding",
+  Login = "Login",
+  Signup = "Signup",
+  Home = "Home",
+  Profile = "Profile",
+  News = "News",
+  NewsDetail = "NewsDetail",
+  Settings = "Settings",
 }
 
 /**
  * Represents the parameter types for the root stack navigation.
  */
 export type RootStackParams = {
-  [Routes.Home]: undefined;
+  [Routes.Onboarding]: undefined;
   [Routes.Login]: undefined;
-};
-
-/**
- * Represents the parameter types for the profile stack routes.
- */
-export type ProfileStackParams = {
-  [Routes.Profile]: undefined;
+  [Routes.Signup]: undefined;
+  [Routes.Home]: undefined;
+  [Routes.NewsDetail]: undefined;
   [Routes.Settings]: undefined;
-  [Routes.Post]: { id: string, username: string };
 };
 
 /**
@@ -31,4 +29,4 @@ export type ProfileStackParams = {
  */
 export type NavigationParams = RootStackParams;
 
-export default Routes
+export default Routes;
