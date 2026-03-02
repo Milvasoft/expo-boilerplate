@@ -1,12 +1,10 @@
 {
+  "extends": "expo/tsconfig.base",
   "compilerOptions": {
+    "strict": true,
     "jsx": "react-native",
     "target": "esnext",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "strictNullChecks": true,
-    "strict": false,
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
@@ -15,25 +13,19 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "isolatedModules": true,
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
-      "@assets/*": ["./src/assets/*"],
-      "@components/*": ["./src/components/*"],
-      "@helpers/*": ["./src/helpers/*"],
-      "@hooks/*": ["./src/hooks/*"],
-      "@modules/*": ["./src/modules/*"],
-      "@routers/*": ["./src/routers/*"],
-      "@providers/*": ["./src/providers/*"],
-      "@screens/*": ["./src/screens/*"],
-      "@store/*": ["./src/store/*"],
-      "@styles/*": ["./src/styles/*"],
-      "@utils/*": ["./src/utils/*"],
-      "@src/*": ["./src/*"],
+      "@/*": ["./src/*"]
     }
   },
-  "include": ["src/**/*","custom.d.ts"],
-  "exclude": ["node_modules"],
-  "extends": "expo/tsconfig.base"
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "src/**/*",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts"
+  ],
+  "exclude": ["node_modules"]
 }

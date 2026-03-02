@@ -1,15 +1,14 @@
 module.exports = {
-  verbose: true,
   preset: "jest-expo",
   transformIgnorePatterns: [
-    "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|react-redux|native-base|react-native-svg)",
+    "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|react-redux|react-native-svg|react-native-reanimated)",
   ],
-  collectCoverage: true,
+  moduleNameMapper: {
+    "^@/(.*)$": "<rootDir>/src/$1",
+  },
   collectCoverageFrom: [
-    "**/*.{js,jsx}",
-    "!**/coverage/**",
+    "src/**/*.{ts,tsx}",
+    "!src/**/*.d.ts",
     "!**/node_modules/**",
-    "!**/babel.config.js",
-    "!**/jest.setup.js",
   ],
 };
