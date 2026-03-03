@@ -1,51 +1,42 @@
 import { useEffect, useRef, useCallback, useState, type ReactNode } from "react";
-import {
-  Text,
-  Animated,
-  TouchableWithoutFeedback,
-  StyleSheet,
-} from "react-native";
+import { Text, Pressable, StyleSheet } from "react-native";
+import Animated, {
+  useSharedValue,
+  useAnimatedStyle,
+  withTiming,
+} from "react-native-reanimated";
 import { registerToastHandler, type ToastMessage, ToastType } from "@/lib/toast";
 
 const TOAST_HEIGHT = 120;
+const ANIM_MS = 300;
 
 interface Props {
   children: ReactNode;
 }
 
 export function ToastProvider({ children }: Props) {
-  const animatedValue = useRef(new Animated.Value(-TOAST_HEIGHT)).current;
-  const stopRef = useRef(false);
+  const translateY = useSharedValue(-TOAST_HEIGHT);
+  const heldRef = useRef(false);
   const [state, setState] = useState<ToastMessage>({
     msg: "",
     type: ToastType.Info,
     duration: 1500,
   });
 
-  const hideToast = useCallback(
-    (duration: number) => {
-      setTimeout(() => {
-        if (!stopRef.current) {
-          Animated.timing(animatedValue, {
-            toValue: -TOAST_HEIGHT,
-            duration: 300,
-            useNativeDriver: true,
-          }).start();
-        }
-      }, duration);
-    },
-    [animatedValue]
-  );
+  const hideToast = useCallback(() => {
+    translateY.value = withTiming(-TOAST_HEIGHT, { duration: ANIM_MS });
+  }, [translateY]);
 
   const showToastAnimation = useCallback(
     (duration: number) => {
-      Animated.timing(animatedValue, {
-        toValue: 0,
-        duration: 300,
-        useNativeDriver: true,
-      }).start(() => hideToast(duration));
+      translateY.value = withTiming(0, { duration: ANIM_MS });
+      setTimeout(() => {
+        if (!heldRef.current) {
+          hideToast();
+        }
+      }, duration + ANIM_MS);
     },
-    [animatedValue, hideToast]
+    [translateY, hideToast]
   );
 
   useEffect(() => {
@@ -61,39 +52,29 @@ export function ToastProvider({ children }: Props) {
     });
   }, [showToastAnimation]);
 
-  const handlePressIn = useCallback(() => {
-    stopRef.current = true;
-  }, []);
-
-  const handlePressOut = useCallback(() => {
-    stopRef.current = false;
-    Animated.timing(animatedValue, {
-      toValue: -TOAST_HEIGHT,
-      duration: 300,
-      useNativeDriver: true,
-    }).start();
-  }, [animatedValue]);
+  const animatedStyle = useAnimatedStyle(() => ({
+    transform: [{ translateY: translateY.value }],
+  }));
 
   return (
     <>
-      <TouchableWithoutFeedback
-        onPressIn={handlePressIn}
-        onPressOut={handlePressOut}
+      <Pressable
+        onPressIn={() => {
+          heldRef.current = true;
+        }}
+        onPressOut={() => {
+          heldRef.current = false;
+          hideToast();
+        }}
       >
         <Animated.View
-          style={[
-            styles.toast,
-            {
-              transform: [{ translateY: animatedValue }],
-              backgroundColor: state.type,
-            },
-          ]}
+          style={[styles.toast, animatedStyle, { backgroundColor: state.type }]}
         >
           <Text style={styles.text} numberOfLines={3}>
             {state.msg}
           </Text>
         </Animated.View>
-      </TouchableWithoutFeedback>
+      </Pressable>
       {children}
     </>
   );

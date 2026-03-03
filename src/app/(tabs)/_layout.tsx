@@ -1,26 +1,41 @@
+import { Platform } from "react-native";
 import { Tabs } from "expo-router";
 import { AntDesign, Ionicons } from "@expo/vector-icons";
-import { useAppSelector } from "@/store/hooks";
-import { selectTheme } from "@/store/appSlice";
+import * as Haptics from "expo-haptics";
+import { useTheme } from "@/hooks/useTheme";
 
 export default function TabLayout() {
-  const theme = useAppSelector(selectTheme);
+  const { colors } = useTheme();
 
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: theme.primary,
-        tabBarInactiveTintColor: theme.border,
+        tabBarActiveTintColor: colors.primary,
+        tabBarInactiveTintColor: colors.border,
         tabBarStyle: {
-          backgroundColor: theme.card,
-          borderTopColor: theme.border,
+          backgroundColor: colors.card,
+          borderTopColor: colors.border,
+          height: Platform.OS === "ios" ? 88 : 64,
+          paddingBottom: Platform.OS === "ios" ? 28 : 8,
+          paddingTop: 8,
+        },
+        tabBarLabelStyle: {
+          fontFamily: "Medium",
+          fontSize: 11,
         },
         headerStyle: {
-          backgroundColor: theme.card,
+          backgroundColor: colors.card,
         },
-        headerTintColor: theme.text,
+        headerTintColor: colors.text,
         headerTitleStyle: {
           fontFamily: "Bold",
+        },
+      }}
+      screenListeners={{
+        tabPress: () => {
+          if (Platform.OS !== "web") {
+            Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+          }
         },
       }}
     >

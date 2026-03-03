@@ -1,8 +1,9 @@
-import { View, Text, Pressable, StyleSheet } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
-import { useAppSelector } from "@/store/hooks";
-import { selectTheme } from "@/store/appSlice";
+import { useTheme } from "@/hooks/useTheme";
+import { Button } from "./Button";
 import translate from "@/lib/i18n";
+import { spacing, typography } from "@/constants/spacing";
 
 interface Props {
   errorMessage?: string;
@@ -10,19 +11,22 @@ interface Props {
 }
 
 export function ErrorComponent({ errorMessage, onRetry }: Props) {
-  const theme = useAppSelector(selectTheme);
+  const { colors } = useTheme();
 
   return (
     <View style={styles.container}>
-      <MaterialIcons name="error" size={50} color={theme.primary} />
-      {errorMessage && <Text style={styles.message}>{errorMessage}</Text>}
+      <MaterialIcons name="error" size={50} color={colors.primary} />
+      {errorMessage && (
+        <Text style={[styles.message, { color: colors.text }]}>
+          {errorMessage}
+        </Text>
+      )}
       {onRetry && (
-        <Pressable
+        <Button
+          title={translate("retry")}
           onPress={onRetry}
-          style={[styles.retryButton, { backgroundColor: theme.primary }]}
-        >
-          <Text style={styles.buttonText}>{translate("retry")}</Text>
-        </Pressable>
+          style={{ marginTop: spacing.md }}
+        />
       )}
     </View>
   );
@@ -35,20 +39,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   message: {
-    fontSize: 18,
-    marginVertical: 16,
-    textAlign: "center",
-  },
-  retryButton: {
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    borderRadius: 8,
-    marginTop: 16,
-  },
-  buttonText: {
-    color: "white",
-    fontSize: 16,
-    fontWeight: "bold",
+    fontSize: typography.md + 1,
+    marginVertical: spacing.md,
     textAlign: "center",
   },
 });

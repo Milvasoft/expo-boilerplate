@@ -1,18 +1,26 @@
-import { View, Text, StyleSheet, Pressable } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import { Stack, useRouter } from "expo-router";
+import { useTheme } from "@/hooks/useTheme";
+import { Button } from "@/components/Button";
+import { spacing } from "@/constants/spacing";
 
 export default function NotFoundScreen() {
   const router = useRouter();
+  const { colors } = useTheme();
 
   return (
     <>
       <Stack.Screen options={{ title: "Not Found" }} />
-      <View style={styles.root}>
-        <Text style={styles.title}>404</Text>
-        <Text style={styles.message}>This screen doesn't exist.</Text>
-        <Pressable style={styles.button} onPress={() => router.replace("/")}>
-          <Text style={styles.buttonText}>Go Home</Text>
-        </Pressable>
+      <View style={[styles.root, { backgroundColor: colors.background }]}>
+        <Text style={[styles.title, { color: colors.primary }]}>404</Text>
+        <Text style={[styles.message, { color: colors.border }]}>
+          This screen doesn't exist.
+        </Text>
+        <Button
+          title="Go Home"
+          onPress={() => router.replace("/")}
+          style={{ marginTop: spacing.sm }}
+        />
       </View>
     </>
   );
@@ -23,28 +31,14 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    gap: 16,
+    gap: spacing.md,
   },
   title: {
     fontFamily: "Black",
     fontSize: 48,
-    color: "#f27a1a",
   },
   message: {
     fontFamily: "Regular",
-    fontSize: 16,
-    color: "#666",
-  },
-  button: {
-    backgroundColor: "#f27a1a",
-    paddingVertical: 12,
-    paddingHorizontal: 24,
-    borderRadius: 8,
-    marginTop: 8,
-  },
-  buttonText: {
-    color: "#fff",
-    fontFamily: "Bold",
     fontSize: 16,
   },
 });

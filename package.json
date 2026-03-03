@@ -11,13 +11,18 @@
     "build:dev": "eas build --profile development",
     "build:preview": "eas build --profile preview",
     "build:prod": "eas build --profile production",
+    "submit:prod": "eas submit --profile production",
     "lint": "expo lint",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json}\"",
     "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json}\"",
     "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck && npm run lint && npm run format:check",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "clean": "rm -rf node_modules .expo dist && npm install",
+    "reset": "rm -rf node_modules .expo dist ios android && npm install",
+    "doctor": "npx expo-doctor"
   },
   "dependencies": {
     "@expo-google-fonts/montserrat": "^0.2.0",
@@ -31,6 +36,7 @@
     "expo-constants": "~55.0.7",
     "expo-device": "~55.0.9",
     "expo-font": "~55.0.4",
+    "expo-haptics": "^55.0.8",
     "expo-linking": "~55.0.7",
     "expo-localization": "~55.0.8",
     "expo-notifications": "~55.0.10",

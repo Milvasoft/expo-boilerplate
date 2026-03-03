@@ -10,6 +10,7 @@ import MontserratFont from "@/assets/font";
 import { store } from "@/store";
 import { useAppDispatch } from "@/store/hooks";
 import { setColorScheme } from "@/store/appSlice";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { NetworkProvider } from "@/providers/NetworkProvider";
 import { NotificationProvider } from "@/providers/NotificationProvider";
 import { ToastProvider } from "@/providers/ToastProvider";
@@ -28,24 +29,29 @@ function RootLayoutInner() {
   return (
     <>
       <StatusBar style="auto" />
-      <NetworkProvider>
-        <ToastProvider>
-          <NotificationProvider>
-            <Stack screenOptions={{ headerShown: false }}>
-              <Stack.Screen name="(tabs)" />
-              <Stack.Screen name="login" options={{ gestureEnabled: false }} />
-              <Stack.Screen
-                name="post/[id]"
-                options={{ headerShown: true, title: "Post" }}
-              />
-              <Stack.Screen
-                name="settings"
-                options={{ headerShown: true, title: "Settings" }}
-              />
-            </Stack>
-          </NotificationProvider>
-        </ToastProvider>
-      </NetworkProvider>
+      <ErrorBoundary>
+        <NetworkProvider>
+          <ToastProvider>
+            <NotificationProvider>
+              <Stack screenOptions={{ headerShown: false }}>
+                <Stack.Screen name="(tabs)" />
+                <Stack.Screen
+                  name="login"
+                  options={{ gestureEnabled: false }}
+                />
+                <Stack.Screen
+                  name="post/[id]"
+                  options={{ headerShown: true, title: "Post" }}
+                />
+                <Stack.Screen
+                  name="settings"
+                  options={{ headerShown: true, title: "Settings" }}
+                />
+              </Stack>
+            </NotificationProvider>
+          </ToastProvider>
+        </NetworkProvider>
+      </ErrorBoundary>
     </>
   );
 }

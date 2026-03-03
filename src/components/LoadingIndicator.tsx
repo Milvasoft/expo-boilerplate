@@ -1,19 +1,19 @@
 import { View, Text, ActivityIndicator, StyleSheet } from "react-native";
-import { useAppSelector } from "@/store/hooks";
-import { selectTheme } from "@/store/appSlice";
+import { useTheme } from "@/hooks/useTheme";
 import translate from "@/lib/i18n";
+import { spacing, typography } from "@/constants/spacing";
 
 interface Props {
   text?: string;
 }
 
 export function LoadingIndicator({ text }: Props) {
-  const theme = useAppSelector(selectTheme);
+  const { colors } = useTheme();
 
   return (
     <View style={styles.container}>
-      <ActivityIndicator size="large" color={theme.primary} />
-      <Text style={[styles.text, { color: theme.primary }]}>
+      <ActivityIndicator size="large" color={colors.primary} />
+      <Text style={[styles.text, { color: colors.primary }]}>
         {text ?? translate("generalActivityIndicatorText")}
       </Text>
     </View>
@@ -31,8 +31,8 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(0, 0, 0, 0.85)",
   },
   text: {
-    marginTop: 12,
+    marginTop: spacing.md - 4,
     fontWeight: "bold",
-    fontSize: 14,
+    fontSize: typography.sm + 1,
   },
 });

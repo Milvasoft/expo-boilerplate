@@ -17,11 +17,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     tr: "./src/assets/languages/turkish.json",
     en: "./src/assets/languages/english.json",
   },
-  splash: {
-    image: "./src/assets/images/splash.png",
-    resizeMode: "contain",
-    backgroundColor: "#ffffff",
-  },
+  newArchEnabled: true,
   ios: {
     bundleIdentifier: "com.expoboilerplate.app",
     buildNumber: "2.0.0",
@@ -51,5 +47,19 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       projectId: "49e4e24d-c928-4ff1-815d-f1a58ca580bd",
     },
   },
-  plugins: ["expo-font", "expo-localization", "expo-router"],
+  plugins: [
+    "expo-font",
+    "expo-localization",
+    "expo-router",
+    [
+      "expo-splash-screen",
+      {
+        image: "./src/assets/images/splash.png",
+        imageWidth: 200,
+        resizeMode: "contain",
+        backgroundColor: "#ffffff",
+      },
+    ],
+    "expo-haptics",
+  ],
 });

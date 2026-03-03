@@ -1,12 +1,16 @@
-import { View, Text, StyleSheet, Pressable } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import { useRouter } from "expo-router";
 import { useAppDispatch } from "@/store/hooks";
 import { setUser } from "@/store/appSlice";
+import { useTheme } from "@/hooks/useTheme";
+import { Button } from "@/components/Button";
 import { showToast } from "@/lib/toast";
+import { spacing, typography } from "@/constants/spacing";
 
 export default function LoginScreen() {
   const dispatch = useAppDispatch();
   const router = useRouter();
+  const { colors } = useTheme();
 
   const handleLogin = () => {
     showToast("Welcome!");
@@ -15,11 +19,9 @@ export default function LoginScreen() {
   };
 
   return (
-    <View style={styles.root}>
-      <Text style={styles.welcome}>Welcome!</Text>
-      <Pressable style={styles.button} onPress={handleLogin}>
-        <Text style={styles.buttonText}>Login</Text>
-      </Pressable>
+    <View style={[styles.root, { backgroundColor: colors.background }]}>
+      <Text style={[styles.welcome, { color: colors.text }]}>Welcome!</Text>
+      <Button title="Login" onPress={handleLogin} />
     </View>
   );
 }
@@ -29,22 +31,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#fff",
   },
   welcome: {
     fontFamily: "Bold",
-    fontSize: 28,
-    marginBottom: 24,
-  },
-  button: {
-    backgroundColor: "#f27a1a",
-    paddingVertical: 14,
-    paddingHorizontal: 32,
-    borderRadius: 8,
-  },
-  buttonText: {
-    color: "#fff",
-    fontFamily: "Bold",
-    fontSize: 18,
+    fontSize: typography.xl - 4,
+    marginBottom: spacing.lg,
   },
 });

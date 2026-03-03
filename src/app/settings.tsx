@@ -1,26 +1,24 @@
 import { View, Text, StyleSheet } from "react-native";
 import { Stack } from "expo-router";
-import { useAppSelector } from "@/store/hooks";
-import { selectTheme } from "@/store/appSlice";
+import { useTheme } from "@/hooks/useTheme";
 import translate from "@/lib/i18n";
+import { typography } from "@/constants/spacing";
 
 export default function SettingsScreen() {
-  const theme = useAppSelector(selectTheme);
+  const { colors } = useTheme();
 
   return (
     <>
       <Stack.Screen
         options={{
           title: translate("navigation.settings"),
-          headerStyle: { backgroundColor: theme.card },
-          headerTintColor: theme.primary,
+          headerStyle: { backgroundColor: colors.card },
+          headerTintColor: colors.primary,
           headerTitleStyle: { fontFamily: "Bold" },
         }}
       />
-      <View
-        style={[styles.root, { backgroundColor: theme.background }]}
-      >
-        <Text style={[styles.text, { color: theme.text }]}>Settings</Text>
+      <View style={[styles.root, { backgroundColor: colors.background }]}>
+        <Text style={[styles.text, { color: colors.text }]}>Settings</Text>
       </View>
     </>
   );
@@ -34,6 +32,6 @@ const styles = StyleSheet.create({
   },
   text: {
     fontFamily: "SemiBold",
-    fontSize: 18,
+    fontSize: typography.md + 1,
   },
 });

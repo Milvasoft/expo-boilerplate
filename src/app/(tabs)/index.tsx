@@ -1,35 +1,34 @@
-import { View, Text, StyleSheet, Pressable } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useAppSelector } from "@/store/hooks";
-import { selectTheme } from "@/store/appSlice";
+import { useTheme } from "@/hooks/useTheme";
+import { Button } from "@/components/Button";
 import translate from "@/lib/i18n";
 import { showToast } from "@/lib/toast";
+import { spacing, typography } from "@/constants/spacing";
 
 export default function HomeScreen() {
-  const theme = useAppSelector(selectTheme);
+  const { colors } = useTheme();
 
   return (
     <SafeAreaView
-      style={[styles.safeView, { backgroundColor: theme.background }]}
+      style={[styles.safeView, { backgroundColor: colors.background }]}
     >
       <View style={styles.root}>
         <View style={styles.container}>
-          <Text style={[styles.title, { color: theme.text }]}>
+          <Text style={[styles.title, { color: colors.text }]}>
             EXPO BOILERPLATE
           </Text>
-          <Text style={[styles.subtitle, { color: theme.secondary }]}>
+          <Text style={[styles.subtitle, { color: colors.secondary }]}>
             SDK 55 &bull; TypeScript &bull; expo-router
           </Text>
         </View>
 
-        <Pressable
-          style={[styles.button, { backgroundColor: theme.primary }]}
+        <Button
+          title="Show Toast"
           onPress={() => showToast("Hello from the toast system!")}
-        >
-          <Text style={styles.buttonText}>Show Toast</Text>
-        </Pressable>
+        />
 
-        <Text style={[styles.translatedText, { color: theme.text }]}>
+        <Text style={[styles.translatedText, { color: colors.text }]}>
           {translate("name")}
         </Text>
       </View>
@@ -45,7 +44,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "space-around",
     alignItems: "center",
-    paddingHorizontal: 24,
+    paddingHorizontal: spacing.lg,
   },
   container: {
     justifyContent: "center",
@@ -53,25 +52,15 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: "Black",
-    fontSize: 24,
+    fontSize: typography.lg + 4,
   },
   subtitle: {
     fontFamily: "Regular",
-    fontSize: 14,
-    marginTop: 8,
-  },
-  button: {
-    paddingVertical: 12,
-    paddingHorizontal: 24,
-    borderRadius: 8,
-  },
-  buttonText: {
-    color: "#fff",
-    fontFamily: "Bold",
-    fontSize: 16,
+    fontSize: typography.sm + 1,
+    marginTop: spacing.sm,
   },
   translatedText: {
     fontFamily: "Bold",
-    fontSize: 18,
+    fontSize: typography.md + 1,
   },
 });

@@ -1,7 +1,10 @@
 import { useEffect, useState, type ReactNode } from "react";
-import { View, Text, Modal, Pressable, StyleSheet } from "react-native";
+import { View, Text, Modal, StyleSheet } from "react-native";
 import { useNetInfo } from "@react-native-community/netinfo";
+import { useTheme } from "@/hooks/useTheme";
+import { Button } from "@/components/Button";
 import translate from "@/lib/i18n";
+import { spacing, typography } from "@/constants/spacing";
 
 interface Props {
   children: ReactNode;
@@ -9,6 +12,7 @@ interface Props {
 
 export function NetworkProvider({ children }: Props) {
   const { isConnected } = useNetInfo();
+  const { colors } = useTheme();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -24,14 +28,11 @@ export function NetworkProvider({ children }: Props) {
         onRequestClose={() => setVisible(false)}
       >
         <View style={styles.backdrop}>
-          <View style={styles.modal}>
-            <Text style={styles.text}>{translate("noInternet")}</Text>
-            <Pressable
-              style={styles.button}
-              onPress={() => setVisible(false)}
-            >
-              <Text style={styles.buttonText}>OK</Text>
-            </Pressable>
+          <View style={[styles.modal, { backgroundColor: colors.card }]}>
+            <Text style={[styles.text, { color: colors.text }]}>
+              {translate("noInternet")}
+            </Text>
+            <Button title="OK" onPress={() => setVisible(false)} />
           </View>
         </View>
       </Modal>
@@ -51,10 +52,9 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(0, 0, 0, 0.5)",
   },
   modal: {
-    margin: 20,
-    backgroundColor: "white",
-    borderRadius: 16,
-    padding: 32,
+    margin: spacing.lg - 4,
+    borderRadius: spacing.md,
+    padding: spacing.xl,
     alignItems: "center",
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
@@ -63,20 +63,9 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   text: {
-    marginBottom: 16,
+    marginBottom: spacing.md,
     textAlign: "center",
-    fontSize: 16,
+    fontSize: typography.md,
     fontFamily: "SemiBold",
-  },
-  button: {
-    backgroundColor: "#f27a1a",
-    paddingVertical: 10,
-    paddingHorizontal: 24,
-    borderRadius: 8,
-  },
-  buttonText: {
-    color: "#fff",
-    fontFamily: "Bold",
-    fontSize: 14,
   },
 });
